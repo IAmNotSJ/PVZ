@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://5w656huwv7ud"]
+
+[ext_resource type="Texture2D" uid="uid://ebjjyj1qsqbd" path="res://assets/objects/lawnmower/lawnmower.png" id="1_50rt4"]
+[ext_resource type="Script" path="res://assets/objects/lawnmower/lawnmower.gd" id="2_yn6gq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7fc7"]
+size = Vector2(3, 46)
+
+[node name="Lawnmower" type="Sprite2D"]
+texture = ExtResource("1_50rt4")
+script = ExtResource("2_yn6gq")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(29.5, 13)
+shape = SubResource("RectangleShape2D_q7fc7")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(29.5, 13)
+shape = SubResource("RectangleShape2D_q7fc7")
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

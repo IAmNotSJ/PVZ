@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvvydqux3m080"]
+
+[ext_resource type="Texture2D" uid="uid://c1q3fx0r22bol" path="res://assets/plants/seeds/packet_unknown.png" id="1_1xogv"]
+[ext_resource type="Script" path="res://assets/plants/seeds/packet_base.gd" id="1_8egpq"]
+
+[sub_resource type="Theme" id="Theme_0nef7"]
+
+[node name="Packet 1" type="Button"]
+offset_left = 199.0
+offset_top = 1.0
+offset_right = 308.0
+offset_bottom = 126.0
+theme = SubResource("Theme_0nef7")
+icon = ExtResource("1_1xogv")
+flat = true
+script = ExtResource("1_8egpq")

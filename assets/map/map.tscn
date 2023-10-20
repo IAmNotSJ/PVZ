@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://dci2asff5tkug"]
+
+[ext_resource type="Texture2D" uid="uid://ej4udvoupb60" path="res://assets/grid/tile.png" id="1_u1a30"]
+[ext_resource type="Texture2D" uid="uid://c7uid8qem80bk" path="res://assets/grid/outline.png" id="2_2meh5"]
+[ext_resource type="Texture2D" uid="uid://l14md6m2xqrn" path="res://assets/grid/white.png" id="3_7mtm5"]
+[ext_resource type="Script" path="res://assets/grid/grid.gd" id="3_r27qd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ogv4q"]
+texture = ExtResource("1_u1a30")
+texture_region_size = Vector2i(95, 95)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u3hmx"]
+texture = ExtResource("2_2meh5")
+texture_region_size = Vector2i(95, 95)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_32rxj"]
+texture = ExtResource("3_7mtm5")
+texture_region_size = Vector2i(95, 95)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_t7lfn"]
+tile_size = Vector2i(95, 95)
+sources/0 = SubResource("TileSetAtlasSource_ogv4q")
+sources/1 = SubResource("TileSetAtlasSource_u3hmx")
+sources/2 = SubResource("TileSetAtlasSource_32rxj")
+
+[node name="World" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_t7lfn")
+cell_quadrant_size = 95
+format = 2
+layer_0/name = "select 1"
+layer_1/name = "select 2"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
+script = ExtResource("3_r27qd")
