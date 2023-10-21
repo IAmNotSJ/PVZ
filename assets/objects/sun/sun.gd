@@ -4,9 +4,12 @@ extends Sprite2D
 
 var rng = RandomNumberGenerator.new()
 
+var value:int = 25
+
 var speed:float = rng.randf_range(50, 80)
 
 var final_placement:Vector2
+
 var despawn_timer:float = 25
 var from_sky:bool = true
 var collected:bool = false
@@ -23,20 +26,16 @@ func _ready():
 	else:
 		speed *= -1
 		acceleration = 130
-		final_placement = Vector2(global_position.x, global_position.y + 40)
+		final_placement = Vector2(global_position.x + rng.randi_range(-20,20), global_position.y + 40)
 
 func _physics_process(delta):
-	if from_sky:
-		if (speed > 0):
-			speed = lerpf(speed,speed + acceleration, delta)
-		else:
-			speed = 0
-	else:
+	if !from_sky:
 		speed = lerpf(speed,speed + acceleration, delta)
 	
 	if (flower_timer >= 0):
 		flower_timer -= delta
-	global_position = global_position.move_toward(final_placement, delta * speed)
+	global_position.y = global_position.move_toward(final_placement, delta * speed).y
+	global_position.x = global_position.move_toward(final_placement, delta * abs(speed)).x
 	despawn_timer -= delta
 	
 	if (despawn_timer < 8):
@@ -46,7 +45,7 @@ func _physics_process(delta):
 	
 
 func _on_area_2d_area_entered(_area):
-	mainScene.collect_sun(25)
+	mainScene.collect_sun(value)
 	final_placement = Vector2(40,40)
 	speed = 10 * global_position.x
 	acceleration = 0

@@ -46,10 +46,10 @@ func eat_state(delta):
 			plant_to_eat.take_damage(.2)
 
 func _on_area_2d_area_entered(area):
-	take_damage(area)
+	take_damage(area.owner.damage)
 
-func take_damage(area):
-	health -= area.owner.damage
+func take_damage(amount:float):
+	health -= amount
 	
 	$ShaderPlayer.play("blink")
 	

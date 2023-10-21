@@ -53,6 +53,13 @@ offset_right = 561.0
 offset_bottom = 125.0
 plant = "walnut"
 
+[node name="Packet 4" parent="Seed Packets" instance=ExtResource("2_dc4t3")]
+offset_left = 569.0
+offset_top = -3.0
+offset_right = 678.0
+offset_bottom = 122.0
+plant = "evil_sunflower"
+
 [node name="Shovel Base" type="Sprite2D" parent="."]
 position = Vector2(1055, 595)
 texture = ExtResource("3_6n67r")

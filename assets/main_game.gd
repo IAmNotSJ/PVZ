@@ -5,6 +5,7 @@ extends Node2D
 
 var peaShooterScene = load('res://assets/plants/peashooter/peashooter.tscn')
 var sunFlowerScene = load('res://assets/plants/sunflower/sunflower.tscn')
+var evilSunFlowerScene = load('res://assets/plants/evil_sunflower/evil_sunflower.tscn')
 var walNutScene = load('res://assets/plants/walnut/walnut.tscn')
 
 var zombieScene = load("res://assets/zombies/base/zombie.tscn")
@@ -94,6 +95,8 @@ func hold_plant(plant):
 				plant_to_hold = sunFlowerScene.instantiate()
 			'walnut':
 				plant_to_hold = walNutScene.instantiate()
+			'evil_sunflower':
+				plant_to_hold = evilSunFlowerScene.instantiate()
 		if (sun < plant_to_hold.cost):
 			plant_to_hold.queue_free()
 			pass

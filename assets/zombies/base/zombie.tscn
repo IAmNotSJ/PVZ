@@ -31,7 +31,7 @@ shader_parameter/darken_amount = 0.3
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e2psr"]
 radius = 31.0
-height = 114.0
+height = 166.249
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7hupt"]
 size = Vector2(115.651, 20)
@@ -477,18 +477,16 @@ scale = Vector2(0.961538, 0.961538)
 texture = ExtResource("8_as6rf")
 
 [node name="Hurtbox" type="Area2D" parent="."]
-visible = false
 scale = Vector2(0.821, 0.821)
 collision_layer = 4
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(0, 5.93436)
+position = Vector2(-1.48359, 29.6718)
 scale = Vector2(0.821, 0.821)
 shape = SubResource("CapsuleShape2D_e2psr")
 
 [node name="Hitbox" type="Area2D" parent="."]
-visible = false
 position = Vector2(-20.7065, 0)
 scale = Vector2(0.821, 0.821)
 collision_layer = 0
