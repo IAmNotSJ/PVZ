@@ -28,6 +28,8 @@ func _on_packet_2_pressed():
 	hold_plant($"HUD/Seed Packets/Packet 2".plant)
 func _on_packet_3_pressed():
 	hold_plant($"HUD/Seed Packets/Packet 3".plant)
+func _on_packet_4_pressed():
+	hold_plant($"HUD/Seed Packets/Packet 4".plant)
 
 func _ready():
 	collect_sun(50)
@@ -37,6 +39,9 @@ func _process(delta):
 	if (zombieTimer <= 0):
 		spawn_zombie()
 		zombieTimer = 15
+	
+	if Input.is_action_just_pressed("spawn_zombie"):
+		spawn_zombie()
 	
 	sunTimer -= delta
 	if (sunTimer <= 0):

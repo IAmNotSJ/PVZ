@@ -52,5 +52,7 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="HUD/Seed Packets/Packet 1" to="." method="_on_packet_1_pressed"]
 [connection signal="pressed" from="HUD/Seed Packets/Packet 2" to="." method="_on_packet_2_pressed"]
 [connection signal="pressed" from="HUD/Seed Packets/Packet 3" to="." method="_on_packet_3_pressed"]
+[connection signal="pressed" from="HUD/Seed Packets/Packet 4" to="." method="_on_packet_4_pressed"]
+[connection signal="pressed" from="HUD/Seed Packets/Packet 4" to="HUD" method="_on_packet_4_pressed"]
 
 [editable path="HUD"]
