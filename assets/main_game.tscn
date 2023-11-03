@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcyuco3hmkdl"]
+[gd_scene load_steps=13 format=3 uid="uid://dcyuco3hmkdl"]
 
 [ext_resource type="Script" path="res://assets/main_game.gd" id="1_q0gss"]
 [ext_resource type="PackedScene" uid="uid://dci2asff5tkug" path="res://assets/map/map.tscn" id="1_x0fhb"]
@@ -7,6 +7,23 @@
 [ext_resource type="PackedScene" uid="uid://censfur40ew8n" path="res://assets/HUD/HUD.tscn" id="4_681hs"]
 [ext_resource type="PackedScene" uid="uid://61gk575sgqd1" path="res://assets/objects/cursor/cursor.tscn" id="5_b7ptp"]
 [ext_resource type="PackedScene" uid="uid://5w656huwv7ud" path="res://assets/objects/lawnmower/lawnmower.tscn" id="5_octmu"]
+[ext_resource type="Shader" path="res://assets/shaders/fill.gdshader" id="7_t24mb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w6wro"]
+resource_local_to_scene = true
+shader = ExtResource("7_t24mb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7flbk"]
+resource_local_to_scene = true
+shader = ExtResource("7_t24mb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sbgo1"]
+resource_local_to_scene = true
+shader = ExtResource("7_t24mb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_46i6l"]
+resource_local_to_scene = true
+shader = ExtResource("7_t24mb")
 
 [node name="Main Game" type="Node2D"]
 y_sort_enabled = true
@@ -19,7 +36,7 @@ stream = ExtResource("2_lf6y2")
 
 [node name="BG" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(873, 321)
+position = Vector2(765, 321)
 texture = ExtResource("3_uvbsn")
 
 [node name="World" parent="." instance=ExtResource("1_x0fhb")]
@@ -42,17 +59,32 @@ position = Vector2(105, 464)
 [node name="Lawnmower5" parent="lawnmower" instance=ExtResource("5_octmu")]
 position = Vector2(105, 559)
 
+[node name="Cursor" parent="." instance=ExtResource("5_b7ptp")]
+metadata/_edit_lock_ = true
+
 [node name="HUD" parent="." instance=ExtResource("4_681hs")]
 z_index = 1
 metadata/_edit_lock_ = true
 
-[node name="Cursor" parent="." instance=ExtResource("5_b7ptp")]
-metadata/_edit_lock_ = true
+[node name="Packet 1" parent="HUD/Seed Packets" index="0"]
+material = SubResource("ShaderMaterial_w6wro")
 
-[connection signal="pressed" from="HUD/Seed Packets/Packet 1" to="." method="_on_packet_1_pressed"]
-[connection signal="pressed" from="HUD/Seed Packets/Packet 2" to="." method="_on_packet_2_pressed"]
-[connection signal="pressed" from="HUD/Seed Packets/Packet 3" to="." method="_on_packet_3_pressed"]
-[connection signal="pressed" from="HUD/Seed Packets/Packet 4" to="." method="_on_packet_4_pressed"]
-[connection signal="pressed" from="HUD/Seed Packets/Packet 4" to="HUD" method="_on_packet_4_pressed"]
+[node name="Packet 2" parent="HUD/Seed Packets" index="1"]
+material = SubResource("ShaderMaterial_7flbk")
+
+[node name="Packet 3" parent="HUD/Seed Packets" index="2"]
+material = SubResource("ShaderMaterial_sbgo1")
+
+[node name="Packet 4" parent="HUD/Seed Packets" index="3"]
+material = SubResource("ShaderMaterial_46i6l")
+
+[node name="Cam" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[connection signal="plant_planted" from="." to="HUD" method="_on_main_game_plant_planted"]
+[connection signal="clicked" from="HUD/Seed Packets/Packet 1" to="." method="_on_packet_1_clicked"]
+[connection signal="clicked" from="HUD/Seed Packets/Packet 2" to="." method="_on_packet_2_clicked"]
+[connection signal="clicked" from="HUD/Seed Packets/Packet 3" to="." method="_on_packet_3_clicked"]
+[connection signal="clicked" from="HUD/Seed Packets/Packet 4" to="." method="_on_packet_4_clicked"]
 
 [editable path="HUD"]

@@ -19,15 +19,15 @@ shader_parameter/darken = false
 shader_parameter/darken_amount = 0.3
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ofxmp"]
-radius = 29.75
-height = 68.0
+radius = 41.4286
+height = 94.2857
 
 [sub_resource type="Animation" id="Animation_okp1w"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:material:shader_parameter/active")
+tracks/0/path = NodePath("..:material:shader_parameter/darken")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -39,22 +39,10 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("..:material:shader_parameter/darken")
+tracks/1/path = NodePath("..:material:shader_parameter/blink")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("..:material:shader_parameter/blink")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -64,29 +52,30 @@ tracks/2/keys = {
 [sub_resource type="Animation" id="Animation_a4klk"]
 resource_name = "blink"
 length = 0.3
+step = 0.0417
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:material:shader_parameter/active")
+tracks/0/path = NodePath("..:material:shader_parameter/darken")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.258146),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:material:shader_parameter/darken")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:material:shader_parameter/blink")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0834),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_iv7gf"]
@@ -130,7 +119,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Stem:rotation")
+tracks/0/path = NodePath("Node2D/Stem:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -142,7 +131,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Leaf1:position")
+tracks/1/path = NodePath("Node2D/Leaf1:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -154,7 +143,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Leaf1:rotation")
+tracks/2/path = NodePath("Node2D/Leaf1:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -166,7 +155,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Leaf2:position")
+tracks/3/path = NodePath("Node2D/Leaf2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -178,7 +167,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Leaf2:rotation")
+tracks/4/path = NodePath("Node2D/Leaf2:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -190,7 +179,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Leaf3:position")
+tracks/5/path = NodePath("Node2D/Leaf3:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -202,7 +191,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Leaf3:rotation")
+tracks/6/path = NodePath("Node2D/Leaf3:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -214,7 +203,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Leaf4:position")
+tracks/7/path = NodePath("Node2D/Leaf4:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -226,7 +215,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Leaf4:rotation")
+tracks/8/path = NodePath("Node2D/Leaf4:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -238,7 +227,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Head and Face/Head:rotation")
+tracks/9/path = NodePath("Node2D/Head and Face/Head:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -250,7 +239,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Head and Face/Face:frame")
+tracks/10/path = NodePath("Node2D/Head and Face/Face:frame")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -262,7 +251,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Head and Face/Head:frame")
+tracks/11/path = NodePath("Node2D/Head and Face/Head:frame")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -274,7 +263,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Head and Face:position")
+tracks/12/path = NodePath("Node2D/Head and Face:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -292,7 +281,7 @@ step = 0.0417
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Stem:position")
+tracks/0/path = NodePath("Node2D/Stem:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -304,7 +293,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Stem:rotation")
+tracks/1/path = NodePath("Node2D/Stem:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -316,7 +305,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Leaf1:position")
+tracks/2/path = NodePath("Node2D/Leaf1:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -328,7 +317,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Leaf1:rotation")
+tracks/3/path = NodePath("Node2D/Leaf1:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -340,7 +329,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Leaf2:position")
+tracks/4/path = NodePath("Node2D/Leaf2:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -352,7 +341,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Leaf2:rotation")
+tracks/5/path = NodePath("Node2D/Leaf2:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -364,7 +353,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Leaf3:position")
+tracks/6/path = NodePath("Node2D/Leaf3:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -376,7 +365,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Leaf3:rotation")
+tracks/7/path = NodePath("Node2D/Leaf3:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -388,7 +377,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Leaf4:position")
+tracks/8/path = NodePath("Node2D/Leaf4:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -400,7 +389,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Leaf4:rotation")
+tracks/9/path = NodePath("Node2D/Leaf4:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -412,7 +401,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Head and Face:position")
+tracks/10/path = NodePath("Node2D/Head and Face:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -429,7 +418,7 @@ step = 0.0417
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Leaf3:position")
+tracks/0/path = NodePath("Node2D/Leaf3:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -441,7 +430,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Leaf3:rotation")
+tracks/1/path = NodePath("Node2D/Leaf3:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -453,7 +442,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Leaf4:position")
+tracks/2/path = NodePath("Node2D/Leaf4:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -465,7 +454,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Leaf4:rotation")
+tracks/3/path = NodePath("Node2D/Leaf4:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -477,7 +466,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Stem:position")
+tracks/4/path = NodePath("Node2D/Stem:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -489,7 +478,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Stem:rotation")
+tracks/5/path = NodePath("Node2D/Stem:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -501,7 +490,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Head and Face/Head:rotation")
+tracks/6/path = NodePath("Node2D/Head and Face/Head:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -513,7 +502,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Leaf1:position")
+tracks/7/path = NodePath("Node2D/Leaf1:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -525,7 +514,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Leaf1:rotation")
+tracks/8/path = NodePath("Node2D/Leaf1:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -537,7 +526,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Leaf2:position")
+tracks/9/path = NodePath("Node2D/Leaf2:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -549,7 +538,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Leaf2:rotation")
+tracks/10/path = NodePath("Node2D/Leaf2:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -561,7 +550,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Head and Face/Face:frame")
+tracks/11/path = NodePath("Node2D/Head and Face/Face:frame")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -573,7 +562,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Head and Face/Head:frame")
+tracks/12/path = NodePath("Node2D/Head and Face/Head:frame")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -602,7 +591,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Head and Face:position")
+tracks/14/path = NodePath("Node2D/Head and Face:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -619,44 +608,50 @@ _data = {
 "sun": SubResource("Animation_4hab6")
 }
 
-[node name="Sunflower" type="Node2D"]
+[node name="Sunflower" type="Node2D" node_paths=PackedStringArray("shaderPlayer")]
 z_index = 2
 material = SubResource("ShaderMaterial_bxxp5")
 scale = Vector2(0.7, 0.7)
 script = ExtResource("2_638ty")
+plant_name = "sunflower"
+cost = 50
+max_health = 5
+shaderPlayer = NodePath("ShaderPlayer")
 
-[node name="Leaf4" type="Sprite2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Leaf4" type="Sprite2D" parent="Node2D"]
 use_parent_material = true
 position = Vector2(-10, 34)
 texture = ExtResource("3_jpghq")
 offset = Vector2(0, -10)
 
-[node name="Leaf3" type="Sprite2D" parent="."]
+[node name="Leaf3" type="Sprite2D" parent="Node2D"]
 use_parent_material = true
 position = Vector2(26, 33)
 texture = ExtResource("2_s4ygo")
 offset = Vector2(0, -10)
 
-[node name="Stem" type="Sprite2D" parent="."]
+[node name="Stem" type="Sprite2D" parent="Node2D"]
 use_parent_material = true
 position = Vector2(3, 26)
 rotation = -0.141372
 texture = ExtResource("2_48ogy")
 offset = Vector2(0, -10)
 
-[node name="Head and Face" type="Node2D" parent="."]
+[node name="Head and Face" type="Node2D" parent="Node2D"]
 use_parent_material = true
 position = Vector2(5, -4.76837e-07)
 metadata/_edit_group_ = true
 
-[node name="Head" type="Sprite2D" parent="Head and Face"]
+[node name="Head" type="Sprite2D" parent="Node2D/Head and Face"]
 use_parent_material = true
 position = Vector2(-4.25, -9.25)
 texture = ExtResource("3_vhkc3")
 offset = Vector2(0, -10)
 hframes = 2
 
-[node name="Face" type="Sprite2D" parent="Head and Face"]
+[node name="Face" type="Sprite2D" parent="Node2D/Head and Face"]
 use_parent_material = true
 position = Vector2(-3.67857, -7.25)
 texture = ExtResource("4_7pb2i")
@@ -664,29 +659,27 @@ offset = Vector2(0, -10)
 hframes = 3
 frame = 1
 
-[node name="Leaf2" type="Sprite2D" parent="."]
+[node name="Leaf2" type="Sprite2D" parent="Node2D"]
 use_parent_material = true
 position = Vector2(26, 44)
 texture = ExtResource("8_ixwo5")
 offset = Vector2(0, -10)
 
-[node name="Leaf1" type="Sprite2D" parent="."]
+[node name="Leaf1" type="Sprite2D" parent="Node2D"]
 use_parent_material = true
 position = Vector2(-17, 44)
 texture = ExtResource("7_tndrj")
 offset = Vector2(0, -10)
 
 [node name="sun_anchor" type="Marker2D" parent="."]
-visible = false
 position = Vector2(-5, -18.75)
 
 [node name="hurtbox" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(5, -3.75)
+position = Vector2(1.42857, -7.14286)
 shape = SubResource("CapsuleShape2D_ofxmp")
 
 [node name="ShaderPlayer" type="AnimationPlayer" parent="."]

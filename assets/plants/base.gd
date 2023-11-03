@@ -1,9 +1,16 @@
-extends Node2D
+class_name Plant extends Node2D
 
 @onready var mainScene = get_tree().current_scene
 
+@export var plant_name:String
+
 @export var cost:int
 @export var max_health:int
+
+@export var shaderPlayer: Node
+@export var animationPlayer: Node
+
+@export var idleAnim = 'idle'
 
 var health = max_health
 var activated:bool = false
@@ -12,31 +19,34 @@ var curTile:Vector2
 
 var rng = RandomNumberGenerator.new()
 
-func _process(delta):
+func _process(_delta):
 	if activated:
 		pass
 
-func dance():
+func dance(_anim = idleAnim):
 	pass
 
 func activate():
-	activated = true
-	$hurtbox.collision_layer = 2
+	health = max_health
 	dance()
+	activated = true
 
 func take_damage(amount:float):
 	health -= amount
-	$"Shader Player".play("blink")
+	apply_blink()
 	
 	if health <= 0:
 		remove_plant()
 
 func remove_plant():
 	queue_free()
-	mainScene.tilemap.dic[str(curTile)] = {"Availability": "Free"}
+	mainScene.tilemap.dic[str(curTile)] = "Free"
 
 func reset_shaders():
-	$"ShaderPlayer".play("RESET")
+	shaderPlayer.play("RESET")
 
 func apply_dark():
-	$"ShaderPlayer".play("darken")
+	shaderPlayer.play("darken")
+
+func apply_blink():
+	shaderPlayer.play("blink")

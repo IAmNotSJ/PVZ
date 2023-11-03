@@ -1,0 +1,160 @@
+[gd_scene load_steps=13 format=3 uid="uid://dsa0u5yv4q2rb"]
+
+[ext_resource type="Script" path="res://assets/plants/cherry_bomb/cherry_bomb.gd" id="1_lhut5"]
+[ext_resource type="Material" uid="uid://llvwrq5n4trs" path="res://assets/shaders/flash.tres" id="2_fmtq2"]
+[ext_resource type="Texture2D" uid="uid://dy1nbrynp0jqp" path="res://assets/plants/cherry_bomb/cherry.png" id="4_mmjol"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0tem5"]
+radius = 153.082
+
+[sub_resource type="Animation" id="Animation_0imnr"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ofh7e"]
+resource_name = "explode"
+
+[sub_resource type="Animation" id="Animation_ci7ik"]
+resource_name = "wind up"
+length = 2.0001
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"explode"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fesf8"]
+_data = {
+"RESET": SubResource("Animation_0imnr"),
+"explode": SubResource("Animation_ofh7e"),
+"wind up": SubResource("Animation_ci7ik")
+}
+
+[sub_resource type="Animation" id="Animation_yc0t3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bomb:material:shader_parameter/blink")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bomb:material:shader_parameter/darken")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_sa6eg"]
+resource_name = "blink"
+step = 0.0417
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bomb:material:shader_parameter/blink")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0834),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bomb:material:shader_parameter/darken")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0834),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lnjsk"]
+resource_name = "darken"
+length = 0.001
+step = 0.0417
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bomb:material:shader_parameter/blink")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bomb:material:shader_parameter/darken")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_adp2b"]
+_data = {
+"RESET": SubResource("Animation_yc0t3"),
+"blink": SubResource("Animation_sa6eg"),
+"darken": SubResource("Animation_lnjsk")
+}
+
+[node name="Cherry Bomb" type="Node2D" node_paths=PackedStringArray("shaderPlayer")]
+script = ExtResource("1_lhut5")
+plant_name = "cherry_bomb"
+cost = 150
+max_health = 1
+shaderPlayer = NodePath("ShaderPlayer")
+
+[node name="Bomb" type="Sprite2D" parent="."]
+material = ExtResource("2_fmtq2")
+use_parent_material = true
+texture = ExtResource("4_mmjol")
+
+[node name="ExplosionRadius" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionRadius"]
+position = Vector2(-4, 0)
+shape = SubResource("CircleShape2D_0tem5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fesf8")
+}
+
+[node name="ShaderPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_adp2b")
+}

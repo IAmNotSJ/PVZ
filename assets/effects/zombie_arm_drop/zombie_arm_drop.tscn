@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmckabq4p04yg"]
+
+[ext_resource type="Texture2D" uid="uid://cad4hlwyqwn18" path="res://assets/zombies/base/assets/hand1.png" id="1_41yad"]
+[ext_resource type="Texture2D" uid="uid://cwos3jkxudwa2" path="res://assets/zombies/base/assets/bottom sleeve 1.png" id="2_6clno"]
+
+[node name="Sprite2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, 32)
+texture = ExtResource("1_41yad")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1, -4)
+texture = ExtResource("2_6clno")

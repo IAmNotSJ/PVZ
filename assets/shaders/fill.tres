@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bmulvffsgp1ye"]
+
+[ext_resource type="Shader" path="res://assets/shaders/hit flash.gdshader" id="1_n8abd"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_n8abd")
+shader_parameter/blink = false
+shader_parameter/bright_amount = 0.3
+shader_parameter/darken = true
+shader_parameter/darken_amount = 0.3

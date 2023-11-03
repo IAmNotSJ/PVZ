@@ -1,11 +1,11 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://llvwrq5n4trs"]
 
-[ext_resource type="Shader" path="res://assets/shaders/hit flash.gdshader" id="1_7ppux"]
+[ext_resource type="Shader" path="res://assets/shaders/hit flash.gdshader" id="1_qi0h3"]
 
 [resource]
 resource_local_to_scene = true
-shader = ExtResource("1_7ppux")
-shader_parameter/blink = false
+shader = ExtResource("1_qi0h3")
+shader_parameter/blink = true
 shader_parameter/bright_amount = 0.3
-shader_parameter/darken = false
+shader_parameter/darken = true
 shader_parameter/darken_amount = 0.3

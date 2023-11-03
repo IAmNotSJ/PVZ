@@ -1,8 +1,8 @@
-extends Node2D
+class_name Zombie extends Node2D 
 
 @onready var mainScene = get_tree().current_scene
 
-const speed:int = 5
+const speed:int = 7
 const max_health:float = 5
 const eating_interval:float = 1
 
@@ -23,7 +23,7 @@ var health:float = max_health
 var eatTimer:float = eating_interval
 
 func _physics_process(delta):
-	speed_modifier = lerpf(speed_modifier, 0, 0.01)
+	speed_modifier = lerpf(speed_modifier, 0, 0.005)
 	dynamic_speed = speed * speed_modifier * delta * 60
 	
 	match state:
@@ -43,7 +43,7 @@ func eat_state(delta):
 		eatTimer -= delta
 		if (eatTimer <= 0):
 			eatTimer = eating_interval
-			plant_to_eat.take_damage(.2)
+			plant_to_eat.take_damage(1)
 
 func _on_area_2d_area_entered(area):
 	take_damage(area.owner.damage)

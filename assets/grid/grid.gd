@@ -9,6 +9,8 @@ var dic = {}
 var availability = {}
 
 func _ready():
+	if mainScene == null:
+		print('cool')
 	for x in gridSize.x:
 		for y in gridSize.y:
 			dic[str(Vector2i(x,y))] = "Free"

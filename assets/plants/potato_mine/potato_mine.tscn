@@ -1,0 +1,199 @@
+[gd_scene load_steps=15 format=3 uid="uid://cb5ne1msel3vc"]
+
+[ext_resource type="Script" path="res://assets/plants/potato_mine/potato_mine.gd" id="1_e70kk"]
+[ext_resource type="Texture2D" uid="uid://71uu85jy44xs" path="res://assets/plants/potato_mine/potato.png" id="2_rulqc"]
+[ext_resource type="Material" uid="uid://llvwrq5n4trs" path="res://assets/shaders/flash.tres" id="2_ykqnq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_okqsp"]
+radius = 17.0
+height = 72.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ulda"]
+radius = 42.0
+height = 192.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gecx"]
+size = Vector2(108, 44)
+
+[sub_resource type="Animation" id="Animation_55b8s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_otcqw"]
+resource_name = "deployed"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_vj0qv"]
+resource_name = "hiding"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tpapn"]
+_data = {
+"RESET": SubResource("Animation_55b8s"),
+"deployed": SubResource("Animation_otcqw"),
+"hiding": SubResource("Animation_vj0qv")
+}
+
+[sub_resource type="Animation" id="Animation_ajarg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/blink")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:material:shader_parameter/darken")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fbjsw"]
+resource_name = "blink"
+length = 0.0834
+step = 0.0417
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/blink")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0834),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_3nq65"]
+resource_name = "darken"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/blink")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:material:shader_parameter/darken")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2cb2k"]
+_data = {
+"RESET": SubResource("Animation_ajarg"),
+"blink": SubResource("Animation_fbjsw"),
+"darken": SubResource("Animation_3nq65")
+}
+
+[node name="Potato Mine" type="Node2D" node_paths=PackedStringArray("shaderPlayer", "animationPlayer")]
+script = ExtResource("1_e70kk")
+plant_name = "potato_mine"
+cost = 25
+max_health = 3
+shaderPlayer = NodePath("ShaderPlayer")
+animationPlayer = NodePath("AnimationPlayer")
+idleAnim = "hiding"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_ykqnq")
+texture = ExtResource("2_rulqc")
+hframes = 2
+
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(-1, -7)
+shape = SubResource("CapsuleShape2D_okqsp")
+
+[node name="ExplosionRadius" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionRadius"]
+position = Vector2(-10, -3)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_5ulda")
+
+[node name="DetectionRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRange"]
+position = Vector2(19, 7)
+shape = SubResource("RectangleShape2D_3gecx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tpapn")
+}
+
+[node name="ShaderPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2cb2k")
+}

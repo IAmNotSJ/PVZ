@@ -1,22 +1,10 @@
-extends Node2D
-
-@onready var mainScene = get_tree().current_scene
+extends Plant
+class_name Sunflower
 
 var sunScene = load("res://assets/objects/sun/sun.tscn")
 
-var rng = RandomNumberGenerator.new()
-
-const cost:int = 50
 const maxProductionTimer:int = 24
-const max_health = 1
-
-var health = max_health
 var productionTimer:float = rng.randi_range(4,8)
-var activated:bool = false
-
-var curTile:Vector2
-
-
 
 func _process(delta):
 	if activated:
@@ -25,8 +13,16 @@ func _process(delta):
 			productionTimer = maxProductionTimer
 			$AnimationPlayer.play("sun")
 
-func dance():
-	$AnimationPlayer.play("idle")
+func dance(anim = idleAnim):
+	$AnimationPlayer.play(anim)
+	
+	super()
+
+func activate():
+	$hurtbox.collision_layer = 2
+	print('extended node code running')
+	
+	super()
 
 func produce_sun():
 	print('sun produced!')
@@ -34,25 +30,3 @@ func produce_sun():
 	sun.global_position = $sun_anchor.position
 	sun.from_sky = false
 	add_child(sun)
-	
-func activate():
-	$hurtbox.collision_layer = 2
-	dance()
-	activated = true
-
-func take_damage(amount:float):
-	health -= amount
-	$"Shader Player".play("blink")
-	
-	if health <= 0:
-		remove_plant()
-
-func remove_plant():
-	queue_free()
-	mainScene.tilemap.dic[str(curTile)] = "Free"
-
-func apply_dark():
-	$"ShaderPlayer".play("darken")
-	
-func reset_shaders():
-	$"ShaderPlayer".play("RESET")
