@@ -2,7 +2,7 @@ extends TileMap
 
 @export var curTile:Vector2
 
-@onready var mainScene = get_tree().current_scene
+@onready var mainScene = get_tree().current_scene.get_node("Main Game")
 
 var gridSize:Vector2i = Vector2i(9,5)
 var dic = {}

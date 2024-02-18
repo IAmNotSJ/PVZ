@@ -11,6 +11,7 @@ shader_parameter/blink = false
 shader_parameter/bright_amount = 0.3
 shader_parameter/darken = false
 shader_parameter/darken_amount = 0.3
+shader_parameter/blue = false
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ofxmp"]
 radius = 34.0
@@ -125,7 +126,7 @@ tracks/3/keys = {
 resource_name = "stage 2"
 length = 1.7514
 loop_mode = 1
-step = 0.0417
+step = 0.0416667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -133,7 +134,7 @@ tracks/0/path = NodePath("Sprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1251, 0.3336, 0.5838, 0.7506, 0.8757, 1.0008, 1.1676, 1.4178, 1.6263),
+"times": PackedFloat32Array(0, 0.125, 0.333333, 0.583333, 0.75, 0.875, 1, 1.16667, 1.41667, 1.625),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2(0, 0), Vector2(1, 0), Vector2(2, 0), Vector2(4, 0), Vector2(2, 2.38419e-07), Vector2(0, 0), Vector2(-1, 0), Vector2(-2, 0), Vector2(-4, 1.19209e-07), Vector2(-2, 0)]
@@ -145,7 +146,7 @@ tracks/1/path = NodePath("Sprite2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1251, 0.3336, 0.5838, 0.7506, 0.8757, 1.0008, 1.1676, 1.4178, 1.6263),
+"times": PackedFloat32Array(0, 0.125, 0.333333, 0.583333, 0.75, 0.875, 1, 1.16667, 1.41667, 1.625),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0.0, 0.0261799, 0.0523599, 0.10472, 0.0523599, 0.0, -0.0261799, -0.0523599, -0.10472, -0.0523599]
@@ -167,7 +168,7 @@ tracks/2/keys = {
 resource_name = "stage 3"
 length = 1.7514
 loop_mode = 1
-step = 0.0417
+step = 0.0416667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -175,7 +176,7 @@ tracks/0/path = NodePath("Sprite2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2919, 0.5838, 0.9591, 1.0842, 1.3761),
+"times": PackedFloat32Array(0, 0.291667, 0.583333, 0.958333, 1.08333, 1.3761),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2(0, 0), Vector2(1, 0), Vector2(2, 0), Vector2(2, 2.38419e-07), Vector2(0, 0), Vector2(-1, 0)]
@@ -187,7 +188,7 @@ tracks/1/path = NodePath("Sprite2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2919, 0.5838, 0.9591, 1.0842, 1.3761),
+"times": PackedFloat32Array(0, 0.291667, 0.583333, 0.958333, 1.08333, 1.3761),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0.0, 0.0261799, 0.0523599, 0.0523599, 0.0, -0.0261799]
@@ -304,15 +305,17 @@ _data = {
 "darken": SubResource("Animation_4lcp7")
 }
 
-[node name="Walnut" type="Node2D" node_paths=PackedStringArray("shaderPlayer", "animationPlayer")]
+[node name="Walnut" type="Node2D" node_paths=PackedStringArray("shaderPlayer", "animationPlayer", "hitbox")]
 z_index = 2
 material = SubResource("ShaderMaterial_pyanm")
 script = ExtResource("2_aqbg8")
 plant_name = "walnut"
 cost = 50
 max_health = 60
+max_cooldown = 15
 shaderPlayer = NodePath("ShaderPlayer")
 animationPlayer = NodePath("AnimationPlayer")
+hitbox = NodePath("Hitbox")
 idleAnim = "stage 1"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -322,13 +325,13 @@ texture = ExtResource("2_r0qov")
 offset = Vector2(0, -5)
 hframes = 3
 
-[node name="hurtbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(4, -3)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1, -3)
 shape = SubResource("CapsuleShape2D_ofxmp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

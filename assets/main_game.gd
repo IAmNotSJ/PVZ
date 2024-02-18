@@ -2,38 +2,13 @@ extends Node2D
 
 @onready var tilemap = $World/TileMap
 @onready var cursor = $Cursor
-
-@onready var cam_position:Vector2 = Vector2($Cam.position)
-
-@onready var packet1Scene = load($"HUD/Seed Packets/Packet 1".plantPath)
-@onready var packet2Scene = load($"HUD/Seed Packets/Packet 2".plantPath)
-@onready var packet3Scene = load($"HUD/Seed Packets/Packet 3".plantPath)
-@onready var packet4Scene = load($"HUD/Seed Packets/Packet 4".plantPath)
+@onready var cam = $Cam
 
 signal plant_planted
-
-enum {
-	START,
-	DIALOGUE,
-	MOVE_CAMERA,
-	GAME
-}
 
 var zombieScene = load("res://assets/zombies/base/zombie.tscn")
 var sunScene = load("res://assets/objects/sun/sun.tscn")
 
-func _on_packet_1_clicked():
-	hold_plant(1)
-func _on_packet_2_clicked():
-	hold_plant(2)
-func _on_packet_3_clicked():
-	hold_plant(3)
-func _on_packet_4_clicked():
-	hold_plant(4)
-
-var state = START
-
-var cam_timer:float
 var game_started:bool = false
 
 var curHolding
@@ -46,47 +21,12 @@ var sun:int = 0
 var sunTimer:float = 10
 var zombieTimer:float = 15
 
-var rng = RandomNumberGenerator.new()
-
 func _ready():
 	collect_sun(50)
 
 func _process(delta):
-	match state:
-		START:
-			start_state()
-		DIALOGUE:
-			pass
-		MOVE_CAMERA:
-			move_camera_state(delta)
-		GAME:
-			game_state(delta)
-
-func start_state():
-	cam_timer = 17
-	cam_position.x += 300
-	
-	state = MOVE_CAMERA
-
-func move_camera_state(delta):
-	if Input.is_action_just_pressed("space"):
-		cam_timer = 0
-		@warning_ignore("integer_division")
-		$Cam.position.x = 1152/2
-		@warning_ignore("integer_division")
-		cam_position.x = 1152/2
-		state = GAME
-	$Cam.position = $Cam.position.move_toward(cam_position, 50 * delta)
-	
-	cam_timer -= delta
-	print(cam_timer)
-	
-	if (cam_timer <= 8):
-		@warning_ignore("integer_division")
-		cam_position.x = 1152/2
-	if (cam_timer <= 0):
-		game_started = true
-		state = GAME
+	if game_started:
+		game_state(delta)
 
 func game_state(delta):
 		zombieTimer -= delta
@@ -126,37 +66,30 @@ func cancel_planting():
 
 func collect_sun(amount:int = 25):
 	sun += amount
-	$"HUD/Sun Counter".text = str(sun)
+	$"Cam/HUD/Packet Holder/Sun Counter".text = str(sun)
 
 func subtract_sun(amount:int):
 	sun -= amount
-	$"HUD/Sun Counter".text = str(sun)
+	$"Cam/HUD/Packet Holder/Sun Counter".text = str(sun)
 
 func spawn_zombie():
 	var zombie = zombieScene.instantiate()
 	
-	zombie.global_position = Vector2(1170, (rng.randi_range(0, 4) * tilemap.cell_quadrant_size) + tilemap.global_position.y)
+	zombie.global_position = Vector2(1170, (Global.rng.randi_range(0, 4) * tilemap.cell_quadrant_size) + tilemap.global_position.y)
 	print(zombie.global_position)
 	add_child(zombie)
 
 func spawn_sun():
 	var sun_instance = sunScene.instantiate()
-	sun_instance.global_position = Vector2(rng.randi_range(100, 1052), -30)
+	sun_instance.global_position = Vector2(Global.rng.randi_range(100, 1052), -30)
 	add_child(sun_instance)
 
 func hold_plant(packet):
 	if game_started:
 		if curHolding == null:
 			var plant_to_hold 
-			match packet:
-				1:
-					plant_to_hold = packet1Scene.instantiate()
-				2:
-					plant_to_hold = packet2Scene.instantiate()
-				3:
-					plant_to_hold = packet3Scene.instantiate()
-				4:
-					plant_to_hold = packet4Scene.instantiate()
+			if packet != null:
+				plant_to_hold = load(packet.plantPath).instantiate()
 			if (sun < plant_to_hold.cost):
 				plant_to_hold.queue_free()
 				pass
@@ -169,7 +102,6 @@ func hold_plant(packet):
 
 func plant_plant(plant):
 	if (sun >= plant.cost and tilemap.dic.has(str(tilemap.curTile))):
-		
 		if check_tile_availability():
 			subtract_sun(curHolding.cost)
 			
@@ -178,9 +110,12 @@ func plant_plant(plant):
 			tilemap.dic[str(tilemap.curTile)] = plant
 			plant.curTile = tilemap.curTile
 			plant.activate()
-			print('plant planted!')
 			plant.z_index = 0
 			plant.reset_shaders()
+			
+			for i in range(cam.HUD.packets.size()):
+				if cam.HUD.packets[i].plant == plant.plant_name:
+					cam.HUD.packets[i].activate_cooldown()
 			
 			curHolding = null
 			
@@ -198,3 +133,11 @@ func check_tile_availability():
 		return true
 	else:
 		return false
+
+
+func _on_cam_done_moving():
+	for packet in $"Cam/HUD/Packet Holder/Seed Packets".get_children():
+		packet.add_special()
+		packet.activate_cooldown()
+		packet.clicked.connect(hold_plant.bind(packet))
+	game_started = true

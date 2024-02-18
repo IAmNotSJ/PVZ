@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvvydqux3m080"]
+[gd_scene load_steps=6 format=3 uid="uid://bvvydqux3m080"]
 
 [ext_resource type="Texture2D" uid="uid://c1q3fx0r22bol" path="res://assets/plants/seeds/packet_unknown.png" id="1_1xogv"]
 [ext_resource type="Script" path="res://assets/plants/seeds/packet_base.gd" id="1_8egpq"]
 [ext_resource type="Material" uid="uid://llvwrq5n4trs" path="res://assets/shaders/flash.tres" id="1_qtd7f"]
+
+[sub_resource type="SystemFont" id="SystemFont_jwwoq"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_3ngj7"]
+font = SubResource("SystemFont_jwwoq")
+font_size = 18
+font_color = Color(0.00392157, 0.0156863, 0.00392157, 1)
 
 [node name="Packet" type="Control"]
 light_mask = 32
@@ -10,10 +18,13 @@ material = ExtResource("1_qtd7f")
 layout_mode = 3
 anchor_left = 0.00954861
 anchor_top = 0.0231481
-anchor_right = 0.0277778
-anchor_bottom = 0.066358
-offset_right = 80.0
-offset_bottom = 113.0
+anchor_right = 0.0121528
+anchor_bottom = 0.029321
+offset_left = -11.0
+offset_top = -15.0
+offset_right = 69.0
+offset_bottom = 98.0
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_8egpq")
 metadata/_edit_use_anchors_ = true
 
@@ -24,16 +35,31 @@ centered = false
 [node name="CooldownBox" type="Control" parent="."]
 clip_contents = true
 layout_mode = 1
-anchor_right = 0.990099
-anchor_bottom = 1.0
+anchor_right = 1.03614
+anchor_bottom = 1.20513
 offset_bottom = -141.0
 metadata/_edit_use_anchors_ = true
 
 [node name="DarkPacket" type="Sprite2D" parent="CooldownBox"]
 modulate = Color(0.4, 0.4, 0.4, 1)
-scale = Vector2(1, 1)
 texture = ExtResource("1_1xogv")
 centered = false
+
+[node name="RichTextLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.5
+offset_top = -23.0
+offset_right = 40.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "0"
+label_settings = SubResource("LabelSettings_3ngj7")
+horizontal_alignment = 1
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

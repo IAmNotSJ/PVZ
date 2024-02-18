@@ -5,13 +5,35 @@ signal clicked
 @export var plant = ''
 @export var plantPath = ''
 
-@onready var plantRef = load(plantPath)
+@onready var plantRef
+@onready var max_cooldown:float
+@onready var cooldown:float
+
+var cost:int = 0
 
 var clickable:bool = false
 var on_cooldown:bool = false
 
-var max_cooldown:float = 5
-var cooldown:float = max_cooldown
+var picked:bool = false
+
+func add_sprite():
+	if (plant != ''):
+		$Packet.texture = load("res://assets/plants/seeds/packet_" + plant + ".png")
+		$CooldownBox/DarkPacket.texture = load("res://assets/plants/seeds/packet_" + plant + ".png")
+	else:
+		$Packet.texture = load("res://assets/plants/seeds/packet_unknown.png")
+		$CooldownBox/DarkPacket.texture = load("res://assets/plants/seeds/packet_" + plant + ".png")
+
+func add_special():
+	if plantPath != null:
+		plantRef = load(plantPath).instantiate()
+		max_cooldown = plantRef.max_cooldown
+		cooldown = max_cooldown
+		#$CooldownBox.set_deferred("size.x", $Packet.texture.get_width)
+
+func add_price(price):
+	cost = price
+	$RichTextLabel.text = str(cost)
 
 func _process(delta):
 	if clickable and Input.is_action_just_pressed("click") and !on_cooldown:
@@ -23,14 +45,6 @@ func _process(delta):
 		if cooldown <= 0:
 			on_cooldown = false
 			cooldown = max_cooldown
-
-func _ready():
-	if (plant != ''):
-		$Packet.texture = load("res://assets/plants/seeds/packet_" + plant + ".png")
-		$CooldownBox/DarkPacket.texture = load("res://assets/plants/seeds/packet_" + plant + ".png")
-	else:
-		$Packet.texture = load("res://assets/plants/seeds/packet_unknown.png")
-		$CooldownBox/DarkPacket.texture = load("res://assets/plants/seeds/packet_" + plant + ".png")
 
 func activate_cooldown():
 	on_cooldown = true

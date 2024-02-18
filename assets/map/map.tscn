@@ -30,14 +30,9 @@ sources/2 = SubResource("TileSetAtlasSource_32rxj")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_t7lfn")
-cell_quadrant_size = 95
+rendering_quadrant_size = 95
 format = 2
 layer_0/name = "select 1"
 layer_1/name = "select 2"
-layer_1/enabled = true
-layer_1/modulate = Color(1, 1, 1, 1)
-layer_1/y_sort_enabled = false
-layer_1/y_sort_origin = 0
-layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
 script = ExtResource("3_r27qd")

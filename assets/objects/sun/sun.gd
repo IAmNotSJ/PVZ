@@ -1,7 +1,5 @@
 extends Sprite2D
 
-@onready var mainScene = get_tree().current_scene
-
 var rng = RandomNumberGenerator.new()
 
 var value:int = 25
@@ -45,7 +43,7 @@ func _physics_process(delta):
 	
 
 func _on_area_2d_area_entered(_area):
-	mainScene.collect_sun(value)
+	Global.mainScene.collect_sun(value)
 	final_placement = Vector2(40,40)
 	speed = 10 * global_position.x
 	acceleration = 0

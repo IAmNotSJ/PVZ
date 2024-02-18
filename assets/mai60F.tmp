@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcyuco3hmkdl"]
+
+[ext_resource type="Script" path="res://assets/main_game.gd" id="1_q0gss"]
+[ext_resource type="PackedScene" uid="uid://dci2asff5tkug" path="res://assets/map/map.tscn" id="1_x0fhb"]
+[ext_resource type="AudioStream" uid="uid://b72maerbf224v" path="res://assets/audio/plant.ogg" id="2_lf6y2"]
+[ext_resource type="Texture2D" uid="uid://d1w3icek12u5h" path="res://assets/environment/lawn.png" id="3_uvbsn"]
+[ext_resource type="PackedScene" uid="uid://censfur40ew8n" path="res://assets/HUD/HUD.tscn" id="4_681hs"]
+[ext_resource type="PackedScene" uid="uid://61gk575sgqd1" path="res://assets/objects/cursor/cursor.tscn" id="5_b7ptp"]
+[ext_resource type="PackedScene" uid="uid://5w656huwv7ud" path="res://assets/objects/lawnmower/lawnmower.tscn" id="5_octmu"]
+
+[node name="Main Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_q0gss")
+
+[node name="Sound Effects" type="Node2D" parent="."]
+
+[node name="Planting Sound" type="AudioStreamPlayer2D" parent="Sound Effects"]
+stream = ExtResource("2_lf6y2")
+
+[node name="BG" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(765, 321)
+texture = ExtResource("3_uvbsn")
+
+[node name="World" parent="." instance=ExtResource("1_x0fhb")]
+position = Vector2(141, 137)
+
+[node name="lawnmower" type="Node" parent="."]
+
+[node name="Lawnmower" parent="lawnmower" instance=ExtResource("5_octmu")]
+position = Vector2(105, 179)
+
+[node name="Lawnmower2" parent="lawnmower" instance=ExtResource("5_octmu")]
+position = Vector2(105, 274)
+
+[node name="Lawnmower3" parent="lawnmower" instance=ExtResource("5_octmu")]
+position = Vector2(105, 369)
+
+[node name="Lawnmower4" parent="lawnmower" instance=ExtResource("5_octmu")]
+position = Vector2(105, 464)
+
+[node name="Lawnmower5" parent="lawnmower" instance=ExtResource("5_octmu")]
+position = Vector2(105, 559)
+
+[node name="Cursor" parent="." instance=ExtResource("5_b7ptp")]
+metadata/_edit_lock_ = true
+
+[node name="HUD" parent="." instance=ExtResource("4_681hs")]
+z_index = 1
+metadata/_edit_lock_ = true
+
+[node name="Cam" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[connection signal="plant_planted" from="." to="HUD" method="_on_main_game_plant_planted"]
+
+[editable path="HUD"]

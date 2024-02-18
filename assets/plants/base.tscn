@@ -10,6 +10,7 @@ shader_parameter/blink = false
 shader_parameter/bright_amount = 0.3
 shader_parameter/darken = false
 shader_parameter/darken_amount = 0.3
+shader_parameter/blue = false
 
 [node name="Plant" type="Node2D"]
 z_index = 2

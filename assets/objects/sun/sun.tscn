@@ -8,6 +8,7 @@ radius = 29.0689
 
 [node name="Sun" type="Sprite2D"]
 z_index = 3
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_10rtt")
 script = ExtResource("2_r1frx")
 

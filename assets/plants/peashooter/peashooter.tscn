@@ -18,6 +18,57 @@ height = 100.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kapwo"]
 size = Vector2(1164, 20)
 
+[sub_resource type="Animation" id="Animation_lidab"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Limbs/Head2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_25yyd"]
+resource_name = "shoot"
+step = 0.0417
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Limbs/Head2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0417, 0.1251, 0.2502, 0.3753, 0.5004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1, 1), Vector2(1, 1.05), Vector2(1.18, 0.95), Vector2(1.07, 0.96), Vector2(1.03, 0.98), Vector2(1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1251),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0vmmm"]
+_data = {
+"RESET": SubResource("Animation_lidab"),
+"shoot": SubResource("Animation_25yyd")
+}
+
 [sub_resource type="Animation" id="Animation_73khh"]
 length = 0.001
 tracks/0/type = "value"
@@ -273,57 +324,6 @@ _data = {
 "idle": SubResource("Animation_5ulod")
 }
 
-[sub_resource type="Animation" id="Animation_lidab"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Limbs/Head2:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_25yyd"]
-resource_name = "shoot"
-step = 0.0417
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Limbs/Head2:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0417, 0.1251, 0.2502, 0.3753, 0.5004),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(1, 1), Vector2(1, 1.05), Vector2(1.18, 0.95), Vector2(1.07, 0.96), Vector2(1.03, 0.98), Vector2(1, 1)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.1251),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"shoot"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0vmmm"]
-_data = {
-"RESET": SubResource("Animation_lidab"),
-"shoot": SubResource("Animation_25yyd")
-}
-
 [sub_resource type="Animation" id="Animation_okp1w"]
 length = 0.001
 tracks/0/type = "value"
@@ -415,15 +415,20 @@ _data = {
 "darken": SubResource("Animation_83e3m")
 }
 
-[node name="PeaShooter" type="Node2D" node_paths=PackedStringArray("shaderPlayer")]
+[node name="PeaShooter" type="Node2D" node_paths=PackedStringArray("sight", "marker", "shootingPlayer", "shaderPlayer", "animationPlayer", "hitbox")]
 z_index = 2
 material = ExtResource("1_ja3dl")
 scale = Vector2(0.7, 0.7)
 script = ExtResource("2_gdcm6")
+sight = NodePath("Sight")
+marker = NodePath("Marker2D")
+shootingPlayer = NodePath("ShootingPlayer")
 plant_name = "peashooter"
 cost = 100
 max_health = 5
 shaderPlayer = NodePath("ShaderPlayer")
+animationPlayer = NodePath("AnimationPlayer")
+hitbox = NodePath("Hitbox")
 
 [node name="Limbs" type="Node2D" parent="."]
 use_parent_material = true
@@ -486,32 +491,30 @@ offset = Vector2(0, 16)
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(53.75, -26.25)
 
-[node name="hurtbox" type="Area2D" parent="."]
-visible = false
+[node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(1.25, -7.5)
 shape = SubResource("CapsuleShape2D_ofxmp")
 
-[node name="hitbox" type="Area2D" parent="."]
-visible = false
+[node name="Sight" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight"]
 position = Vector2(582.5, -42.5)
 shape = SubResource("RectangleShape2D_kapwo")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_gpi5p")
-}
 
 [node name="ShootingPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_0vmmm")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gpi5p")
 }
 
 [node name="ShaderPlayer" type="AnimationPlayer" parent="."]

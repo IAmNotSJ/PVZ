@@ -1,36 +1,38 @@
 extends Plant
 class_name PeaShooter
 
-const maxShootingTimer:int = 2
+enum TYPE {
+	NORMAL,
+	SNOW,
+	FIRE
+}
+
+@export var shootingType:TYPE = TYPE.NORMAL
+
+@export var maxShootingTimer:int = 2
+@export var sight:Area2D
+@export var marker:Marker2D
+
+@export var shootingPlayer:AnimationPlayer
 
 var shootingTimer:float = maxShootingTimer
 var can_shoot:bool = false
 
-var peaScene = load('res://assets/plants/peashooter/pea.tscn')
+var peaScene = preload("res://assets/objects/peas/normal/pea.tscn")
 
 func _process(delta):
 	can_shoot = false
-	if ($hitbox.has_overlapping_areas()):
+	if (sight.has_overlapping_areas()):
 		can_shoot = true
 	if activated:
 		shootingTimer -= delta
 		if can_shoot:
 			if shootingTimer <= 0:
 				shootingTimer = maxShootingTimer
-				$ShootingPlayer.play("shoot")
+				shootingPlayer.play("shoot")
 
 func shoot():
 	var pea = peaScene.instantiate()
-	mainScene.add_child(pea)
-	pea.global_position = $Marker2D.global_position
-
-func dance(anim = idleAnim):
-	$AnimationPlayer.play(anim)
-	
-	super()
-
-func activate():
-	$hurtbox.collision_layer = 2
-	
-	super()
-
+	pea.change_type(shootingType)
+	Global.mainScene.add_child(pea)
+	pea.global_position = marker.global_position

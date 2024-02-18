@@ -5,8 +5,7 @@ class_name CherryBomb
 var explosion_timer = MAX_EXPLOSION_TIMER
 
 func activate():
-	print('HI???')
-	$AnimationPlayer.play('wind up')
+	$ShakePlayer.play('shake')
 	
 	super()
 

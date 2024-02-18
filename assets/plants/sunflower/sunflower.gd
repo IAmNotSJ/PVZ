@@ -13,20 +13,9 @@ func _process(delta):
 			productionTimer = maxProductionTimer
 			$AnimationPlayer.play("sun")
 
-func dance(anim = idleAnim):
-	$AnimationPlayer.play(anim)
-	
-	super()
-
-func activate():
-	$hurtbox.collision_layer = 2
-	print('extended node code running')
-	
-	super()
-
 func produce_sun():
 	print('sun produced!')
 	var sun = sunScene.instantiate()
-	sun.global_position = $sun_anchor.position
+	sun.global_position = $"Limbs/Head and Face/Head/sun_anchor".global_position
 	sun.from_sky = false
-	add_child(sun)
+	Global.mainScene.add_child(sun)

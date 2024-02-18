@@ -1,14 +1,15 @@
 class_name Plant extends Node2D
 
-@onready var mainScene = get_tree().current_scene
-
 @export var plant_name:String
 
 @export var cost:int
 @export var max_health:int
+@export var max_cooldown:int = 5
 
 @export var shaderPlayer: Node
 @export var animationPlayer: Node
+
+@export var hitbox: Area2D
 
 @export var idleAnim = 'idle'
 
@@ -24,12 +25,15 @@ func _process(_delta):
 		pass
 
 func dance(_anim = idleAnim):
-	pass
+	if _anim != null:
+		animationPlayer.play(_anim)
 
 func activate():
 	health = max_health
-	dance()
+	if hitbox != null:
+		hitbox.collision_layer = 2
 	activated = true
+	dance()
 
 func take_damage(amount:float):
 	health -= amount
@@ -40,7 +44,11 @@ func take_damage(amount:float):
 
 func remove_plant():
 	queue_free()
-	mainScene.tilemap.dic[str(curTile)] = "Free"
+	Global.mainScene.tilemap.dic[str(curTile)] = "Free"
+
+func fake_remove_plant():
+	visible = false
+	activated = false
 
 func reset_shaders():
 	shaderPlayer.play("RESET")

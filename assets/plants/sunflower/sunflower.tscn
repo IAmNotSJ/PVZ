@@ -17,10 +17,506 @@ shader_parameter/blink = false
 shader_parameter/bright_amount = 0.3
 shader_parameter/darken = false
 shader_parameter/darken_amount = 0.3
+shader_parameter/blue = false
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ofxmp"]
 radius = 41.4286
 height = 94.2857
+
+[sub_resource type="Animation" id="Animation_eqa55"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Limbs/Stem:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.141372]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Limbs/Leaf1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-17, 44)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Limbs/Leaf1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Limbs/Leaf2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(26, 44)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Limbs/Leaf2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Limbs/Leaf3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(26, 33)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Limbs/Leaf3:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Limbs/Leaf4:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, 34)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Limbs/Leaf4:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Limbs/Head and Face/Head:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Limbs/Head and Face/Face:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Limbs/Head and Face/Head:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Limbs/Head and Face:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, -4.76837e-07)]
+}
+
+[sub_resource type="Animation" id="Animation_sjwdb"]
+resource_name = "idle"
+length = 1.668
+loop_mode = 1
+step = 0.0417
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Limbs/Stem:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1251, 0.2919, 0.417, 0.5421, 0.7089, 0.834, 0.9591, 1.1259, 1.251, 1.3761, 1.5429, 1.668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(3, 26), Vector2(6, 25), Vector2(8, 25), Vector2(11, 26), Vector2(8, 25), Vector2(6, 25), Vector2(3, 26), Vector2(-2, 25), Vector2(-3, 27), Vector2(-4, 27), Vector2(-3, 27), Vector2(-2, 25), Vector2(3, 26)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Limbs/Stem:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1251, 0.2919, 0.5421, 0.7089, 0.834, 0.9591, 1.251, 1.5429, 1.668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.0698132, 0.141372, 0.141372, 0.0698132, 0.0, -0.0698132, -0.141372, -0.0698132, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Limbs/Leaf1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.9591, 1.1259, 1.251, 1.3761, 1.5429),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-17, 45), Vector2(-17, 44), Vector2(-17, 43), Vector2(-17, 44), Vector2(-17, 45)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Limbs/Leaf1:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9591, 1.1259, 1.251, 1.3761, 1.5429),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.0698132, 0.141372, 0.0698132, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Limbs/Leaf2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1251, 0.2919, 0.417, 0.5421, 0.7089),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(26, 44), Vector2(26, 43), Vector2(26, 42), Vector2(26, 43), Vector2(26, 44)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Limbs/Leaf2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.1251, 0.2919, 0.417, 0.5421, 0.7089),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, -0.0698132, -0.141372, -0.0698132, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Limbs/Leaf3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.1251, 0.2919, 0.417, 0.5421, 0.7089),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(26, 33), Vector2(26, 32), Vector2(26, 31), Vector2(26, 32), Vector2(26, 33)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Limbs/Leaf3:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.1251, 0.2919, 0.417, 0.5421, 0.7089),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, -0.0698132, -0.141372, -0.0698132, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Limbs/Leaf4:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.9591, 1.1259, 1.251, 1.3761, 1.5429),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-10, 34), Vector2(-10, 33), Vector2(-10, 32), Vector2(-10, 33), Vector2(-10, 34)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Limbs/Leaf4:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.9591, 1.1259, 1.251, 1.3761, 1.5429),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.0698132, 0.141372, 0.0698132, 0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Limbs/Head and Face:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.1251, 0.2919, 0.417, 0.5421, 0.7089, 0.834, 0.9591, 1.1259, 1.251, 1.3761, 1.5429, 1.668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(3.75, -2.5), Vector2(6.25, -1.25), Vector2(10, -3.57628e-07), Vector2(16.25, 1.25), Vector2(10, -3.57628e-07), Vector2(6.25, -1.25), Vector2(3.75, -2.5), Vector2(-1.78814e-06, -5.96046e-07), Vector2(-2.5, 2.5), Vector2(-5, 5), Vector2(-2.5, 2.5), Vector2(-1.78814e-06, -5.96046e-07), Vector2(3.75, -2.5)]
+}
+
+[sub_resource type="Animation" id="Animation_4hab6"]
+resource_name = "sun"
+length = 0.6255
+step = 0.0417
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Limbs/Leaf3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0417, 0.0834, 0.2085, 0.2919, 0.4587),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(26, 33), Vector2(26, 32), Vector2(26, 31), Vector2(26, 33), Vector2(27, 34), Vector2(26, 33)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Limbs/Leaf3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0417, 0.2085),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0.0, -0.141372, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Limbs/Leaf4:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0417, 0.0834, 0.2085, 0.2919, 0.4587),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-10, 34), Vector2(-10, 33), Vector2(-10, 32), Vector2(-10, 34), Vector2(-11, 35), Vector2(-10, 34)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Limbs/Leaf4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0417, 0.2085),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0.0, 0.141372, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Limbs/Stem:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0417, 0.0834, 0.2085, 0.4587, 0.5421, 0.6255),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(3, 26), Vector2(3, 25), Vector2(3, 24), Vector2(3, 26), Vector2(3, 24), Vector2(3, 27), Vector2(3, 26)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Limbs/Stem:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Limbs/Head and Face/Head:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Limbs/Leaf1:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.0417, 0.0834, 0.2085, 0.2919, 0.4587),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-17, 45), Vector2(-17, 42), Vector2(-17, 41), Vector2(-17, 44), Vector2(-18, 45), Vector2(-17, 45)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Limbs/Leaf1:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.0417, 0.2085, 0.2919),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.141372, 0.0, 0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Limbs/Leaf2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.0417, 0.0834, 0.2085, 0.2919, 0.4587),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(26, 44), Vector2(28, 43), Vector2(28, 42), Vector2(26, 44), Vector2(27, 45), Vector2(26, 44)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Limbs/Leaf2:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.0417, 0.2085),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0.0, -0.141372, 0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Limbs/Head and Face/Face:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.2085, 0.5421),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Limbs/Head and Face/Head:frame")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.2085, 0.5421),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+tracks/13/type = "method"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.2085, 0.6255),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"produce_sun"
+}, {
+"args": [],
+"method": &"dance"
+}]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Limbs/Head and Face:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.0417, 0.0834, 0.2085, 0.2919, 0.4587, 0.5421, 0.6255),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(6.07143, 1.78571), Vector2(6.07143, -3.57143), Vector2(6.07143, -6.07143), Vector2(8.75, 6.25), Vector2(7.5, 10), Vector2(7.32143, 7.5), Vector2(4.64286, 1.78571), Vector2(3.21429, 0.357143)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vonsr"]
+_data = {
+"RESET": SubResource("Animation_eqa55"),
+"idle": SubResource("Animation_sjwdb"),
+"sun": SubResource("Animation_4hab6")
+}
 
 [sub_resource type="Animation" id="Animation_okp1w"]
 length = 0.001
@@ -113,502 +609,7 @@ _data = {
 "darken": SubResource("Animation_iv7gf")
 }
 
-[sub_resource type="Animation" id="Animation_eqa55"]
-resource_name = "RESET"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D/Stem:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.141372]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/Leaf1:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-17, 44)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Node2D/Leaf1:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Node2D/Leaf2:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(26, 44)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Node2D/Leaf2:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Node2D/Leaf3:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(26, 33)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Node2D/Leaf3:rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Node2D/Leaf4:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-10, 34)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Node2D/Leaf4:rotation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Node2D/Head and Face/Head:rotation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Node2D/Head and Face/Face:frame")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Node2D/Head and Face/Head:frame")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Node2D/Head and Face:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(5, -4.76837e-07)]
-}
-
-[sub_resource type="Animation" id="Animation_sjwdb"]
-resource_name = "idle"
-length = 1.668
-loop_mode = 1
-step = 0.0417
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D/Stem:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1251, 0.2919, 0.417, 0.5421, 0.7089, 0.834, 0.9591, 1.1259, 1.251, 1.3761, 1.5429, 1.668),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(3, 26), Vector2(6, 25), Vector2(8, 25), Vector2(11, 26), Vector2(8, 25), Vector2(6, 25), Vector2(3, 26), Vector2(-2, 25), Vector2(-3, 27), Vector2(-4, 27), Vector2(-3, 27), Vector2(-2, 25), Vector2(3, 26)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/Stem:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1251, 0.2919, 0.5421, 0.7089, 0.834, 0.9591, 1.251, 1.5429, 1.668),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0.0, 0.0698132, 0.141372, 0.141372, 0.0698132, 0.0, -0.0698132, -0.141372, -0.0698132, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Node2D/Leaf1:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.9591, 1.1259, 1.251, 1.3761, 1.5429),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(-17, 45), Vector2(-17, 44), Vector2(-17, 43), Vector2(-17, 44), Vector2(-17, 45)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Node2D/Leaf1:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.9591, 1.1259, 1.251, 1.3761, 1.5429),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0.0, 0.0698132, 0.141372, 0.0698132, 0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Node2D/Leaf2:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.1251, 0.2919, 0.417, 0.5421, 0.7089),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(26, 44), Vector2(26, 43), Vector2(26, 42), Vector2(26, 43), Vector2(26, 44)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Node2D/Leaf2:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.1251, 0.2919, 0.417, 0.5421, 0.7089),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0.0, -0.0698132, -0.141372, -0.0698132, 0.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Node2D/Leaf3:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.1251, 0.2919, 0.417, 0.5421, 0.7089),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(26, 33), Vector2(26, 32), Vector2(26, 31), Vector2(26, 32), Vector2(26, 33)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Node2D/Leaf3:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0.1251, 0.2919, 0.417, 0.5421, 0.7089),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0.0, -0.0698132, -0.141372, -0.0698132, 0.0]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Node2D/Leaf4:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0.9591, 1.1259, 1.251, 1.3761, 1.5429),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(-10, 34), Vector2(-10, 33), Vector2(-10, 32), Vector2(-10, 33), Vector2(-10, 34)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Node2D/Leaf4:rotation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0.9591, 1.1259, 1.251, 1.3761, 1.5429),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0.0, 0.0698132, 0.141372, 0.0698132, 0.0]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Node2D/Head and Face:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.1251, 0.2919, 0.417, 0.5421, 0.7089, 0.834, 0.9591, 1.1259, 1.251, 1.3761, 1.5429, 1.668),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(3.75, -2.5), Vector2(6.25, -1.25), Vector2(10, -3.57628e-07), Vector2(16.25, 1.25), Vector2(10, -3.57628e-07), Vector2(6.25, -1.25), Vector2(3.75, -2.5), Vector2(-1.78814e-06, -5.96046e-07), Vector2(-2.5, 2.5), Vector2(-5, 5), Vector2(-2.5, 2.5), Vector2(-1.78814e-06, -5.96046e-07), Vector2(3.75, -2.5)]
-}
-
-[sub_resource type="Animation" id="Animation_4hab6"]
-resource_name = "sun"
-length = 0.6255
-step = 0.0417
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D/Leaf3:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0417, 0.0834, 0.2085, 0.2919, 0.4587),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(26, 33), Vector2(26, 32), Vector2(26, 31), Vector2(26, 33), Vector2(27, 34), Vector2(26, 33)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/Leaf3:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0417, 0.2085),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0.0, -0.141372, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Node2D/Leaf4:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0417, 0.0834, 0.2085, 0.2919, 0.4587),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(-10, 34), Vector2(-10, 33), Vector2(-10, 32), Vector2(-10, 34), Vector2(-11, 35), Vector2(-10, 34)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Node2D/Leaf4:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.0417, 0.2085),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0.0, 0.141372, 0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Node2D/Stem:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.0417, 0.0834, 0.2085, 0.4587, 0.5421, 0.6255),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(3, 26), Vector2(3, 25), Vector2(3, 24), Vector2(3, 26), Vector2(3, 24), Vector2(3, 27), Vector2(3, 26)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Node2D/Stem:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Node2D/Head and Face/Head:rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Node2D/Leaf1:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.0417, 0.0834, 0.2085, 0.2919, 0.4587),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(-17, 45), Vector2(-17, 42), Vector2(-17, 41), Vector2(-17, 44), Vector2(-18, 45), Vector2(-17, 45)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Node2D/Leaf1:rotation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.0417, 0.2085, 0.2919),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0.0, 0.141372, 0.0, 0.0]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Node2D/Leaf2:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.0417, 0.0834, 0.2085, 0.2919, 0.4587),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(26, 44), Vector2(28, 43), Vector2(28, 42), Vector2(26, 44), Vector2(27, 45), Vector2(26, 44)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Node2D/Leaf2:rotation")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.0417, 0.2085),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0.0, -0.141372, 0.0]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Node2D/Head and Face/Face:frame")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.2085, 0.5421),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [1, 2, 0]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Node2D/Head and Face/Head:frame")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 0.2085, 0.5421),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 0]
-}
-tracks/13/type = "method"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath(".")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0.2085, 0.6255),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"produce_sun"
-}, {
-"args": [],
-"method": &"dance"
-}]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Node2D/Head and Face:position")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0, 0.0417, 0.0834, 0.2085, 0.2919, 0.4587, 0.5421, 0.6255),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(6.07143, 1.78571), Vector2(6.07143, -3.57143), Vector2(6.07143, -6.07143), Vector2(8.75, 6.25), Vector2(7.5, 10), Vector2(7.32143, 7.5), Vector2(4.64286, 1.78571), Vector2(3.21429, 0.357143)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_vonsr"]
-_data = {
-"RESET": SubResource("Animation_eqa55"),
-"idle": SubResource("Animation_sjwdb"),
-"sun": SubResource("Animation_4hab6")
-}
-
-[node name="Sunflower" type="Node2D" node_paths=PackedStringArray("shaderPlayer")]
+[node name="Sunflower" type="Node2D" node_paths=PackedStringArray("shaderPlayer", "animationPlayer", "hitbox")]
 z_index = 2
 material = SubResource("ShaderMaterial_bxxp5")
 scale = Vector2(0.7, 0.7)
@@ -617,41 +618,47 @@ plant_name = "sunflower"
 cost = 50
 max_health = 5
 shaderPlayer = NodePath("ShaderPlayer")
+animationPlayer = NodePath("AnimationPlayer")
+hitbox = NodePath("Hitbox")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Limbs" type="Node2D" parent="."]
+use_parent_material = true
 
-[node name="Leaf4" type="Sprite2D" parent="Node2D"]
+[node name="Leaf4" type="Sprite2D" parent="Limbs"]
 use_parent_material = true
 position = Vector2(-10, 34)
 texture = ExtResource("3_jpghq")
 offset = Vector2(0, -10)
 
-[node name="Leaf3" type="Sprite2D" parent="Node2D"]
+[node name="Leaf3" type="Sprite2D" parent="Limbs"]
 use_parent_material = true
 position = Vector2(26, 33)
 texture = ExtResource("2_s4ygo")
 offset = Vector2(0, -10)
 
-[node name="Stem" type="Sprite2D" parent="Node2D"]
+[node name="Stem" type="Sprite2D" parent="Limbs"]
 use_parent_material = true
 position = Vector2(3, 26)
 rotation = -0.141372
 texture = ExtResource("2_48ogy")
 offset = Vector2(0, -10)
 
-[node name="Head and Face" type="Node2D" parent="Node2D"]
+[node name="Head and Face" type="Node2D" parent="Limbs"]
 use_parent_material = true
 position = Vector2(5, -4.76837e-07)
 metadata/_edit_group_ = true
 
-[node name="Head" type="Sprite2D" parent="Node2D/Head and Face"]
+[node name="Head" type="Sprite2D" parent="Limbs/Head and Face"]
 use_parent_material = true
 position = Vector2(-4.25, -9.25)
 texture = ExtResource("3_vhkc3")
 offset = Vector2(0, -10)
 hframes = 2
 
-[node name="Face" type="Sprite2D" parent="Node2D/Head and Face"]
+[node name="sun_anchor" type="Marker2D" parent="Limbs/Head and Face/Head"]
+position = Vector2(-4.5, -7)
+
+[node name="Face" type="Sprite2D" parent="Limbs/Head and Face"]
 use_parent_material = true
 position = Vector2(-3.67857, -7.25)
 texture = ExtResource("4_7pb2i")
@@ -659,36 +666,34 @@ offset = Vector2(0, -10)
 hframes = 3
 frame = 1
 
-[node name="Leaf2" type="Sprite2D" parent="Node2D"]
+[node name="Leaf2" type="Sprite2D" parent="Limbs"]
 use_parent_material = true
 position = Vector2(26, 44)
 texture = ExtResource("8_ixwo5")
 offset = Vector2(0, -10)
 
-[node name="Leaf1" type="Sprite2D" parent="Node2D"]
+[node name="Leaf1" type="Sprite2D" parent="Limbs"]
 use_parent_material = true
 position = Vector2(-17, 44)
 texture = ExtResource("7_tndrj")
 offset = Vector2(0, -10)
 
-[node name="sun_anchor" type="Marker2D" parent="."]
-position = Vector2(-5, -18.75)
-
-[node name="hurtbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(1.42857, -7.14286)
 shape = SubResource("CapsuleShape2D_ofxmp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vonsr")
+}
 
 [node name="ShaderPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimationPlayer")
 libraries = {
 "": SubResource("AnimationLibrary_uobb8")
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_vonsr")
 }

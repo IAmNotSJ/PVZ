@@ -1,7 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://dgdbgj5naahd2"]
+[gd_scene load_steps=22 format=3 uid="uid://bw6u200gbn14e"]
 
 [ext_resource type="Shader" path="res://assets/shaders/hit flash.gdshader" id="1_sgagm"]
-[ext_resource type="Script" path="res://assets/plants/sunflower/sunflower-optimized.gd" id="2_4wphp"]
 [ext_resource type="Texture2D" uid="uid://dl34et3mhcvcw" path="res://assets/plants/sunflower/assets/stem.png" id="2_48ogy"]
 [ext_resource type="Texture2D" uid="uid://dsjltd31clcrx" path="res://assets/plants/sunflower/assets/leaf3.png" id="2_s4ygo"]
 [ext_resource type="PackedScene" uid="uid://xsnq4c25kcda" path="res://assets/plants/base.tscn" id="3_goj1e"]
@@ -18,6 +17,57 @@ shader_parameter/blink = false
 shader_parameter/bright_amount = 0.3
 shader_parameter/darken = false
 shader_parameter/darken_amount = 0.3
+
+[sub_resource type="GDScript" id="GDScript_cwuu6"]
+script/source = "extends Node2D
+
+@onready var mainScene = get_tree().current_scene
+@onready var parent = $Plant
+
+var sunScene = load(\"res://assets/objects/sun/sun.tscn\")
+
+@export var maxProductionTimer:int = 7
+var productionTimer:float = maxProductionTimer
+
+var curTile:Vector2
+
+var rng = RandomNumberGenerator.new()
+
+func _process(delta):
+	parent._process(delta)
+	if parent.activated:
+		productionTimer -= delta
+		if productionTimer <= 0:
+			productionTimer = rng.randf_range(maxProductionTimer - 2, maxProductionTimer + 2)
+			$AnimationPlayer.play(\"sun\")
+
+func dance():
+	parent.dance()
+	$AnimationPlayer.play(\"idle\")
+
+func produce_sun():
+	print('sun produced!')
+	var sun = sunScene.instantiate()
+	sun.global_position = $sun_anchor.position
+	sun.from_sky = false
+	add_child(sun)
+
+#PARENT FUNCTIONS!!!!!!!!
+func activate():
+	parent.activate()
+
+func take_damage(amount:float):
+	parent.take_damage()
+
+func remove_plant():
+	parent.remove_plant()
+
+func apply_dark():
+	parent.apply_dark()
+
+func reset_shaders():
+	parent.reset_shaders()
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_unhfo"]
 resource_local_to_scene = true
@@ -301,7 +351,7 @@ step = 0.0417
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Plant/Limbs/Stem:position")
+tracks/0/path = NodePath("Plant/Stem/Stem:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -313,7 +363,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Plant/Limbs/Stem:rotation")
+tracks/1/path = NodePath("Plant/Stem/Stem:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -325,7 +375,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Plant/Limbs/Leaf1:position")
+tracks/2/path = NodePath("Plant/Stem/Leaf1:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -337,7 +387,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Plant/Limbs/Leaf1:rotation")
+tracks/3/path = NodePath("Plant/Stem/Leaf1:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -349,7 +399,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Plant/Limbs/Leaf2:position")
+tracks/4/path = NodePath("Plant/Stem/Leaf2:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -361,7 +411,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Plant/Limbs/Leaf2:rotation")
+tracks/5/path = NodePath("Plant/Stem/Leaf2:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -373,7 +423,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Plant/Limbs/Leaf3:position")
+tracks/6/path = NodePath("Plant/Stem/Leaf3:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -385,7 +435,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Plant/Limbs/Leaf3:rotation")
+tracks/7/path = NodePath("Plant/Stem/Leaf3:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -397,7 +447,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Plant/Limbs/Leaf4:position")
+tracks/8/path = NodePath("Plant/Stem/Leaf4:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -409,7 +459,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Plant/Limbs/Leaf4:rotation")
+tracks/9/path = NodePath("Plant/Stem/Leaf4:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -421,7 +471,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Plant/Limbs/Head and Face:position")
+tracks/10/path = NodePath("Plant/Head:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -632,75 +682,78 @@ _data = {
 z_index = 2
 material = SubResource("ShaderMaterial_bxxp5")
 scale = Vector2(0.8, 0.8)
-script = ExtResource("2_4wphp")
+script = SubResource("GDScript_cwuu6")
 
 [node name="Plant" parent="." instance=ExtResource("3_goj1e")]
 material = SubResource("ShaderMaterial_unhfo")
 scale = Vector2(0.8, 0.8)
 
-[node name="Leaf4" type="Sprite2D" parent="Plant/Limbs" index="0"]
+[node name="Stem" type="Node2D" parent="Plant"]
+scale = Vector2(1.25, 1.25)
+
+[node name="Leaf4" type="Sprite2D" parent="Plant/Stem"]
 use_parent_material = true
 position = Vector2(-10, 34)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("3_jpghq")
 offset = Vector2(0, -10)
 
-[node name="Leaf3" type="Sprite2D" parent="Plant/Limbs" index="1"]
+[node name="Leaf3" type="Sprite2D" parent="Plant/Stem"]
 use_parent_material = true
 position = Vector2(26, 33)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_s4ygo")
 offset = Vector2(0, -10)
 
-[node name="Stem" type="Sprite2D" parent="Plant/Limbs" index="2"]
+[node name="Stem" type="Sprite2D" parent="Plant/Stem"]
 use_parent_material = true
 position = Vector2(3, 26)
-rotation = -0.141372
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_48ogy")
 offset = Vector2(0, -10)
 
-[node name="Head and Face" type="Node2D" parent="Plant/Limbs" index="3"]
-use_parent_material = true
-position = Vector2(5, -4.76837e-07)
-scale = Vector2(1.25, 1.25)
-metadata/_edit_group_ = true
-
-[node name="Head" type="Sprite2D" parent="Plant/Limbs/Head and Face"]
-use_parent_material = true
-position = Vector2(-4.25, -9.25)
-texture = ExtResource("3_vhkc3")
-offset = Vector2(0, -10)
-hframes = 2
-
-[node name="Face" type="Sprite2D" parent="Plant/Limbs/Head and Face"]
-use_parent_material = true
-position = Vector2(-2.25, -7.25)
-texture = ExtResource("4_7pb2i")
-offset = Vector2(0, -10)
-hframes = 3
-frame = 1
-
-[node name="Leaf2" type="Sprite2D" parent="Plant/Limbs" index="4"]
+[node name="Leaf2" type="Sprite2D" parent="Plant/Stem"]
 use_parent_material = true
 position = Vector2(26, 44)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("8_ixwo5")
 offset = Vector2(0, -10)
 
-[node name="Leaf1" type="Sprite2D" parent="Plant/Limbs" index="5"]
+[node name="Leaf1" type="Sprite2D" parent="Plant/Stem"]
 use_parent_material = true
-position = Vector2(-17, 44)
+position = Vector2(-17, 45)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("7_tndrj")
 offset = Vector2(0, -10)
 
-[node name="sun_anchor" type="Marker2D" parent="."]
-visible = false
-position = Vector2(-5, -18.75)
+[node name="Head" type="Node2D" parent="Plant"]
+use_parent_material = true
+position = Vector2(3.75, -2.5)
+scale = Vector2(1.5625, 1.5625)
+metadata/_edit_group_ = true
+
+[node name="Head2" type="Sprite2D" parent="Plant/Head"]
+use_parent_material = true
+position = Vector2(-7.4, -7.4)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_vhkc3")
+offset = Vector2(0, -10)
+hframes = 2
+
+[node name="sun_anchor" type="Marker2D" parent="Plant/Head/Head2"]
+position = Vector2(-0.75, -9.5)
+scale = Vector2(1, 1)
+
+[node name="Face" type="Sprite2D" parent="Plant/Head"]
+use_parent_material = true
+position = Vector2(-5.8, -5.8)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_7pb2i")
+offset = Vector2(0, -10)
+hframes = 3
+frame = 1
 
 [node name="hurtbox" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 4
 
