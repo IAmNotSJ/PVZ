@@ -66,11 +66,11 @@ func cancel_planting():
 
 func collect_sun(amount:int = 25):
 	sun += amount
-	$"Cam/HUD/Packet Holder/Sun Counter".text = str(sun)
+	$"Cam/HUD/Packet Holder/Sun Counter".text = "[center]" + str(sun) + "[/center]"
 
 func subtract_sun(amount:int):
 	sun -= amount
-	$"Cam/HUD/Packet Holder/Sun Counter".text = str(sun)
+	$"Cam/HUD/Packet Holder/Sun Counter".text = "[center]" + str(sun) + "[/center]"
 
 func spawn_zombie():
 	var zombie = zombieScene.instantiate()
