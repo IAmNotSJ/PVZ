@@ -513,6 +513,7 @@ _data = {
 }
 
 [node name="Potato Mine" type="Node2D" node_paths=PackedStringArray("shaderPlayer", "animationPlayer", "hitbox")]
+z_index = 2
 material = ExtResource("2_ykqnq")
 script = ExtResource("1_e70kk")
 plant_name = "potato_mine"

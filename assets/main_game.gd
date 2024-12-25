@@ -5,6 +5,7 @@ extends Node2D
 @onready var cam = $Cam
 
 signal plant_planted
+signal started
 
 var zombieScene = load("res://assets/zombies/base/zombie.tscn")
 var sunScene = load("res://assets/objects/sun/sun.tscn")
@@ -29,13 +30,6 @@ func _process(delta):
 		game_state(delta)
 
 func game_state(delta):
-		zombieTimer -= delta
-		if (zombieTimer <= 0):
-			spawn_zombie()
-			zombieTimer = 15
-		
-		if Input.is_action_just_pressed("spawn_zombie"):
-			spawn_zombie()
 		
 		sunTimer -= delta
 		if (sunTimer <= 0):
@@ -141,3 +135,4 @@ func _on_cam_done_moving():
 		packet.activate_cooldown()
 		packet.clicked.connect(hold_plant.bind(packet))
 	game_started = true
+	started.emit()

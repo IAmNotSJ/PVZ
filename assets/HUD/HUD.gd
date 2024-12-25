@@ -19,7 +19,7 @@ var plantsToAdd:Array = [
 ]
 
 var plantList:Array = [
-	"peashooter","sunflower","walnut","potato_mine","snow_pea","cherry_bomb"
+	"peashooter","sunflower","walnut","potato_mine","snow_pea","cherry_bomb","chomper"
 ]
 var packets = []
 

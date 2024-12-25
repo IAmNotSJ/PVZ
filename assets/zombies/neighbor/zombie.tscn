@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://ck2ds2hhfqjn"]
+
+[ext_resource type="Shader" path="res://assets/shaders/hit flash.gdshader" id="1_tx737"]
+[ext_resource type="Script" path="res://assets/zombies/zombie.gd" id="2_surh2"]
+[ext_resource type="PackedScene" uid="uid://bj52tp4ir8wdv" path="res://assets/zombies/sprites/neighbor_sprite.tscn" id="3_vkudt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p048e"]
+resource_local_to_scene = true
+shader = ExtResource("1_tx737")
+shader_parameter/blink = false
+shader_parameter/bright_amount = 0.3
+shader_parameter/darken = false
+shader_parameter/darken_amount = 0.3
+shader_parameter/blue = false
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e2psr"]
+radius = 31.0
+height = 97.5807
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hupt"]
+size = Vector2(115.651, 20)
+
+[sub_resource type="Animation" id="Animation_6kfdw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/blink")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_d1duw"]
+resource_name = "blink"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/blink")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ahvfq"]
+_data = {
+"RESET": SubResource("Animation_6kfdw"),
+"blink": SubResource("Animation_d1duw")
+}
+
+[node name="Zombie" type="Node2D"]
+material = SubResource("ShaderMaterial_p048e")
+scale = Vector2(0.821, 0.821)
+script = ExtResource("2_surh2")
+
+[node name="Limbs" parent="." instance=ExtResource("3_vkudt")]
+
+[node name="Hurtbox" type="Area2D" parent="."]
+scale = Vector2(0.821, 0.821)
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-1.48359, 29.6718)
+scale = Vector2(0.821, 0.821)
+shape = SubResource("CapsuleShape2D_e2psr")
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(-20.7065, 0)
+scale = Vector2(0.821, 0.821)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(13.3523, 19.2867)
+scale = Vector2(0.821, 0.821)
+shape = SubResource("RectangleShape2D_7hupt")
+
+[node name="ShaderPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ahvfq")
+}
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]

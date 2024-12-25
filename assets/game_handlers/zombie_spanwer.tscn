@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm228rrkv7a4o"]
+
+[ext_resource type="Script" path="res://assets/game_handlers/zombie_spawner.gd" id="1_nccua"]
+
+[node name="ZombieSpanwer" type="Node"]
+script = ExtResource("1_nccua")
+
+[node name="ZombieTimer" type="Timer" parent="."]
+wait_time = 20.0
+
+[connection signal="timeout" from="ZombieTimer" to="." method="_on_timer_timeout"]

@@ -10,12 +10,13 @@ var packet_list:Array = [
 	["walnut", "res://assets/plants/walnut/walnut.tscn"],
 	["potato_mine", "res://assets/plants/potato_mine/potato_mine.tscn"],
 	["snow_pea", "res://assets/plants/snow_pea/snow_pea.tscn"],
-	["cherry_bomb", "res://assets/plants/cherry_bomb/cherry_bomb.tscn"]
+	["cherry_bomb", "res://assets/plants/cherry_bomb/cherry_bomb.tscn"],
+	["chomper", "res://assets/plants/chomper/chomper.tscn"]
 ]
 
 #TODO: FIND BETTER WAY TO FUCKING DO THIS
 var plantPrices:Array = [
-	100, 50, 50, 25, 150, 150
+	100, 50, 50, 25, 150, 150, 125
 ]
 
 var packets = []
@@ -53,4 +54,4 @@ func remove_packet(packet):
 
 func reposition_selected():
 	for i in range(HUD.packets.size()):
-		HUD.packets[i].position = Vector2(165 + i * 75, 5 )
+		HUD.packets[i].position = Vector2(90 + i * 75, 5 )

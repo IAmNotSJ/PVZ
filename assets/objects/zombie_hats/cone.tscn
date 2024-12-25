@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8vdvx7oopiot"]
+
+[ext_resource type="Texture2D" uid="uid://erb2ywf5am3o" path="res://assets/objects/zombie_hats/cone.png" id="1_6dvtd"]
+[ext_resource type="Script" path="res://assets/objects/zombie_hats/hat.gd" id="2_8q1mm"]
+
+[node name="Cone" type="Sprite2D"]
+use_parent_material = true
+texture = ExtResource("1_6dvtd")
+offset = Vector2(5, -12)
+hframes = 3
+script = ExtResource("2_8q1mm")

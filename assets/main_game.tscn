@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcyuco3hmkdl"]
+[gd_scene load_steps=9 format=3 uid="uid://dcyuco3hmkdl"]
 
 [ext_resource type="Script" path="res://assets/main_game.gd" id="1_q0gss"]
 [ext_resource type="PackedScene" uid="uid://dci2asff5tkug" path="res://assets/map/map.tscn" id="1_x0fhb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://61gk575sgqd1" path="res://assets/objects/cursor/cursor.tscn" id="5_b7ptp"]
 [ext_resource type="PackedScene" uid="uid://5w656huwv7ud" path="res://assets/objects/lawnmower/lawnmower.tscn" id="5_octmu"]
 [ext_resource type="PackedScene" uid="uid://2g0im2rhk05i" path="res://assets/HUD/cam/cam.tscn" id="7_lh3me"]
+[ext_resource type="PackedScene" uid="uid://dm228rrkv7a4o" path="res://assets/game_handlers/zombie_spanwer.tscn" id="8_w8u5d"]
 
 [node name="Main Game" type="Node2D"]
 y_sort_enabled = true
@@ -46,5 +47,13 @@ position = Vector2(105, 559)
 metadata/_edit_lock_ = true
 
 [node name="Cam" parent="." instance=ExtResource("7_lh3me")]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+position = Vector2(626, -251)
+color = Color(0.682353, 0.529412, 0.227451, 1)
+energy = 0.36
+
+[node name="ZombieSpanwer" parent="." instance=ExtResource("8_w8u5d")]
 
 [connection signal="done_moving" from="Cam" to="." method="_on_cam_done_moving"]

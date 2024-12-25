@@ -38,6 +38,7 @@ layout_mode = 1
 anchor_right = 1.03614
 anchor_bottom = 1.20513
 offset_bottom = -141.0
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="DarkPacket" type="Sprite2D" parent="CooldownBox"]

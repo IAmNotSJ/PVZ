@@ -1,0 +1,16 @@
+[remap]
+
+importer="iseesharp83.kenney.spritesheet.importer"
+type="Resource"
+uid="uid://bj8tna53w67mi"
+path="res://.godot/imported/happy.png-0b55d02ebe98720936f503c96165dbc5.res"
+
+[deps]
+
+source_file="res://art/concepts/happy/happy.png"
+dest_files=["res://.godot/imported/happy.png-0b55d02ebe98720936f503c96165dbc5.res"]
+
+[params]
+
+spritesheet_xml_file="res://art/concepts/happy/happy.xml"
+destination_folder="res://art/concepts/happy/happy"

@@ -38,7 +38,9 @@ func add_price(price):
 func _process(delta):
 	if clickable and Input.is_action_just_pressed("click") and !on_cooldown:
 		clicked.emit()
-	
+	if clickable and Input.is_action_just_pressed("cancel"):
+		cooldown = 0
+		$CooldownBox.size.y = 0
 	if on_cooldown:
 		cooldown -= delta
 		$CooldownBox.size.y -= $Packet.texture.get_height() / max_cooldown * delta
@@ -49,7 +51,6 @@ func _process(delta):
 func activate_cooldown():
 	on_cooldown = true
 	$CooldownBox.size.y = $Packet.texture.get_height()
-	print('yo')
 
 func _on_mouse_entered():
 	clickable = true

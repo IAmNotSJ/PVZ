@@ -392,6 +392,7 @@ _data = {
 }
 
 [node name="Cherry Bomb" type="Node2D" node_paths=PackedStringArray("shaderPlayer", "animationPlayer")]
+z_index = 2
 material = ExtResource("2_fmtq2")
 script = ExtResource("1_lhut5")
 plant_name = "cherry_bomb"
