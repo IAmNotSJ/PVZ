@@ -9,6 +9,10 @@ signal clicked
 @onready var max_cooldown:float
 @onready var cooldown:float
 
+const movement_speed:float = 35
+
+var intended_pos:Vector2 = position
+
 var cost:int = 0
 
 var clickable:bool = false
@@ -47,6 +51,7 @@ func _process(delta):
 		if cooldown <= 0:
 			on_cooldown = false
 			cooldown = max_cooldown
+	position = lerp(position, intended_pos, delta * movement_speed)
 
 func activate_cooldown():
 	on_cooldown = true

@@ -19,7 +19,7 @@ script = ExtResource("1_q0gss")
 stream = ExtResource("2_lf6y2")
 
 [node name="BG" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -2
 position = Vector2(765, 321)
 texture = ExtResource("3_uvbsn")
 
@@ -47,6 +47,7 @@ position = Vector2(105, 559)
 metadata/_edit_lock_ = true
 
 [node name="Cam" parent="." instance=ExtResource("7_lh3me")]
+y_sort_enabled = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 visible = false

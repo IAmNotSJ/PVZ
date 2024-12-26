@@ -7,7 +7,7 @@ const packetScene = preload("res://assets/plants/seeds/packet_base.tscn")
 @onready var packetHolder = $"Packet Holder"
 @onready var seedPackets = $"Packet Holder/Seed Packets"
 
-@onready var selectionScreen = $SelectionScreen
+@onready var selectionScreen = %SelectionScreen
 
 var plantsToAdd:Array = [
 	["peashooter", "res://assets/plants/peashooter/peashooter.tscn"],

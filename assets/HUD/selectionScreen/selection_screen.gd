@@ -29,6 +29,7 @@ func _ready():
 		packet.add_price(plantPrices[i])
 		packet.add_sprite()
 		packet.position = Vector2(14 + i * 75, 145)
+		packet.intended_pos = packet.global_position
 		packets.append(packet)
 		add_child(packet)
 
@@ -40,18 +41,17 @@ func packet_clicked(packet):
 
 func add_packet(packet):
 	HUD.packets.append(packet)
-	packet.reparent(HUD.seedPackets)
 	reposition_selected()
+	packet.reparent(HUD.seedPackets)
 	packet.picked = true
 
 func remove_packet(packet):
 	HUD.packets.erase(packet)
-	packet.reparent(HUD.selectionScreen)
-	print(HUD.plantList.find(packet.plant))
-	packet.position = Vector2(14 + HUD.plantList.find(packet.plant) * 75, 145)
+	packet.intended_pos = Vector2(14 + HUD.plantList.find(packet.plant) * 75, 145)
 	reposition_selected()
+	packet.reparent(HUD.selectionScreen)
 	packet.picked = false
 
 func reposition_selected():
 	for i in range(HUD.packets.size()):
-		HUD.packets[i].position = Vector2(90 + i * 75, 5 )
+		HUD.packets[i].intended_pos = Vector2(i * 75, 0)

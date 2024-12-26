@@ -81,6 +81,7 @@ terrain_set_0/terrain_0/color = Color(0.721569, 0, 0.215686, 1)
 sources/0 = SubResource("TileSetAtlasSource_l4v5b")
 
 [node name="Box" type="TileMap"]
+z_index = -1
 tile_set = SubResource("TileSet_i0etw")
 rendering_quadrant_size = 13
 format = 2

@@ -46,7 +46,7 @@ func spawn_zombie(type:TYPES, lane:int):
 	if type == TYPES.CONE:
 		await get_tree().process_frame
 		zombie.add_hat(zombie.Hat.CONE)
-	zombie.global_position = Vector2(1170, (lane * game.tilemap.cell_quadrant_size) + game.tilemap.global_position.y)
+	zombie.global_position = Vector2(1170, (lane * game.tilemap.cell_quadrant_size) + game.tilemap.global_position.y + 60)
 	
 	game.add_child(zombie)
 
