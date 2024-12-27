@@ -60,6 +60,7 @@ texture = ExtResource("8_blk4c")
 
 [node name="SelectionScreen" parent="Packet Holder" instance=ExtResource("6_g1o7x")]
 unique_name_in_owner = true
+visible = false
 position = Vector2(0, -26)
 
 [node name="Shovel Base" type="Sprite2D" parent="."]

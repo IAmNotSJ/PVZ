@@ -2,7 +2,10 @@ class_name ZombieHat extends Sprite2D
 
 const fall_prop = preload("res://assets/objects/zombie_hats/falling/falling_cone.tscn")
 
-@export var hatHealth:float = 10
+var is_primary
+
+@export var max_health:float = 10
+var hat_health = max_health
 
 @export var stages:Array = [
 	Vector2(5, 10),
@@ -10,8 +13,10 @@ const fall_prop = preload("res://assets/objects/zombie_hats/falling/falling_cone
 	Vector2(0, 2)
 ]
 
-func parent_hurt(parent):
-	var hat_health = parent.health - parent.max_health
+func parent_hurt(amount:float, parent):
+	print('is primary: ' + str(is_primary))
+	if is_primary:
+		hat_health -= amount
 	if frame + 1 >= stages.size():
 		if hat_health <= stages[frame].x:
 			var fall = fall_prop.instantiate()

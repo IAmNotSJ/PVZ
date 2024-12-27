@@ -18,7 +18,7 @@ radius = 31.0
 height = 90.3525
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7hupt"]
-size = Vector2(79.5103, 20)
+size = Vector2(93.9667, 20)
 
 [sub_resource type="Animation" id="Animation_6kfdw"]
 length = 0.001
@@ -85,7 +85,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sight"]
-position = Vector2(22.2539, 19.2867)
+position = Vector2(28.1882, 19.2867)
 scale = Vector2(0.821, 0.821)
 shape = SubResource("RectangleShape2D_7hupt")
 

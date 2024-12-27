@@ -26,22 +26,23 @@ texture = ExtResource("3_uvbsn")
 [node name="World" parent="." instance=ExtResource("1_x0fhb")]
 position = Vector2(141, 137)
 
-[node name="Lawnmowers" type="Node" parent="."]
+[node name="Lawnmowers" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Lawnmower" parent="Lawnmowers" instance=ExtResource("5_octmu")]
-position = Vector2(105, 179)
+position = Vector2(105, 203)
 
 [node name="Lawnmower2" parent="Lawnmowers" instance=ExtResource("5_octmu")]
-position = Vector2(105, 274)
+position = Vector2(105, 298)
 
 [node name="Lawnmower3" parent="Lawnmowers" instance=ExtResource("5_octmu")]
-position = Vector2(105, 369)
+position = Vector2(105, 393)
 
 [node name="Lawnmower4" parent="Lawnmowers" instance=ExtResource("5_octmu")]
-position = Vector2(105, 464)
+position = Vector2(105, 488)
 
 [node name="Lawnmower5" parent="Lawnmowers" instance=ExtResource("5_octmu")]
-position = Vector2(105, 559)
+position = Vector2(105, 583)
 
 [node name="Cursor" parent="." instance=ExtResource("5_b7ptp")]
 metadata/_edit_lock_ = true

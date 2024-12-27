@@ -7,8 +7,10 @@ extends Node2D
 signal plant_planted
 signal started
 
-var zombieScene = load("res://assets/zombies/base/zombie.tscn")
-var sunScene = load("res://assets/objects/sun/sun.tscn")
+const zombieScene = preload("res://assets/zombies/base/zombie.tscn")
+const sunScene = preload("res://assets/objects/sun/sun.tscn")
+
+const dirtScene = preload("res://assets/objects/dirt/dirt_plant.tscn")
 
 var game_started:bool = false
 
@@ -100,7 +102,7 @@ func plant_plant(plant):
 			subtract_sun(curHolding.cost)
 			
 			$"Sound Effects/Planting Sound".play()
-			plant.global_position = tilemap.curTile * tilemap.cell_quadrant_size + tileOffset + tilemap.global_position
+			plant.global_position = tilemap.curTile * tilemap.cell_quadrant_size + tilemap.global_position + tileOffset
 			tilemap.dic[str(tilemap.curTile)] = plant
 			plant.curTile = tilemap.curTile
 			plant.activate()
@@ -114,6 +116,11 @@ func plant_plant(plant):
 			curHolding = null
 			
 			plant_planted.emit(plant)
+			
+			var dirt = dirtScene.instantiate()
+			dirt.global_position = plant.bottom.global_position
+			dirt.get_node('anim').play('explode')
+			Global.mainScene.add_child(dirt)
 	else:
 		cancel_planting()
 

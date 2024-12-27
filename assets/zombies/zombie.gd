@@ -1,6 +1,6 @@
 class_name Zombie extends Node2D 
 
-signal hurt
+signal hurt(damage)
 
 @onready var animationPlayer:AnimationPlayer = get_node("Limbs").animationPlayer
 
@@ -56,7 +56,7 @@ func eat_state(delta):
 
 func take_damage(amount:float):
 	health -= amount
-	hurt.emit()
+	hurt.emit(amount)
 	
 	$ShaderPlayer.play("blink")
 
@@ -70,13 +70,19 @@ func add_effect(effect):
 					speed -= 2
 
 func add_hat(hat:Hat):
+	var hat_container = $Limbs/Head/Hats
 	var dahat:ZombieHat
 	match hat:
 		Hat.CONE:
 			dahat = load("res://assets/objects/zombie_hats/cone.tscn").instantiate()
 	hurt.connect(dahat.parent_hurt.bind(self))
-	$Limbs/Head/Hats.add_child(dahat)
-	health += dahat.hatHealth
+	dahat.position.y = hat_container.get_children().size() * -10
+	hat_container.add_child(dahat)
+	dahat.is_primary = true
+	for i in range(hat_container.get_children().size()):
+		if hat_container.get_children()[i] != dahat:
+			hat_container.get_children()[i].is_primary = false
+	health += dahat.max_health
 
 func _on_hitbox_area_entered(area):
 	plant_to_eat = area.owner

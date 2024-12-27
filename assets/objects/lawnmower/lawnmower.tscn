@@ -7,20 +7,26 @@
 size = Vector2(3, 46)
 
 [node name="Lawnmower" type="Sprite2D"]
+y_sort_enabled = true
 texture = ExtResource("1_50rt4")
+offset = Vector2(0, -36)
 script = ExtResource("2_yn6gq")
 
 [node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2(0, -36)
 collision_layer = 2
 collision_mask = 4
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(29.5, 13)
 shape = SubResource("RectangleShape2D_q7fc7")
 
 [node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 8
+position = Vector2(0, -36)
+collision_layer = 0
 collision_mask = 4
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(29.5, 13)

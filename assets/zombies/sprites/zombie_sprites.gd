@@ -10,7 +10,7 @@ func _ready():
 func step():
 	parent.step()
 
-func parent_hurt():
+func parent_hurt(_amount):
 	var hp = parent.health
 	print(hp)
 	if hp <= 0:

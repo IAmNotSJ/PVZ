@@ -10,6 +10,7 @@ class_name Plant extends Node2D
 @export var animationPlayer: Node
 
 @export var hitbox: Area2D
+@export var bottom:Marker2D
 
 @export var idleAnim = 'idle'
 

@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var HUD = get_parent()
+@onready var HUD = get_parent().get_parent()
 
 const packetScene = preload("res://assets/plants/seeds/packet_base.tscn")
 

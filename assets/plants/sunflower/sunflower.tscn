@@ -519,7 +519,7 @@ _data = {
 "sun": SubResource("Animation_4hab6")
 }
 
-[node name="Sunflower" type="Node2D" node_paths=PackedStringArray("shaderPlayer", "animationPlayer", "hitbox")]
+[node name="Sunflower" type="Node2D" node_paths=PackedStringArray("shaderPlayer", "animationPlayer", "hitbox", "bottom")]
 z_index = 2
 material = SubResource("ShaderMaterial_bxxp5")
 scale = Vector2(0.7, 0.7)
@@ -530,6 +530,7 @@ max_health = 5
 shaderPlayer = NodePath("ShaderPlayer")
 animationPlayer = NodePath("AnimationPlayer")
 hitbox = NodePath("Hitbox")
+bottom = NodePath("bottom")
 
 [node name="Limbs" type="Node2D" parent="."]
 use_parent_material = true
@@ -538,20 +539,20 @@ use_parent_material = true
 use_parent_material = true
 position = Vector2(-10, 34)
 texture = ExtResource("3_jpghq")
-offset = Vector2(0, -10)
+offset = Vector2(0, -22)
 
 [node name="Leaf3" type="Sprite2D" parent="Limbs"]
 use_parent_material = true
 position = Vector2(26, 33)
 texture = ExtResource("2_s4ygo")
-offset = Vector2(0, -10)
+offset = Vector2(0, -22)
 
 [node name="Stem" type="Sprite2D" parent="Limbs"]
 use_parent_material = true
 position = Vector2(3, 26)
 rotation = -0.141372
 texture = ExtResource("2_48ogy")
-offset = Vector2(0, -10)
+offset = Vector2(0, -22)
 
 [node name="Head and Face" type="Node2D" parent="Limbs"]
 use_parent_material = true
@@ -562,17 +563,17 @@ metadata/_edit_group_ = true
 use_parent_material = true
 position = Vector2(-4.25, -9.25)
 texture = ExtResource("3_vhkc3")
-offset = Vector2(0, -10)
+offset = Vector2(0, -22)
 hframes = 2
 
 [node name="sun_anchor" type="Marker2D" parent="Limbs/Head and Face/Head"]
-position = Vector2(-4.5, -7)
+position = Vector2(-0.75, -17.8929)
 
 [node name="Face" type="Sprite2D" parent="Limbs/Head and Face"]
 use_parent_material = true
 position = Vector2(-3.67857, -7.25)
 texture = ExtResource("4_7pb2i")
-offset = Vector2(0, -10)
+offset = Vector2(0, -22)
 hframes = 3
 frame = 1
 
@@ -580,16 +581,16 @@ frame = 1
 use_parent_material = true
 position = Vector2(26, 44)
 texture = ExtResource("8_ixwo5")
-offset = Vector2(0, -10)
+offset = Vector2(0, -22)
 
 [node name="Leaf1" type="Sprite2D" parent="Limbs"]
 use_parent_material = true
 position = Vector2(-17, 44)
 texture = ExtResource("7_tndrj")
-offset = Vector2(0, -10)
+offset = Vector2(0, -22)
 
 [node name="Hitbox" type="Area2D" parent="."]
-visible = false
+position = Vector2(1.42857, -7.14286)
 collision_layer = 0
 collision_mask = 4
 
@@ -603,3 +604,6 @@ libraries = {
 }
 
 [node name="ShaderPlayer" parent="." instance=ExtResource("10_hb6do")]
+
+[node name="bottom" type="Marker2D" parent="."]
+position = Vector2(5.71429, 32.8571)
