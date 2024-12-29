@@ -26,15 +26,15 @@ var packets = []
 var packet_count = 6
 
 func _process(_delta):
-	if Global.mainScene.game_started:
+	if global.mainScene.game_started:
 		if ($Shovel/hitbox.has_overlapping_areas() && Input.is_action_just_pressed("click")):
-			if (Global.mainScene.shovel_active != true):
-				Global.mainScene.shovel_active = true
+			if (global.mainScene.shovel_active != true):
+				global.mainScene.shovel_active = true
 			else:
 				$Shovel.global_position = shovel_position
-				Global.mainScene.shovel_active = false
-		if (Global.mainScene.shovel_active):
-			$Shovel.global_position = Global.mainScene.cursor.global_position
+				global.mainScene.shovel_active = false
+		if (global.mainScene.shovel_active):
+			$Shovel.global_position = global.mainScene.cursor.global_position
 
 
 func _on_main_game_plant_planted(plant):

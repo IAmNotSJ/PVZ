@@ -7,6 +7,7 @@ signal hurt(damage)
 @export var max_health:float = 10
 @export var eating_interval:float = 1
 @export var speed:int = 7
+
 enum {
 	WALKING,
 	EATING
@@ -17,6 +18,7 @@ enum Hat {
 	CONE
 }
 
+var damage_cooldown:Timer = Timer.new()
 
 var speed_modifier:float = 0
 var dynamic_speed
@@ -54,7 +56,7 @@ func eat_state(delta):
 			eatTimer = eating_interval
 			plant_to_eat.take_damage(1)
 
-func take_damage(amount:float):
+func take_damage(amount:float, _type:int):
 	health -= amount
 	hurt.emit(amount)
 	

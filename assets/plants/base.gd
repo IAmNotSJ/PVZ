@@ -1,5 +1,10 @@
 class_name Plant extends Node2D
 
+signal planted
+signal dug
+signal bitten
+signal eaten
+
 @export var plant_name:String
 
 @export var cost:int
@@ -14,23 +19,18 @@ class_name Plant extends Node2D
 
 @export var idleAnim = 'idle'
 
-var health = max_health
+var health:float = max_health
 var activated:bool = false
 
 var curTile:Vector2
 
-var rng = RandomNumberGenerator.new()
-
-func _process(_delta):
-	if activated:
-		pass
-
 func dance(_anim = idleAnim):
-	if _anim != null:
+	if _anim != null && animationPlayer != null:
 		animationPlayer.play(_anim)
 
 func activate():
 	health = max_health
+	z_index = 0
 	if hitbox != null:
 		hitbox.collision_layer = 2
 	activated = true
@@ -45,17 +45,20 @@ func take_damage(amount:float):
 
 func remove_plant():
 	queue_free()
-	Global.mainScene.tilemap.dic[str(curTile)] = "Free"
+	global.mainScene.tilemap.dic[str(curTile)] = "Free"
 
 func fake_remove_plant():
 	visible = false
 	activated = false
 
 func reset_shaders():
-	shaderPlayer.play("RESET")
+	if shaderPlayer != null:
+		shaderPlayer.play("RESET")
 
 func apply_dark():
-	shaderPlayer.play("darken")
+	if shaderPlayer != null:
+		shaderPlayer.play("darken")
 
 func apply_blink():
-	shaderPlayer.play("blink")
+	if shaderPlayer != null:
+		shaderPlayer.play("blink")

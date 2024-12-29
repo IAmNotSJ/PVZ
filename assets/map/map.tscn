@@ -34,5 +34,4 @@ rendering_quadrant_size = 95
 format = 2
 layer_0/name = "select 1"
 layer_1/name = "select 2"
-layer_1/tile_data = PackedInt32Array()
 script = ExtResource("3_r27qd")

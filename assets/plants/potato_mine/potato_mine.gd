@@ -3,6 +3,8 @@ class_name PotatoMine
 
 @export var max_draw_time = 13
 
+@export var sight:Area2D
+
 var can_explode = false
 var despawn_timer:float = 1
 
@@ -17,7 +19,7 @@ var draw_time = max_draw_time
 
 func _process(delta):
 	if can_explode:
-		Global.mainScene.cam.shake_screen(delta, 2, 1)
+		global.mainScene.cam.shake_screen(delta, 2, 1)
 		despawn_timer -= delta
 		
 		if (despawn_timer <= 0):
@@ -41,10 +43,10 @@ func deploying_state():
 	pass
 
 func deployed_state():
-	if ($DetectionRange.has_overlapping_areas()):
+	if (sight.has_overlapping_areas()):
 		can_explode = true
-		for i in $ExplosionRadius.get_overlapping_areas().size():
-			$ExplosionRadius.get_overlapping_areas()[i].owner.take_damage(30)
+		for i in sight.get_overlapping_areas().size():
+			sight.get_overlapping_areas()[i].owner.take_damage(30, Enums.DAMAGE_EXPLOSION)
 			fake_remove_plant()
 
 func change_to_deployed():

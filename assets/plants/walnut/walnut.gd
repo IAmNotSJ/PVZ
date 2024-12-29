@@ -16,7 +16,7 @@ func take_damage(amount:float):
 
 func remove_plant():
 	queue_free()
-	Global.mainScene.tilemap.dic[str(curTile)] = "Free"
+	global.mainScene.tilemap.dic[str(curTile)] = "Free"
 
 func apply_dark():
 	$"ShaderPlayer".play("darken")
