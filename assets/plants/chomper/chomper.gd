@@ -30,7 +30,7 @@ func _process(_delta):
 					$AnimationPlayer.play(idleAnim)
 
 func bite():
-	sight.get_overlapping_areas()[0].owner.take_damage(attack, Enums.DAMAGE_PHYSICAL)
+	sight.get_overlapping_areas()[0].owner.take_damage(attack)
 
 
 func _on_chew_timer_timeout():

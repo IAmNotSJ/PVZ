@@ -3,7 +3,6 @@ extends Node2D
 @onready var tilemap = $World/TileMap
 @onready var cursor = $Cursor
 @onready var cam = $Cam
-@onready var tileOffset:Vector2 = Vector2(tilemap.rendering_quadrant_size / 2, 70)
 
 signal plant_planted
 signal started
@@ -16,6 +15,7 @@ const dirtScene = preload("res://assets/objects/dirt/dirt_plant.tscn")
 var game_started:bool = false
 
 var curHolding
+var tileOffset:Vector2 = Vector2(45, 45)
 
 var shovel_active = false;
 
@@ -71,13 +71,13 @@ func subtract_sun(amount:int):
 func spawn_zombie():
 	var zombie = zombieScene.instantiate()
 	
-	zombie.global_position = Vector2(1170, (randi_range(0, 4) * tilemap.cell_quadrant_size) + tilemap.global_position.y)
+	zombie.global_position = Vector2(1170, (Global.rng.randi_range(0, 4) * tilemap.cell_quadrant_size) + tilemap.global_position.y)
 	print(zombie.global_position)
 	add_child(zombie)
 
 func spawn_sun():
 	var sun_instance = sunScene.instantiate()
-	sun_instance.global_position = Vector2(randi_range(100, 1052), -30)
+	sun_instance.global_position = Vector2(Global.rng.randi_range(100, 1052), -30)
 	add_child(sun_instance)
 
 func hold_plant(packet):
@@ -106,6 +106,7 @@ func plant_plant(plant):
 			tilemap.dic[str(tilemap.curTile)] = plant
 			plant.curTile = tilemap.curTile
 			plant.activate()
+			plant.z_index = 0
 			plant.reset_shaders()
 			
 			for i in range(cam.HUD.packets.size()):
@@ -116,13 +117,10 @@ func plant_plant(plant):
 			
 			plant_planted.emit(plant)
 			
-			if plant.bottom != null:
-				var dirt = dirtScene.instantiate()
-				dirt.global_position = plant.bottom.global_position
-				dirt.get_node('anim').play('explode')
-				global.mainScene.add_child(dirt)
-			else:
-				printerr("Plant does not have a bottom position set!")
+			var dirt = dirtScene.instantiate()
+			dirt.global_position = plant.bottom.global_position
+			dirt.get_node('anim').play('explode')
+			Global.mainScene.add_child(dirt)
 	else:
 		cancel_planting()
 

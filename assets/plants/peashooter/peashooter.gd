@@ -20,20 +20,6 @@ var can_shoot:bool = false
 
 var peaScene = preload("res://assets/objects/peas/normal/pea.tscn")
 
-
-func activate():
-	super()
-	var collision_shape = sight.get_children()[0]
-	var tilemap = global.mainScene.tilemap
-	
-	# global position of the tilemap, plus its current tile + 1 to reach the end of the tile, times the width of the tile
-	var tile_position_x = tilemap.global_position.x + (curTile.x * tilemap.cell_quadrant_size)
-	var sight_offset = tilemap.cell_quadrant_size - (sight.global_position.x - tile_position_x)
-	
-	# gridSize starts counting at 1, while curTile starts counting at 0
-	collision_shape.shape.size.x = (tilemap.gridSize.x - (curTile.x + 1)) * tilemap.cell_quadrant_size + sight_offset
-	collision_shape.shape.size.x /= scale.x
-	collision_shape.position.x = collision_shape.shape.size.x / 2
 func _process(delta):
 	can_shoot = false
 	if (sight.has_overlapping_areas()):
@@ -48,5 +34,5 @@ func _process(delta):
 func shoot():
 	var pea = peaScene.instantiate()
 	pea.change_type(shootingType)
-	global.mainScene.add_child(pea)
+	Global.mainScene.add_child(pea)
 	pea.global_position = marker.global_position

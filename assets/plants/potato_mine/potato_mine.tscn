@@ -81,7 +81,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -18)]
+"values": [Vector2(1, 8)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -93,7 +93,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -26)]
+"values": [Vector2(0, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -117,12 +117,12 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(4, -9)]
+"values": [Vector2(4, 17)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Limbs/dirt:frame")
+tracks/5/path = NodePath("Limbs/Sprite2D3:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -134,14 +134,14 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Limbs/dirt:position")
+tracks/6/path = NodePath("Limbs/Sprite2D3:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2, -10)]
+"values": [Vector2(2, 16)]
 }
 
 [sub_resource type="Animation" id="Animation_lvapf"]
@@ -168,10 +168,10 @@ tracks/1/path = NodePath("Limbs/Body:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2502, 0.4587, 0.5838, 0.791667),
+"times": PackedFloat32Array(0, 0.2502, 0.4587, 0.5838, 0.7923),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(2, -24), Vector2(2, -23), Vector2(2, -24), Vector2(2, -25), Vector2(2, -25)]
+"values": [Vector2(1, 2), Vector2(1, 3), Vector2(1, 2), Vector2(1, 1), Vector2(1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -180,10 +180,10 @@ tracks/2/path = NodePath("Limbs/Beeper:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2502, 0.4587, 0.583333, 0.791667),
+"times": PackedFloat32Array(0, 0.2502, 0.4587, 0.5838, 0.7923),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(0, -45), Vector2(0, -44), Vector2(0, -45), Vector2(0, -46), Vector2(0, -46)]
+"values": [Vector2(0, -19), Vector2(0, -18), Vector2(0, -19), Vector2(0, -20), Vector2(0, -20)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -204,15 +204,15 @@ tracks/4/path = NodePath("Limbs/Face:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.2502, 0.4587, 0.583333, 0.7923),
+"times": PackedFloat32Array(0, 0.2502, 0.4587, 0.5838, 0.7923),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(4, -21), Vector2(4, -20), Vector2(4, -21), Vector2(4, -22), Vector2(4, -22)]
+"values": [Vector2(4, 5), Vector2(4, 6), Vector2(4, 5), Vector2(4, 4), Vector2(4, 4)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Limbs/dirt:frame")
+tracks/5/path = NodePath("Limbs/Sprite2D3:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -224,14 +224,14 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Limbs/dirt:position")
+tracks/6/path = NodePath("Limbs/Sprite2D3:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(2, -10)]
+"values": [Vector2(2, 16)]
 }
 
 [sub_resource type="Animation" id="Animation_saeis"]
@@ -257,10 +257,10 @@ tracks/1/path = NodePath("Limbs/Body:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0834, 0.1668, 0.2502, 0.3336, 0.417, 0.5004, 0.5838, 0.708333),
+"times": PackedFloat32Array(0, 0.0834, 0.1668, 0.2502, 0.3336, 0.417, 0.5004, 0.5838, 0.7089),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(1, -17), Vector2(1, -18), Vector2(1, -17), Vector2(1, -18), Vector2(1, -17), Vector2(1, -18), Vector2(2, -26), Vector2(2, -27), Vector2(2, -24)]
+"values": [Vector2(1, 9), Vector2(1, 8), Vector2(1, 9), Vector2(1, 8), Vector2(1, 9), Vector2(1, 8), Vector2(1, 0), Vector2(1, -1), Vector2(1, 2)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -272,7 +272,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.0834, 0.1668, 0.2502, 0.3336, 0.417, 0.5004, 0.5838, 0.7089),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(0, -25), Vector2(0, -26), Vector2(0, -25), Vector2(0, -26), Vector2(0, -24), Vector2(0, -26), Vector2(0, -47), Vector2(0, -48), Vector2(0, -45)]
+"values": [Vector2(0, 1), Vector2(0, 0), Vector2(0, 1), Vector2(0, 0), Vector2(0, 2), Vector2(0, 0), Vector2(0, -21), Vector2(0, -22), Vector2(0, -19)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -296,12 +296,12 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.5004, 0.5838, 0.7089),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(4, -9), Vector2(4, -22), Vector2(4, -23), Vector2(4, -21)]
+"values": [Vector2(4, 17), Vector2(4, 4), Vector2(4, 3), Vector2(4, 5)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Limbs/dirt:frame")
+tracks/5/path = NodePath("Limbs/Sprite2D3:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -313,14 +313,14 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Limbs/dirt:position")
+tracks/6/path = NodePath("Limbs/Sprite2D3:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2(2, -10)]
+"values": [Vector2(2, 16)]
 }
 tracks/7/type = "method"
 tracks/7/imported = false
@@ -362,7 +362,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, -18)]
+"values": [Vector2(1, 8)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -374,7 +374,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -26)]
+"values": [Vector2(0, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -398,12 +398,12 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(4, -9)]
+"values": [Vector2(4, 17)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Limbs/dirt:frame")
+tracks/5/path = NodePath("Limbs/Sprite2D3:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -415,14 +415,14 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Limbs/dirt:position")
+tracks/6/path = NodePath("Limbs/Sprite2D3:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2, -10)]
+"values": [Vector2(2, 16)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tpapn"]
@@ -512,11 +512,10 @@ _data = {
 "darken": SubResource("Animation_3nq65")
 }
 
-[node name="Potato Mine" type="Node2D" node_paths=PackedStringArray("sight", "shaderPlayer", "animationPlayer", "hitbox", "bottom")]
+[node name="Potato Mine" type="Node2D" node_paths=PackedStringArray("shaderPlayer", "animationPlayer", "hitbox", "bottom")]
 z_index = 2
 material = ExtResource("2_ykqnq")
 script = ExtResource("1_e70kk")
-sight = NodePath("sight")
 plant_name = "potato_mine"
 cost = 25
 max_health = 3
@@ -532,14 +531,13 @@ use_parent_material = true
 
 [node name="Body" type="Sprite2D" parent="Limbs"]
 use_parent_material = true
-position = Vector2(1, -18)
+position = Vector2(1, 8)
 texture = ExtResource("2_ghm3p")
 offset = Vector2(0, 7)
 hframes = 2
 
 [node name="Beeper" type="Sprite2D" parent="Limbs"]
 use_parent_material = true
-position = Vector2(0, -26)
 texture = ExtResource("4_telwt")
 offset = Vector2(0, 7)
 hframes = 2
@@ -547,49 +545,45 @@ hframes = 2
 [node name="Face" type="Sprite2D" parent="Limbs"]
 visible = false
 use_parent_material = true
-position = Vector2(4, -9)
+position = Vector2(4, 17)
 texture = ExtResource("5_nvmx4")
 offset = Vector2(0, 7)
 
-[node name="dirt" type="Sprite2D" parent="Limbs"]
+[node name="Sprite2D3" type="Sprite2D" parent="Limbs"]
 use_parent_material = true
-position = Vector2(2, -10)
+position = Vector2(2, 16)
 texture = ExtResource("6_au886")
 offset = Vector2(0, 7)
 hframes = 2
 
 [node name="Hitbox" type="Area2D" parent="."]
 visible = false
-position = Vector2(-1, -32)
 collision_layer = 0
 collision_mask = 0
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-1, -7)
 shape = SubResource("CapsuleShape2D_okqsp")
-debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="ExplosionRadius" type="Area2D" parent="."]
-visible = false
-position = Vector2(-10, -31)
 collision_layer = 0
 collision_mask = 4
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionRadius"]
+position = Vector2(-10, -3)
 rotation = -1.57079
 shape = SubResource("CapsuleShape2D_5ulda")
 
-[node name="sight" type="Area2D" parent="."]
-visible = false
-position = Vector2(10, -22)
+[node name="DetectionRange" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sight"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRange"]
+position = Vector2(9, 7)
 shape = SubResource("RectangleShape2D_3gecx")
-debug_color = Color(1, 1, 0, 0.486275)
 
 [node name="BeepPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimationPlayer")
@@ -608,3 +602,4 @@ libraries = {
 }
 
 [node name="bottom" type="Marker2D" parent="."]
+position = Vector2(0, 27)

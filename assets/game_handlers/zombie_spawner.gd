@@ -31,7 +31,7 @@ func _ready():
 
 func _unhandled_input(event):
 	if event.is_action_pressed("spawn_zombie"):
-		spawn_zombie(TYPES.CONE, randi_range(0,4))
+		spawn_zombie(TYPES.CONE, Global.rng.randi_range(0,4))
 
 
 func spawn_zombie(type:TYPES, lane:int):
