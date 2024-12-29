@@ -69,13 +69,16 @@ texture = ExtResource("3_6n67r")
 
 [node name="Shovel" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(1056, 590)
+position = Vector2(1056, 616)
 texture = ExtResource("4_6ycqt")
+offset = Vector2(0, -26)
 metadata/_edit_group_ = true
 
 [node name="hitbox" type="Area2D" parent="Shovel"]
+position = Vector2(0, -24)
 collision_layer = 32
 collision_mask = 32
+monitorable = false
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shovel/hitbox"]

@@ -1,6 +1,7 @@
 extends Camera2D
 
 signal done_moving
+
 enum {
 	START,
 	DIALOGUE,
@@ -22,6 +23,6 @@ func shake_screen(delta, strength, decay):
 
 func get_random_offset(shake_strength) -> Vector2:
 	return Vector2(
-		Global.rng.randf_range(-shake_strength, shake_strength),
-		Global.rng.randf_range(-shake_strength, shake_strength),
+		randf_range(-shake_strength, shake_strength),
+		randf_range(-shake_strength, shake_strength),
 	)

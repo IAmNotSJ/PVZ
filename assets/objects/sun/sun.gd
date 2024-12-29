@@ -1,10 +1,8 @@
 extends Node2D
 
-var rng = RandomNumberGenerator.new()
-
 var value:int = 25
 
-var speed:float = rng.randf_range(50, 80)
+var speed:float = randf_range(50, 80)
 
 var final_placement:Vector2
 
@@ -20,11 +18,11 @@ var acceleration:int = -5
 
 func _ready():
 	if from_sky:
-		final_placement = Vector2(global_position.x, rng.randi_range(4,4) * 80 + 180)
+		final_placement = Vector2(global_position.x, randi_range(4,4) * 80 + 180)
 	else:
 		speed *= -1
 		acceleration = 130
-		final_placement = Vector2(global_position.x + rng.randi_range(-20,20), global_position.y + 40)
+		final_placement = Vector2(global_position.x + randi_range(-20,20), global_position.y + 40)
 
 func _physics_process(delta):
 	if !from_sky:
@@ -43,7 +41,7 @@ func _physics_process(delta):
 	
 
 func _on_area_2d_area_entered(_area):
-	Global.mainScene.collect_sun(value)
+	global.mainScene.collect_sun(value)
 	final_placement = Vector2(40,40)
 	speed = 10 * global_position.x
 	acceleration = 0

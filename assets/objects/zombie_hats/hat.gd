@@ -13,7 +13,7 @@ var hat_health = max_health
 	Vector2(0, 2)
 ]
 
-func parent_hurt(amount:float, parent):
+func parent_hurt(amount:float, _parent):
 	print('is primary: ' + str(is_primary))
 	if is_primary:
 		hat_health -= amount
@@ -22,7 +22,7 @@ func parent_hurt(amount:float, parent):
 			var fall = fall_prop.instantiate()
 			fall.global_position = global_position
 			fall.get_node('sprite/anim').play('fall')
-			Global.mainScene.add_child(fall)
+			global.mainScene.add_child(fall)
 			queue_free()
 	for i in range(stages.size()):
 		if Util.is_between(hat_health, stages[i]):
