@@ -86,9 +86,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uobb8"]
 _data = {
-"RESET": SubResource("Animation_okp1w"),
-"blink": SubResource("Animation_a4klk"),
-"darken": SubResource("Animation_iv7gf")
+&"RESET": SubResource("Animation_okp1w"),
+&"blink": SubResource("Animation_a4klk"),
+&"darken": SubResource("Animation_iv7gf")
 }
 
 [node name="ShaderPlayer" type="AnimationPlayer"]

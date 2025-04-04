@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://bj52tp4ir8wdv"]
 
-[ext_resource type="Script" path="res://assets/zombies/sprites/zombie_sprites.gd" id="1_7fnh0"]
+[ext_resource type="Script" uid="uid://bgk0dwkw4x6vp" path="res://assets/zombies/sprites/zombie_sprites.gd" id="1_7fnh0"]
 [ext_resource type="Texture2D" uid="uid://dlkm7axi7obrc" path="res://assets/zombies/neighbor/assets/hand2.png" id="2_elk6t"]
 [ext_resource type="Texture2D" uid="uid://dljm1u5brbiap" path="res://assets/zombies/neighbor/assets/bottomsleeve2.png" id="3_12nsf"]
 [ext_resource type="Texture2D" uid="uid://bcj5cv6go2qgm" path="res://assets/zombies/neighbor/assets/uppersleeve2.png" id="4_vn50o"]
@@ -807,9 +807,9 @@ tracks/22/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dfjxn"]
 _data = {
-"RESET": SubResource("Animation_xaab2"),
-"eat": SubResource("Animation_odagl"),
-"walk": SubResource("Animation_iv53v")
+&"RESET": SubResource("Animation_xaab2"),
+&"eat": SubResource("Animation_odagl"),
+&"walk": SubResource("Animation_iv53v")
 }
 
 [node name="Limbs" type="Node2D"]

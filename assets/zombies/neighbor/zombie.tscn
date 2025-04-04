@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://ck2ds2hhfqjn"]
 
-[ext_resource type="Shader" path="res://assets/shaders/hit flash.gdshader" id="1_tx737"]
-[ext_resource type="Script" path="res://assets/zombies/zombie.gd" id="2_surh2"]
+[ext_resource type="Shader" uid="uid://bpsmfvjo66rgh" path="res://assets/shaders/hit flash.gdshader" id="1_tx737"]
+[ext_resource type="Script" uid="uid://b4wimje5hgjh" path="res://assets/zombies/zombie.gd" id="2_surh2"]
 [ext_resource type="PackedScene" uid="uid://bj52tp4ir8wdv" path="res://assets/zombies/sprites/neighbor_sprite.tscn" id="3_vkudt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p048e"]
@@ -53,8 +53,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ahvfq"]
 _data = {
-"RESET": SubResource("Animation_6kfdw"),
-"blink": SubResource("Animation_d1duw")
+&"RESET": SubResource("Animation_6kfdw"),
+&"blink": SubResource("Animation_d1duw")
 }
 
 [node name="Zombie" type="Node2D"]

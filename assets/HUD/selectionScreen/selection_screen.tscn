@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bke1b03jh706i"]
 
-[ext_resource type="Script" path="res://assets/HUD/selectionScreen/selection_screen.gd" id="1_640sj"]
+[ext_resource type="Script" uid="uid://xt08bka03ss3" path="res://assets/HUD/selectionScreen/selection_screen.gd" id="1_640sj"]
 [ext_resource type="PackedScene" uid="uid://c5ynskahkwcku" path="res://assets/HUD/container/container.tscn" id="2_v128a"]
 
 [node name="SelectionScreen" type="Node2D"]

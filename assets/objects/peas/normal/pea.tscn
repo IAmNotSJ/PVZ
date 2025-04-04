@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3kikwk1rrssf"]
 
 [ext_resource type="Texture2D" uid="uid://cxfe5xeelum5e" path="res://assets/objects/peas/normal/pea_norm.png" id="1_cfnxp"]
-[ext_resource type="Script" path="res://assets/objects/peas/normal/pea.gd" id="2_f2klp"]
+[ext_resource type="Script" uid="uid://1a3eq002xkpy" path="res://assets/objects/peas/normal/pea.gd" id="2_f2klp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lkdne"]
 

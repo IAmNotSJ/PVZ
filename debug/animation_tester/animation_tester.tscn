@@ -1,0 +1,274 @@
+[gd_scene load_steps=12 format=3 uid="uid://bv67g3ex867u6"]
+
+[ext_resource type="Script" uid="uid://bu4o1a7rbcw1o" path="res://debug/animation_tester/animation_tester.gd" id="1_6ufs8"]
+[ext_resource type="Texture2D" uid="uid://cxq1stf75dltm" path="res://debug/animation_tester/sprites/grid.png" id="3_ep1yc"]
+[ext_resource type="PackedScene" uid="uid://cy6wwsx18gx4w" path="res://debug/animation_tester/layer_container/layer_container.tscn" id="4_3r6yi"]
+[ext_resource type="PackedScene" uid="uid://cjhfcpski13ol" path="res://debug/animation_tester/hover_detection/hover_detection.tscn" id="4_4fikq"]
+[ext_resource type="Texture2D" uid="uid://dpk6govcskdf" path="res://debug/animation_tester/sprites/deselect.png" id="5_4fikq"]
+[ext_resource type="FontFile" uid="uid://b0eimy42hqrtx" path="res://assets/fonts/Brianne_s_hand.ttf" id="5_7sq03"]
+[ext_resource type="Script" uid="uid://cc0vovi1bh6pb" path="res://debug/animation_tester/history.gd" id="5_afno0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf01o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14ts1"]
+bg_color = Color(0.246094, 0.246094, 0.246094, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.152344, 0.152344, 0.152344, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjhqh"]
+bg_color = Color(0.128906, 0.128906, 0.128906, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_color = Color(0.0429688, 0.0429688, 0.0429688, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wv5dx"]
+bg_color = Color(0.144531, 0.144531, 0.144531, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0546875, 0.0546875, 0.0546875, 1)
+
+[node name="Animation Tester" type="Node2D"]
+script = ExtResource("1_6ufs8")
+
+[node name="grid" type="TextureRect" parent="."]
+offset_left = -48.0
+offset_top = -47.0
+offset_right = 1209.0
+offset_bottom = 687.0
+texture = ExtResource("3_ep1yc")
+stretch_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="grid"]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 285.0
+offset_right = 665.0
+offset_bottom = 380.0
+color = Color(1, 1, 0.67451, 1)
+
+[node name="SpriteContainer" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(570, 288)
+
+[node name="Camera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(576, 324)
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 648
+limit_smoothed = true
+
+[node name="Dialogs" type="Node" parent="."]
+
+[node name="LoadSpriteDialog" type="FileDialog" parent="Dialogs"]
+unique_name_in_owner = true
+title = "Open a File"
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.tscn")
+use_native_dialog = true
+
+[node name="AddImageDialog" type="FileDialog" parent="Dialogs"]
+unique_name_in_owner = true
+auto_translate_mode = 1
+title = "Open File(s)"
+ok_button_text = "Open"
+file_mode = 1
+filters = PackedStringArray("*.png")
+use_native_dialog = true
+
+[node name="UI_LAYER" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="UI_LAYER"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI_LAYER/UI"]
+layout_mode = 0
+offset_left = 834.0
+offset_top = 469.0
+offset_right = 1152.0
+offset_bottom = 648.0
+horizontal_scroll_mode = 0
+
+[node name="LayerContainer" parent="UI_LAYER/UI/ScrollContainer" instance=ExtResource("4_3r6yi")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Hover_Detection" parent="UI_LAYER/UI/ScrollContainer" instance=ExtResource("4_4fikq")]
+visible = false
+custom_minimum_size = Vector2(318, 179)
+layout_mode = 2
+
+[node name="Draggable Top Left" type="Control" parent="UI_LAYER/UI"]
+layout_mode = 1
+anchor_top = 0.066
+anchor_bottom = 0.066
+offset_top = 0.231998
+offset_right = 268.0
+offset_bottom = 100.232
+mouse_filter = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI_LAYER/UI/Draggable Top Left"]
+layout_mode = 2
+offset_right = 268.0
+offset_bottom = 100.0
+theme_override_constants/separation = 0
+
+[node name="Load Sprite" type="Button" parent="UI_LAYER/UI/Draggable Top Left/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mf01o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_14ts1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kjhqh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wv5dx")
+text = "Load Sprite"
+
+[node name="Add Image" type="Button" parent="UI_LAYER/UI/Draggable Top Left/VBoxContainer"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mf01o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_14ts1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kjhqh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wv5dx")
+text = "Add Image"
+
+[node name="Overview" type="Control" parent="UI_LAYER/UI"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 566.0
+offset_top = 25.0
+offset_right = 1152.0
+offset_bottom = 221.0
+mouse_filter = 2
+
+[node name="Preview" type="TextureRect" parent="UI_LAYER/UI/Overview"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -113.0
+offset_bottom = 143.0
+grow_horizontal = 0
+mouse_filter = 2
+stretch_mode = 3
+
+[node name="Name" type="RichTextLabel" parent="UI_LAYER/UI/Overview"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.672
+anchor_top = 0.122
+anchor_right = 0.672
+anchor_bottom = 0.122
+offset_left = -155.84
+offset_top = -23.912
+offset_right = 79.16
+offset_bottom = 24.088
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_7sq03")
+theme_override_font_sizes/normal_font_size = 32
+text = "Name"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Descriptions" type="RichTextLabel" parent="UI_LAYER/UI/Overview"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.807
+anchor_top = 0.487
+anchor_right = 0.807
+anchor_bottom = 0.487
+offset_left = -333.902
+offset_top = -47.452
+offset_right = 0.0979614
+offset_bottom = 47.548
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_7sq03")
+theme_override_font_sizes/normal_font_size = 24
+text = "Position: (0, 0)
+Rotation: 0°
+Scale: (1, 1)"
+horizontal_alignment = 2
+
+[node name="TextEdit" type="TextEdit" parent="UI_LAYER/UI/Overview"]
+visible = false
+layout_mode = 0
+offset_right = 158.0
+offset_bottom = 8.0
+focus_mode = 0
+
+[node name="Top" type="ColorRect" parent="UI_LAYER/UI"]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 43.0
+color = Color(0.753906, 0.753906, 0.753906, 1)
+
+[node name="Deselect" type="Button" parent="UI_LAYER/UI/Top"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 5.0
+offset_right = 51.0
+offset_bottom = 40.0
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mf01o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_14ts1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kjhqh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wv5dx")
+icon = ExtResource("5_4fikq")
+
+[node name="Move" type="Button" parent="UI_LAYER/UI/Top"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 8.0
+offset_right = 121.0
+offset_bottom = 39.0
+focus_mode = 0
+text = "+"
+
+[node name="Rotate" type="Button" parent="UI_LAYER/UI/Top"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 8.0
+offset_right = 161.0
+offset_bottom = 39.0
+focus_mode = 0
+text = "O"
+
+[node name="Scale" type="Button" parent="UI_LAYER/UI/Top"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 8.0
+offset_right = 201.0
+offset_bottom = 39.0
+focus_mode = 0
+text = "^"
+
+[node name="History" type="Node" parent="."]
+script = ExtResource("5_afno0")
+
+[connection signal="file_selected" from="Dialogs/LoadSpriteDialog" to="." method="_on_load_sprite_dialog_file_selected"]
+[connection signal="files_selected" from="Dialogs/AddImageDialog" to="." method="_on_add_image_dialog_files_selected"]
+[connection signal="mouse_entered" from="UI_LAYER/UI/Draggable Top Left" to="UI_LAYER/UI/Draggable Top Left" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="UI_LAYER/UI/Draggable Top Left" to="UI_LAYER/UI/Draggable Top Left" method="_on_mouse_exited"]
+[connection signal="pressed" from="UI_LAYER/UI/Draggable Top Left/VBoxContainer/Load Sprite" to="." method="_on_load_sprite_pressed"]
+[connection signal="pressed" from="UI_LAYER/UI/Draggable Top Left/VBoxContainer/Add Image" to="." method="_on_add_image_pressed"]
+[connection signal="pressed" from="UI_LAYER/UI/Top/Deselect" to="." method="_on_deselect_pressed"]
+[connection signal="pressed" from="UI_LAYER/UI/Top/Move" to="." method="_on_move_pressed"]
+[connection signal="pressed" from="UI_LAYER/UI/Top/Rotate" to="." method="_on_rotate_pressed"]
+[connection signal="pressed" from="UI_LAYER/UI/Top/Scale" to="." method="_on_scale_pressed"]

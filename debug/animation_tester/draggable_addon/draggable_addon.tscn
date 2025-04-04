@@ -1,0 +1,137 @@
+[gd_scene load_steps=9 format=3 uid="uid://c1xkda710h3b"]
+
+[ext_resource type="Script" uid="uid://dulnw10ybjckh" path="res://debug/animation_tester/draggable_addon/draggable_addon.gd" id="1_sj161"]
+[ext_resource type="Texture2D" uid="uid://3byhe813c5q1" path="res://debug/animation_tester/sprites/transform box.png" id="2_lnxtq"]
+[ext_resource type="Script" uid="uid://bokltdwy681nb" path="res://debug/animation_tester/draggable_addon/transform.gd" id="3_2yevc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sj161"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.367188, 0.955505, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lnxtq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2yevc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_moldu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sj161"]
+
+[node name="DraggableAddon" type="Button"]
+offset_right = 10.0
+offset_bottom = 20.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_sj161")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lnxtq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2yevc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_moldu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sj161")
+script = ExtResource("1_sj161")
+
+[node name="transform" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("2_lnxtq")
+expand_mode = 1
+script = ExtResource("3_2yevc")
+
+[node name="scale_detection_1" type="Button" parent="transform"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.125
+anchor_bottom = 1.125
+offset_left = -4.0
+offset_top = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+
+[node name="scale_detection_2" type="Button" parent="transform"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.125
+anchor_top = 1.0
+anchor_bottom = 1.125
+offset_top = -4.0
+offset_right = 4.0
+grow_vertical = 0
+pivot_offset = Vector2(13, 0)
+focus_mode = 0
+
+[node name="scale_detection_3" type="Button" parent="transform"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.125
+anchor_top = -0.125
+offset_right = 4.0
+offset_bottom = 4.0
+focus_mode = 0
+
+[node name="scale_detection_4" type="Button" parent="transform"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = -0.125
+anchor_right = 1.125
+offset_left = -4.0
+offset_bottom = 4.0
+grow_horizontal = 0
+focus_mode = 0
+
+[node name="rotate_detection_1" type="Button" parent="transform"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.125
+anchor_top = -0.325
+anchor_right = 1.125
+anchor_bottom = -0.125
+focus_mode = 0
+
+[node name="rotate_detection_2" type="Button" parent="transform"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.125
+anchor_top = -0.325
+anchor_right = 1.325
+anchor_bottom = 1.325
+focus_mode = 0
+
+[node name="rotate_detection_3" type="Button" parent="transform"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.125
+anchor_top = 1.125
+anchor_right = 1.125
+anchor_bottom = 1.325
+focus_mode = 0
+
+[node name="rotate_detection_4" type="Button" parent="transform"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.325
+anchor_top = -0.325
+anchor_right = -0.125
+anchor_bottom = 1.325
+focus_mode = 0
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

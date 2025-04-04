@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhlgrjtgnydqi"]
+
+[ext_resource type="Script" uid="uid://vyngxsosbg0v" path="res://globalScripts/global.gd" id="1_1ymna"]
+[ext_resource type="PackedScene" uid="uid://5cdgq4er245k" path="res://globalScripts/mice/mouse.tscn" id="2_hejts"]
+
+[node name="global" type="Node2D"]
+script = ExtResource("1_1ymna")
+
+[node name="mouse_layer" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="mouse" parent="mouse_layer" instance=ExtResource("2_hejts")]
+unique_name_in_owner = true

@@ -10,7 +10,7 @@ enum {
 }
 var state = IDLE
 
-const attack:int = 20
+const attack:int = 50
 
 func _process(_delta):
 	if activated:

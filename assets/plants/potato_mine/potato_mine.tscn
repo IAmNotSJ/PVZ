@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://cb5ne1msel3vc"]
 
-[ext_resource type="Script" path="res://assets/plants/potato_mine/potato_mine.gd" id="1_e70kk"]
+[ext_resource type="Script" uid="uid://ciwuko557pxrg" path="res://assets/plants/potato_mine/potato_mine.gd" id="1_e70kk"]
 [ext_resource type="Texture2D" uid="uid://cx0p8rr1vhtwa" path="res://assets/plants/potato_mine/assets/body.png" id="2_ghm3p"]
 [ext_resource type="Material" uid="uid://llvwrq5n4trs" path="res://assets/shaders/flash.tres" id="2_ykqnq"]
 [ext_resource type="Texture2D" uid="uid://cpjfsucwhe3ui" path="res://assets/plants/potato_mine/assets/beeper.png" id="4_telwt"]
@@ -53,8 +53,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gkb2c"]
 _data = {
-"RESET": SubResource("Animation_bkbrw"),
-"beep": SubResource("Animation_uap50")
+&"RESET": SubResource("Animation_bkbrw"),
+&"beep": SubResource("Animation_uap50")
 }
 
 [sub_resource type="Animation" id="Animation_55b8s"]
@@ -427,10 +427,10 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tpapn"]
 _data = {
-"RESET": SubResource("Animation_55b8s"),
-"deployed": SubResource("Animation_lvapf"),
-"deploying": SubResource("Animation_saeis"),
-"hiding": SubResource("Animation_vj0qv")
+&"RESET": SubResource("Animation_55b8s"),
+&"deployed": SubResource("Animation_lvapf"),
+&"deploying": SubResource("Animation_saeis"),
+&"hiding": SubResource("Animation_vj0qv")
 }
 
 [sub_resource type="Animation" id="Animation_ajarg"]
@@ -507,9 +507,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2cb2k"]
 _data = {
-"RESET": SubResource("Animation_ajarg"),
-"blink": SubResource("Animation_fbjsw"),
-"darken": SubResource("Animation_3nq65")
+&"RESET": SubResource("Animation_ajarg"),
+&"blink": SubResource("Animation_fbjsw"),
+&"darken": SubResource("Animation_3nq65")
 }
 
 [node name="Potato Mine" type="Node2D" node_paths=PackedStringArray("sight", "shaderPlayer", "animationPlayer", "hitbox", "bottom")]

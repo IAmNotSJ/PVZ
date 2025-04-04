@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://byrm4bmii8843"]
 
-[ext_resource type="Shader" path="res://assets/shaders/hit flash.gdshader" id="1_tx737"]
-[ext_resource type="Script" path="res://assets/zombies/zombie.gd" id="2_surh2"]
+[ext_resource type="Shader" uid="uid://bpsmfvjo66rgh" path="res://assets/shaders/hit flash.gdshader" id="1_tx737"]
+[ext_resource type="Script" uid="uid://b4wimje5hgjh" path="res://assets/zombies/zombie.gd" id="2_surh2"]
 [ext_resource type="PackedScene" uid="uid://cbf3h6x4ryh3l" path="res://assets/zombies/sprites/zombie_sprites.tscn" id="3_x8pwu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p048e"]
@@ -53,12 +53,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ahvfq"]
 _data = {
-"RESET": SubResource("Animation_6kfdw"),
-"blink": SubResource("Animation_d1duw")
+&"RESET": SubResource("Animation_6kfdw"),
+&"blink": SubResource("Animation_d1duw")
 }
 
 [node name="Zombie" type="Node2D"]
-y_sort_enabled = true
 material = SubResource("ShaderMaterial_p048e")
 scale = Vector2(0.821, 0.821)
 script = ExtResource("2_surh2")
@@ -73,10 +72,11 @@ collision_layer = 4
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(-1.48359, 29.6718)
+position = Vector2(2.96718, 56.3764)
 rotation = 0.000492209
 scale = Vector2(0.821, 0.821)
 shape = SubResource("CapsuleShape2D_e2psr")
+debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Sight" type="Area2D" parent="."]
 position = Vector2(-20.7065, -75.5177)
@@ -88,10 +88,11 @@ collision_mask = 2
 position = Vector2(28.1882, 19.2867)
 scale = Vector2(0.821, 0.821)
 shape = SubResource("RectangleShape2D_7hupt")
+debug_color = Color(1, 1, 0, 0.486275)
 
 [node name="ShaderPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ahvfq")
+&"": SubResource("AnimationLibrary_ahvfq")
 }
 
 [connection signal="area_entered" from="Sight" to="." method="_on_hitbox_area_entered"]

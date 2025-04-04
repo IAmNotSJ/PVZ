@@ -4,30 +4,15 @@ extends Node2D
 
 const packetScene = preload("res://assets/plants/seeds/packet_base.tscn")
 
-var packet_list:Array = [
-	["peashooter", "res://assets/plants/peashooter/peashooter.tscn"],
-	["sunflower", "res://assets/plants/sunflower/sunflower.tscn"],
-	["walnut", "res://assets/plants/walnut/walnut.tscn"],
-	["potato_mine", "res://assets/plants/potato_mine/potato_mine.tscn"],
-	["snow_pea", "res://assets/plants/snow_pea/snow_pea.tscn"],
-	["cherry_bomb", "res://assets/plants/cherry_bomb/cherry_bomb.tscn"],
-	["chomper", "res://assets/plants/chomper/chomper.tscn"],
-	["beatroot", "res://assets/plants/beatroot/beatroot.tscn"]
-]
-
-#TODO: FIND BETTER WAY TO FUCKING DO THIS
-var plantPrices:Array = [
-	100, 50, 50, 25, 150, 150, 125, 125
-]
-
 var packets = []
 
 func _ready():
-	for i  in range(packet_list.size()):
+	for i  in range(Plants.plants.keys().size()):
+		var plant_name = Plants.plants.keys()[i]
 		var packet = packetScene.instantiate()
-		packet.plant = packet_list[i][0]
-		packet.plantPath = packet_list[i][1]
-		packet.add_price(plantPrices[i])
+		packet.plant = Plants.plants.keys()[i]
+		packet.plantPath = Plants.plants[plant_name]["Path"]
+		packet.add_price(Plants.plants[plant_name]["Price"])
 		packet.add_sprite()
 		packet.position = Vector2(14 + i * 75, 145)
 		packet.intended_pos = packet.global_position

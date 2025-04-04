@@ -17,7 +17,7 @@ func _ready():
 
 func _process(_delta):
 	var tile = local_to_map(mainScene.tilemap.get_local_mouse_position())
-	curTile = tile
+	curTile = Vector2i(tile)
 	
 	for x in gridSize.x:
 		for y in gridSize.y:
@@ -29,9 +29,9 @@ func _process(_delta):
 			for x in gridSize.x:
 				if (x == tile.x):
 					for y in gridSize.y:
-						set_cell(0, Vector2(x, y), 2, Vector2i(0,0), 0)
+						set_cell(0, Vector2i(x, y), 2, Vector2i(0,0), 0)
 			for y in gridSize.y:
 				if (y == tile.y):
 					for x in gridSize.x:
-						set_cell(1, Vector2(x, y), 2, Vector2i(0,0), 0)
+						set_cell(1, Vector2i(x, y), 2, Vector2i(0,0), 0)
 	

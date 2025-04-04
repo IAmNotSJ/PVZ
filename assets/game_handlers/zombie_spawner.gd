@@ -7,12 +7,14 @@ extends Node
 enum TYPES {
 	NORMAL,
 	CONE,
+	BUCKET,
 	NEIGHBOR
 }
 
 var zombieScenes:Dictionary = {
 	"Normal" : "res://assets/zombies/base/zombie.tscn",
 	"Cone" : "res://assets/zombies/cone/zombie.tscn",
+	"Bucket" : "res://assets/zombies/cone/zombie.tscn",
 	"Neighbor" : "res://assets/zombies/neighbor/zombie.tscn"
 }
 
@@ -23,7 +25,8 @@ var zombieList:Array = [
 	[[TYPES.NORMAL, 2]],
 	[],
 	[],
-	[[TYPES.CONE, 3]]
+	[[TYPES.CONE, 3]],
+	[[TYPES.BUCKET, 4]]
 ]
 
 func _ready():
@@ -31,21 +34,25 @@ func _ready():
 
 func _unhandled_input(event):
 	if event.is_action_pressed("spawn_zombie"):
-		spawn_zombie(TYPES.CONE, randi_range(0,4))
+		spawn_zombie(TYPES.BUCKET, randi_range(0,4))
 
 
 func spawn_zombie(type:TYPES, lane:int):
 	var zombScene
 	match type:
-		TYPES.NORMAL, TYPES.CONE:
+		TYPES.NORMAL, TYPES.CONE, TYPES.BUCKET:
 			zombScene = zombieScenes["Normal"]
 		TYPES.NEIGHBOR:
 			zombScene = zombieScenes["Neighbor"]
 	
 	var zombie = load(zombScene).instantiate()
-	if type == TYPES.CONE:
-		await get_tree().process_frame
-		zombie.add_hat(zombie.Hat.CONE)
+	match type:
+		TYPES.CONE:
+			await get_tree().process_frame
+			zombie.add_hat(zombie.Hat.CONE)
+		TYPES.BUCKET:
+			await get_tree().process_frame
+			zombie.add_hat(zombie.Hat.BUCKET)
 	zombie.global_position = Vector2(1170, (lane * game.tilemap.cell_quadrant_size) + game.tilemap.global_position.y + 60)
 	
 	game.add_child(zombie)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://5w656huwv7ud"]
 
 [ext_resource type="Texture2D" uid="uid://ebjjyj1qsqbd" path="res://assets/objects/lawnmower/lawnmower.png" id="1_50rt4"]
-[ext_resource type="Script" path="res://assets/objects/lawnmower/lawnmower.gd" id="2_yn6gq"]
+[ext_resource type="Script" uid="uid://du210v8g4lh0c" path="res://assets/objects/lawnmower/lawnmower.gd" id="2_yn6gq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7fc7"]
 size = Vector2(3, 46)

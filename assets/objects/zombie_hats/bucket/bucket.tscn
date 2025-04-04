@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqe2yptkhx07y"]
+
+[ext_resource type="Texture2D" uid="uid://cv4cx5rvjlgb1" path="res://assets/objects/zombie_hats/bucket/bucket.png" id="1_3sso4"]
+[ext_resource type="Script" uid="uid://bxyistax3pmm" path="res://assets/objects/zombie_hats/hat.gd" id="2_b0qrh"]
+
+[node name="Bucket" type="Sprite2D"]
+y_sort_enabled = true
+use_parent_material = true
+texture = ExtResource("1_3sso4")
+offset = Vector2(5, -12)
+hframes = 3
+script = ExtResource("2_b0qrh")
+prop_path = "res://assets/objects/zombie_hats/falling/falling_bucket.tscn"
+max_health = 20.0
+stages = Array[Vector2]([Vector2(7, 20), Vector2(4, 7), Vector2(0, 4)])

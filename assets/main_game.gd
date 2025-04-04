@@ -44,10 +44,10 @@ func game_state(delta):
 			cancel_planting()
 		
 		if shovel_active:
-			if Input.is_action_just_pressed("click") and tilemap.dic.has(str(tilemap.curTile)):
-				if "cost" in tilemap.dic[str(tilemap.curTile)]:
-					tilemap.dic[str(tilemap.curTile)].remove_plant()
-				print(tilemap.dic[str(tilemap.curTile)])
+			if Input.is_action_just_pressed("click") and tilemap.dic.has(str(Vector2i(tilemap.curTile))):
+				if "cost" in tilemap.dic[str(Vector2i(tilemap.curTile))]:
+					tilemap.dic[str(Vector2i(tilemap.curTile))].remove_plant()
+				print(tilemap.dic[str(Vector2i(tilemap.curTile))])
 		
 		if Input.is_action_just_pressed("sun"):
 			collect_sun(25)
@@ -97,7 +97,7 @@ func hold_plant(packet):
 			plant_plant(curHolding)
 
 func plant_plant(plant):
-	if (sun >= plant.cost and tilemap.dic.has(str(tilemap.curTile))):
+	if (sun >= plant.cost and tilemap.dic.has(str(Vector2i(tilemap.curTile)))):
 		if check_tile_availability():
 			subtract_sun(curHolding.cost)
 			
@@ -123,6 +123,7 @@ func plant_plant(plant):
 				global.mainScene.add_child(dirt)
 			else:
 				printerr("Plant does not have a bottom position set!")
+			
 	else:
 		cancel_planting()
 
@@ -131,8 +132,8 @@ func remove_plant(plant):
 	tilemap.dic[str(plant.curTile)] = "Free"
 
 func check_tile_availability():
-	print(tilemap.dic[str(tilemap.curTile)])
-	if !"cost" in tilemap.dic[str(tilemap.curTile)] and tilemap.dic[str(tilemap.curTile)] == "Free":
+	print(tilemap.dic[str(Vector2i(tilemap.curTile))])
+	if !"cost" in tilemap.dic[str(Vector2i(tilemap.curTile))] and tilemap.dic[str(Vector2i(tilemap.curTile))] == "Free":
 		return true
 	else:
 		return false

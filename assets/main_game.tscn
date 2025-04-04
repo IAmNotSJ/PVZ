@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dcyuco3hmkdl"]
 
-[ext_resource type="Script" path="res://assets/main_game.gd" id="1_q0gss"]
+[ext_resource type="Script" uid="uid://c65htbo5uwcqx" path="res://assets/main_game.gd" id="1_q0gss"]
 [ext_resource type="PackedScene" uid="uid://dci2asff5tkug" path="res://assets/map/map.tscn" id="1_x0fhb"]
 [ext_resource type="AudioStream" uid="uid://b72maerbf224v" path="res://assets/audio/plant.ogg" id="2_lf6y2"]
 [ext_resource type="Texture2D" uid="uid://d1w3icek12u5h" path="res://assets/environment/lawn.png" id="3_uvbsn"]
@@ -20,7 +20,7 @@ stream = ExtResource("2_lf6y2")
 
 [node name="BG" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(765, 321)
+position = Vector2(765, 324)
 texture = ExtResource("3_uvbsn")
 
 [node name="World" parent="." instance=ExtResource("1_x0fhb")]
@@ -49,6 +49,7 @@ metadata/_edit_lock_ = true
 
 [node name="Cam" parent="." instance=ExtResource("7_lh3me")]
 y_sort_enabled = true
+metadata/_edit_lock_ = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 visible = false

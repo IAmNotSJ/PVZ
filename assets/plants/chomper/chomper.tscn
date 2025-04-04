@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://den0xpjxs7cwm" path="res://assets/plants/chomper/assets/back_leaves.png" id="1_ai42q"]
 [ext_resource type="Material" uid="uid://llvwrq5n4trs" path="res://assets/shaders/flash.tres" id="1_cg0uk"]
-[ext_resource type="Script" path="res://assets/plants/chomper/chomper.gd" id="2_badpg"]
+[ext_resource type="Script" uid="uid://ctfnclbqdbkoe" path="res://assets/plants/chomper/chomper.gd" id="2_badpg"]
 [ext_resource type="Texture2D" uid="uid://byfv7qmuxknjr" path="res://assets/plants/chomper/assets/stem.png" id="2_msrjv"]
 [ext_resource type="Texture2D" uid="uid://cdmajmqttlua8" path="res://assets/plants/chomper/assets/head_leaves.png" id="3_e1dpr"]
 [ext_resource type="Texture2D" uid="uid://d11872wyhlvdl" path="res://assets/plants/chomper/assets/jaw.png" id="4_slj0i"]
@@ -395,11 +395,11 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m6a5v"]
 _data = {
-"RESET": SubResource("Animation_3vogo"),
-"bite": SubResource("Animation_jwcif"),
-"chew": SubResource("Animation_07kxo"),
-"idle": SubResource("Animation_vk73u"),
-"swallow": SubResource("Animation_sj0qg")
+&"RESET": SubResource("Animation_3vogo"),
+&"bite": SubResource("Animation_jwcif"),
+&"chew": SubResource("Animation_07kxo"),
+&"idle": SubResource("Animation_vk73u"),
+&"swallow": SubResource("Animation_sj0qg")
 }
 
 [node name="Chomper" type="Node2D" node_paths=PackedStringArray("shaderPlayer", "animationPlayer", "hitbox", "bottom")]

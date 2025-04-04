@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://xsnq4c25kcda"]
 
-[ext_resource type="Shader" path="res://assets/shaders/hit flash.gdshader" id="1_sgagm"]
-[ext_resource type="Script" path="res://assets/plants/base.gd" id="2_jocgb"]
+[ext_resource type="Shader" uid="uid://bpsmfvjo66rgh" path="res://assets/shaders/hit flash.gdshader" id="1_sgagm"]
+[ext_resource type="Script" uid="uid://xrblujeejffv" path="res://assets/plants/base.gd" id="2_jocgb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bxxp5"]
 resource_local_to_scene = true

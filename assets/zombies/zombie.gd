@@ -15,7 +15,8 @@ enum {
 
 enum Hat {
 	BALD,
-	CONE
+	CONE,
+	BUCKET
 }
 
 var damage_cooldown:Timer = Timer.new()
@@ -74,9 +75,13 @@ func add_effect(effect):
 func add_hat(hat:Hat):
 	var hat_container = $Limbs/Head/Hats
 	var dahat:ZombieHat
+	var hat_path:String
 	match hat:
 		Hat.CONE:
-			dahat = load("res://assets/objects/zombie_hats/cone.tscn").instantiate()
+			hat_path = "res://assets/objects/zombie_hats/cone/cone.tscn"
+		Hat.BUCKET:
+			hat_path = "res://assets/objects/zombie_hats/bucket/bucket.tscn"
+	dahat = load(hat_path).instantiate()
 	hurt.connect(dahat.parent_hurt.bind(self))
 	dahat.position.y = hat_container.get_children().size() * -10
 	hat_container.add_child(dahat)

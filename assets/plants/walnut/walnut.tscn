@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://5m8prv30e6wo"]
 
-[ext_resource type="Shader" path="res://assets/shaders/hit flash.gdshader" id="1_3po6h"]
-[ext_resource type="Script" path="res://assets/plants/walnut/walnut.gd" id="2_aqbg8"]
+[ext_resource type="Shader" uid="uid://bpsmfvjo66rgh" path="res://assets/shaders/hit flash.gdshader" id="1_3po6h"]
+[ext_resource type="Script" uid="uid://cr41hye3ogeha" path="res://assets/plants/walnut/walnut.gd" id="2_aqbg8"]
 [ext_resource type="Texture2D" uid="uid://cxu2dhbe3h3m1" path="res://assets/plants/walnut/assets/walnut.png" id="2_r0qov"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pyanm"]
@@ -208,10 +208,10 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tlaws"]
 _data = {
-"RESET": SubResource("Animation_j7xbi"),
-"stage 1": SubResource("Animation_f1m0q"),
-"stage 2": SubResource("Animation_rs0im"),
-"stage 3": SubResource("Animation_odw2n")
+&"RESET": SubResource("Animation_j7xbi"),
+&"stage 1": SubResource("Animation_f1m0q"),
+&"stage 2": SubResource("Animation_rs0im"),
+&"stage 3": SubResource("Animation_odw2n")
 }
 
 [sub_resource type="Animation" id="Animation_sog1x"]
@@ -300,9 +300,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mh7g6"]
 _data = {
-"RESET": SubResource("Animation_sog1x"),
-"blink": SubResource("Animation_su3in"),
-"darken": SubResource("Animation_4lcp7")
+&"RESET": SubResource("Animation_sog1x"),
+&"blink": SubResource("Animation_su3in"),
+&"darken": SubResource("Animation_4lcp7")
 }
 
 [node name="Walnut" type="Node2D" node_paths=PackedStringArray("shaderPlayer", "animationPlayer", "hitbox", "bottom")]

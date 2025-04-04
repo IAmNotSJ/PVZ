@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://chq2xbufow1xm"]
+
+[ext_resource type="Script" uid="uid://chou8sv1sxx2f" path="res://debug/animation_tester/layers/layer.gd" id="1_pfk58"]
+
+[node name="Layer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 145.0
+offset_bottom = 37.0
+script = ExtResource("1_pfk58")
+
+[node name="BasePanel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 145.0
+offset_bottom = 37.0
+
+[node name="NameContainer" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_right = 145.0
+offset_bottom = 37.0
+
+[node name="Texture" type="TextureRect" parent="NameContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 33.0
+offset_bottom = 34.0
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Name" type="Label" parent="NameContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 35.0
+offset_top = 7.0
+offset_right = 143.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 10
+text = "Name"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="ButtonContainer" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_right = 145.0
+offset_bottom = 37.0
+
+[node name="up" type="Button" parent="ButtonContainer"]
+layout_mode = 0
+offset_left = 146.0
+offset_right = 185.0
+offset_bottom = 37.0
+focus_mode = 0
+text = "^"
+
+[node name="down" type="Button" parent="ButtonContainer"]
+layout_mode = 0
+offset_left = 186.0
+offset_right = 225.0
+offset_bottom = 37.0
+focus_mode = 0
+text = "v"
+
+[node name="trash" type="Button" parent="ButtonContainer"]
+layout_mode = 0
+offset_left = 226.0
+offset_right = 265.0
+offset_bottom = 37.0
+focus_mode = 0
+text = "X"
+
+[connection signal="pressed" from="ButtonContainer/up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="ButtonContainer/down" to="." method="_on_down_pressed"]
+[connection signal="pressed" from="ButtonContainer/trash" to="." method="_on_down_pressed"]

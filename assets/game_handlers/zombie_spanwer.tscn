@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dm228rrkv7a4o"]
 
-[ext_resource type="Script" path="res://assets/game_handlers/zombie_spawner.gd" id="1_nccua"]
+[ext_resource type="Script" uid="uid://bnllag1buyayl" path="res://assets/game_handlers/zombie_spawner.gd" id="1_nccua"]
 
 [node name="ZombieSpanwer" type="Node"]
 script = ExtResource("1_nccua")

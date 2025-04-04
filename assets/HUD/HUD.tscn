@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://censfur40ew8n"]
 
-[ext_resource type="Script" path="res://assets/HUD/HUD.gd" id="1_fioux"]
+[ext_resource type="Script" uid="uid://s1buwlkaemcd" path="res://assets/HUD/HUD.gd" id="1_fioux"]
 [ext_resource type="PackedScene" uid="uid://c5ynskahkwcku" path="res://assets/HUD/container/container.tscn" id="2_0ufep"]
 [ext_resource type="Texture2D" uid="uid://je1ueubw4i75" path="res://assets/objects/shovel/base.png" id="3_6n67r"]
 [ext_resource type="Texture2D" uid="uid://birh8dxwkfhuv" path="res://assets/objects/shovel/shovel.png" id="4_6ycqt"]

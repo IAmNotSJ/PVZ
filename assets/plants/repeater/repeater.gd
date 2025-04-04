@@ -1,0 +1,2 @@
+class_name Repeater
+extends PeaShooter

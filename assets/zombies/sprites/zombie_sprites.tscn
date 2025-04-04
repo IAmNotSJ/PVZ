@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://cbf3h6x4ryh3l"]
 
-[ext_resource type="Script" path="res://assets/zombies/sprites/zombie_sprites.gd" id="1_e61ul"]
+[ext_resource type="Script" uid="uid://bgk0dwkw4x6vp" path="res://assets/zombies/sprites/zombie_sprites.gd" id="1_e61ul"]
 [ext_resource type="Texture2D" uid="uid://5gxu6kpx18as" path="res://assets/zombies/base/assets/hand2.png" id="1_hil0y"]
 [ext_resource type="Texture2D" uid="uid://dy6cgwoxqmapx" path="res://assets/zombies/base/assets/bottom sleeve 2.png" id="2_ajtdh"]
 [ext_resource type="Texture2D" uid="uid://dupvynngaovbo" path="res://assets/zombies/base/assets/upper sleeve 2.png" id="3_lo107"]
@@ -817,9 +817,9 @@ tracks/22/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dfjxn"]
 _data = {
-"RESET": SubResource("Animation_xaab2"),
-"eat": SubResource("Animation_odagl"),
-"walk": SubResource("Animation_iv53v")
+&"RESET": SubResource("Animation_xaab2"),
+&"eat": SubResource("Animation_odagl"),
+&"walk": SubResource("Animation_iv53v")
 }
 
 [node name="Limbs" type="Node2D"]
@@ -835,13 +835,13 @@ metadata/_edit_group_ = true
 
 [node name="Hand" type="Sprite2D" parent="Arm 2"]
 use_parent_material = true
-position = Vector2(-49, 55)
+position = Vector2(-49, 44.3423)
 texture = ExtResource("1_hil0y")
 offset = Vector2(-1.68452, 11.1395)
 
 [node name="Bottom Sleeve" type="Sprite2D" parent="Arm 2"]
 use_parent_material = true
-position = Vector2(-45, 22)
+position = Vector2(-48.0451, 17.4324)
 texture = ExtResource("2_ajtdh")
 offset = Vector2(2.31548, 8.59014)
 
@@ -852,7 +852,7 @@ texture = ExtResource("3_lo107")
 
 [node name="Leg 2" type="Node2D" parent="."]
 use_parent_material = true
-position = Vector2(40.0451, -12)
+position = Vector2(41.5676, -15.0451)
 metadata/_edit_group_ = true
 
 [node name="Shoe" type="Sprite2D" parent="Leg 2"]
@@ -892,6 +892,7 @@ texture = ExtResource("9_bweeg")
 
 [node name="Body" type="Node2D" parent="."]
 use_parent_material = true
+position = Vector2(-2.38419e-07, -4.76837e-07)
 metadata/_edit_group_ = true
 
 [node name="Torso" type="Sprite2D" parent="Body"]
@@ -911,7 +912,7 @@ metadata/_edit_group_ = true
 
 [node name="Jaw" type="Sprite2D" parent="Head"]
 use_parent_material = true
-position = Vector2(-11, -25)
+position = Vector2(-12.5225, -25.2754)
 texture = ExtResource("12_mgc8n")
 
 [node name="Head" type="Sprite2D" parent="Head"]
@@ -943,7 +944,7 @@ metadata/_edit_group_ = true
 
 [node name="Hand" type="Sprite2D" parent="Arm 1"]
 use_parent_material = true
-position = Vector2(-1.52253, 61.2661)
+position = Vector2(4.92153, 50.6556)
 texture = ExtResource("16_475ff")
 offset = Vector2(-4.86326, 11.725)
 

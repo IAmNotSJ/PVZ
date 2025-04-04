@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://degypbjgnesoa"]
 
 [ext_resource type="Material" uid="uid://llvwrq5n4trs" path="res://assets/shaders/flash.tres" id="1_ja3dl"]
-[ext_resource type="Script" path="res://assets/plants/peashooter/peashooter.gd" id="2_gdcm6"]
+[ext_resource type="Script" uid="uid://b4ubu2v4wshd1" path="res://assets/plants/peashooter/peashooter.gd" id="2_gdcm6"]
 [ext_resource type="Texture2D" uid="uid://chpj26qnsvqjd" path="res://assets/plants/snow_pea/assets/leaf3.png" id="3_elrlh"]
 [ext_resource type="Texture2D" uid="uid://binbeiapionux" path="res://assets/plants/snow_pea/assets/leaf4.png" id="4_38ekf"]
 [ext_resource type="Texture2D" uid="uid://vpk7u1g2wolu" path="res://assets/plants/snow_pea/assets/stem.png" id="5_ksq25"]
@@ -101,8 +101,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ukisp"]
 _data = {
-"RESET": SubResource("Animation_h32jp"),
-"shiver": SubResource("Animation_wde7j")
+&"RESET": SubResource("Animation_h32jp"),
+&"shiver": SubResource("Animation_wde7j")
 }
 
 [sub_resource type="Animation" id="Animation_73khh"]
@@ -332,8 +332,8 @@ tracks/8/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gpi5p"]
 _data = {
-"RESET": SubResource("Animation_73khh"),
-"idle": SubResource("Animation_5ulod")
+&"RESET": SubResource("Animation_73khh"),
+&"idle": SubResource("Animation_5ulod")
 }
 
 [sub_resource type="Animation" id="Animation_lidab"]
@@ -383,8 +383,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0vmmm"]
 _data = {
-"RESET": SubResource("Animation_lidab"),
-"shoot": SubResource("Animation_25yyd")
+&"RESET": SubResource("Animation_lidab"),
+&"shoot": SubResource("Animation_25yyd")
 }
 
 [sub_resource type="Animation" id="Animation_okp1w"]
@@ -416,7 +416,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_a4klk"]
 resource_name = "blink"
-length = 0.3
+length = 0.0834042
 step = 0.0417
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -473,12 +473,12 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uobb8"]
 _data = {
-"RESET": SubResource("Animation_okp1w"),
-"blink": SubResource("Animation_a4klk"),
-"darken": SubResource("Animation_83e3m")
+&"RESET": SubResource("Animation_okp1w"),
+&"blink": SubResource("Animation_a4klk"),
+&"darken": SubResource("Animation_83e3m")
 }
 
-[node name="SnowPea" type="Node2D" node_paths=PackedStringArray("sight", "marker", "shootingPlayer", "shaderPlayer", "animationPlayer", "hitbox", "bottom")]
+[node name="SnowPea" type="Node2D" node_paths=PackedStringArray("sight", "marker", "shootingPlayer", "animationPlayer", "hitbox", "bottom")]
 z_index = 2
 material = ExtResource("1_ja3dl")
 scale = Vector2(0.7, 0.7)
@@ -491,7 +491,6 @@ plant_name = "snow_pea"
 cost = 150
 max_health = 5
 max_cooldown = 13
-shaderPlayer = NodePath("ShaderPlayer")
 animationPlayer = NodePath("AnimationPlayer")
 hitbox = NodePath("Hitbox")
 bottom = NodePath("bottom")
@@ -548,12 +547,12 @@ texture = ExtResource("9_otqlf")
 offset = Vector2(0, 16)
 
 [node name="shoot" type="Marker2D" parent="."]
-position = Vector2(64.2857, -72.8571)
+position = Vector2(77.1429, -72.8571)
 
 [node name="Hitbox" type="Area2D" parent="."]
 position = Vector2(0, -41.4286)
 collision_layer = 0
-collision_mask = 4
+collision_mask = 0
 monitoring = false
 metadata/_edit_group_ = true
 

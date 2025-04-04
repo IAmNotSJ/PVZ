@@ -62,8 +62,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_11ikx"]
 _data = {
-"RESET": SubResource("Animation_4tdt0"),
-"idle": SubResource("Animation_ixqqa")
+&"RESET": SubResource("Animation_4tdt0"),
+&"idle": SubResource("Animation_ixqqa")
 }
 
 [node name="SunSprite" type="Node2D"]
