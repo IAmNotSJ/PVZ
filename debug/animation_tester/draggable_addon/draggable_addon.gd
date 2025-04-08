@@ -44,7 +44,7 @@ func _input(event):
 			parent.rotation_degrees = original_rotation + rad_to_deg(parent.global_position.angle_to_point(get_global_mouse_position()) - parent.global_position.angle_to_point(original_rotation_position))
 			global.mouse.change_rotation_degrees(original_rotation + rad_to_deg(parent.global_position.angle_to_point(get_global_mouse_position()) - parent.global_position.angle_to_point(original_rotation_position)))
 			animation_tester.update_selection(parent)
-			print(parent.rotation_degrees)
+			#print(parent.rotation_degrees)
 	if animation_tester.focused_sprite == parent:
 		var used_snap = animation_tester.movement_snap
 		if Input.is_key_pressed(KEY_SHIFT):
@@ -73,7 +73,7 @@ func _on_button_down() -> void:
 func _on_button_up() -> void:
 	animation_tester.cur_held = null
 	held = false
-	print('button up!')
+	#print('button up!')
 	history.add_action(history.POSITION, [parent, parent.position])
 	held_offset = Vector2.ZERO
 	

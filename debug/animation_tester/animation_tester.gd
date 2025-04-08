@@ -92,16 +92,16 @@ func _create_sprite(texture, pos, rot, scal, ) -> Sprite2D:
 	sprite2d.rotation_degrees = rot
 	sprite2d.scale = scal
 	return sprite2d
-func _add_sprite_param(sprite):
-	history.add_action(history.POSITION, [sprite, sprite.position])
-	history.add_action(history.ROTATION, [sprite, sprite.rotation_degrees])
-	history.add_action(history.SCALE, [sprite, sprite.scale])
+func _add_sprite_param(daSprite):
+	history.add_action(history.POSITION, [daSprite, daSprite.position])
+	history.add_action(history.ROTATION, [daSprite, daSprite.rotation_degrees])
+	history.add_action(history.SCALE, [daSprite, daSprite.scale])
 	
-	layer_container.create_layer(sprite)
+	layer_container.create_layer(daSprite)
 	
 	var draggable_addon = DRAGGABLE_ADDON.instantiate()
-	draggable_addon.set_button(sprite.texture.get_size())
-	sprite.add_child(draggable_addon)
+	draggable_addon.set_button(daSprite.texture.get_size())
+	daSprite.add_child(draggable_addon)
 
 func _on_gui_focus_changed(control):
 	if control is DraggableAddon:
@@ -124,6 +124,8 @@ func update_selection(reference:Sprite2D):
 
 func _on_deselect_pressed() -> void:
 	get_viewport().gui_release_focus()
+	focused_sprite = null
+	overview.visible = false
 
 
 func _on_move_pressed() -> void:

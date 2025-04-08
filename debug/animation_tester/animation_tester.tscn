@@ -100,6 +100,7 @@ offset_top = 469.0
 offset_right = 1152.0
 offset_bottom = 648.0
 horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
 
 [node name="LayerContainer" parent="UI_LAYER/UI/ScrollContainer" instance=ExtResource("4_3r6yi")]
 unique_name_in_owner = true

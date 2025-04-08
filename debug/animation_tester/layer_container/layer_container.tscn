@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://c8bxp6xnr1lll" path="res://debug/animation_tester/layer_container/layer_container.gd" id="1_1k4bt"]
 
-[node name="LayerContainer" type="VBoxContainer"]
+[node name="LayerContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 227.0
 offset_bottom = 228.0
-theme_override_constants/separation = 39
-alignment = 2
 script = ExtResource("1_1k4bt")
+
+[connection signal="child_order_changed" from="." to="." method="_on_child_order_changed"]

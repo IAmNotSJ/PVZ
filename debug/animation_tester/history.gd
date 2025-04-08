@@ -28,7 +28,7 @@ func add_action(type:int, args:Array):
 			# args = [sprite, scale]
 			result = [type, args[0], args[1]]
 	past.append(result)
-	print(past)
+	#print(past)
 	future = []
 
 func undo():
