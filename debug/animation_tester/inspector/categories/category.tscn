@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://0aqyowo0yuh6"]
+
+[ext_resource type="Script" uid="uid://d1xjn0bsnlg2g" path="res://debug/animation_tester/inspector/categories/category.gd" id="1_4433r"]
+[ext_resource type="FontFile" uid="uid://b0eimy42hqrtx" path="res://assets/fonts/Brianne_s_hand.ttf" id="1_pkt6r"]
+
+[node name="Category" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -0.568001
+offset_right = 215.0
+offset_bottom = 26.432
+mouse_filter = 1
+script = ExtResource("1_4433r")
+
+[node name="container" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 26.0
+offset_right = 215.0
+offset_bottom = 53.0
+
+[node name="children" type="VBoxContainer" parent="container"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="button" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(215, 27)
+layout_mode = 2
+offset_right = 215.0
+offset_bottom = 27.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("1_pkt6r")
+toggle_mode = true
+text = "category name"
+alignment = 0
+
+[connection signal="child_order_changed" from="container/children" to="." method="_on_children_child_order_changed"]
+[connection signal="toggled" from="button" to="." method="_on_button_toggled"]

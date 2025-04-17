@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2r5s7elmcspw"]
+
+[ext_resource type="Script" uid="uid://7rcw38s8gllj" path="res://assets/sprites/sprite.gd" id="1_vwbmv"]
+[ext_resource type="Texture2D" uid="uid://btwn8fmgv0jbi" path="res://assets/sprites/temp.png" id="2_584x7"]
+[ext_resource type="Texture2D" uid="uid://ckf20g3g5dpvl" path="res://assets/plants/beatroot/assets/body.png" id="3_2ks1d"]
+[ext_resource type="Texture2D" uid="uid://dkhfyovwqel58" path="res://assets/plants/beatroot/assets/dirt.png" id="4_2e4i6"]
+[ext_resource type="Texture2D" uid="uid://b5ghdwcq2k5cy" path="res://assets/plants/beatroot/assets/face.png" id="5_s28br"]
+[ext_resource type="Texture2D" uid="uid://cf1esbiixulks" path="res://assets/plants/beatroot/assets/fist1.png" id="6_gn77h"]
+[ext_resource type="Texture2D" uid="uid://dn8noc8d8frru" path="res://assets/plants/beatroot/assets/fist2.png" id="7_ypedp"]
+[ext_resource type="Texture2D" uid="uid://qfu2uoxkcui7" path="res://assets/plants/beatroot/assets/leaf1.png" id="8_7l74h"]
+
+[node name="Sprite" type="Node2D"]
+script = ExtResource("1_vwbmv")
+
+[node name="Limbs" type="Node2D" parent="."]
+
+[node name="Temp" type="Sprite2D" parent="Limbs"]
+texture = ExtResource("2_584x7")
+
+[node name="Body" type="Sprite2D" parent="Limbs"]
+position = Vector2(-1.5, -2)
+texture = ExtResource("3_2ks1d")
+
+[node name="Dirt" type="Sprite2D" parent="Limbs"]
+position = Vector2(-1.5, -2)
+texture = ExtResource("4_2e4i6")
+
+[node name="Face" type="Sprite2D" parent="Limbs"]
+position = Vector2(-1.5, -2)
+texture = ExtResource("5_s28br")
+
+[node name="Fist1" type="Sprite2D" parent="Limbs"]
+position = Vector2(-1.5, -2)
+texture = ExtResource("6_gn77h")
+
+[node name="Fist2" type="Sprite2D" parent="Limbs"]
+position = Vector2(-1.5, -2)
+texture = ExtResource("7_ypedp")
+
+[node name="Leaf1" type="Sprite2D" parent="Limbs"]
+position = Vector2(-1.5, -2)
+texture = ExtResource("8_7l74h")

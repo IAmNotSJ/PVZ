@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbrh4hbgwjfiu"]
+
+[ext_resource type="FontFile" uid="uid://b0eimy42hqrtx" path="res://assets/fonts/Brianne_s_hand.ttf" id="1_hru2j"]
+[ext_resource type="Script" uid="uid://cbvdmtropxdjj" path="res://debug/animation_tester/inspector/variable/variable.gd" id="1_tbik0"]
+
+[node name="variable" type="Control"]
+custom_minimum_size = Vector2(215, 20)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 131.0
+offset_bottom = 23.0
+script = ExtResource("1_tbik0")
+
+[node name="label" type="Label" parent="."]
+custom_minimum_size = Vector2(84, 23)
+layout_mode = 0
+offset_right = 106.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_hru2j")
+text = "variable name"

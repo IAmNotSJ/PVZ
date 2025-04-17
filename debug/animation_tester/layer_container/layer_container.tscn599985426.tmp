@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy6wwsx18gx4w"]
+
+[ext_resource type="Script" uid="uid://c8bxp6xnr1lll" path="res://debug/animation_tester/layer_container/layer_container.gd" id="1_1k4bt"]
+[ext_resource type="PackedScene" uid="uid://chq2xbufow1xm" path="res://debug/animation_tester/layers/layer.tscn" id="2_uh1w6"]
+
+[node name="LayerContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 227.0
+offset_bottom = 228.0
+script = ExtResource("1_1k4bt")
+
+[node name="Root" parent="." instance=ExtResource("2_uh1w6")]
+
+[connection signal="child_order_changed" from="." to="." method="_on_child_order_changed"]

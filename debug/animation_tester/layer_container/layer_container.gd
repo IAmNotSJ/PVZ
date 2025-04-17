@@ -1,70 +1,103 @@
-extends Control
+class_name LayerContainer extends Layer
+
+signal layer_added
+
 
 const LAYER_SCENE = preload("res://debug/animation_tester/layers/layer.tscn")
+const UI_SCENE = preload("res://debug/animation_tester/layers/ui/ui.tscn")
 var sprite:Sprite :
 	get():
 		return find_parent("Animation Tester").sprite
 
-func create_layer(reference):
+func create_layer(ref, parent = self):
 	var instanced_layer = LAYER_SCENE.instantiate()
-	var path_array = reference.texture.resource_path.split("/")
-	instanced_layer.layer_name = path_array[path_array.size() - 1]
-	instanced_layer.sprite2d = reference
-	add_child(instanced_layer)
-	_redo_layer_order()
+	var path_array = ref.texture.resource_path.split("/")
 	
-	instanced_layer.up_pressed.connect(_on_layer_up_pressed)
-	instanced_layer.down_pressed.connect(_on_layer_down_pressed)
+	var instanced_UI = UI_SCENE.instantiate()
+	instanced_UI.layer_name = path_array[path_array.size() - 1]
+	instanced_layer.name = path_array[path_array.size() - 1]
+	
+	instanced_layer.ui = instanced_UI
+	instanced_layer.reference = ref
+	instanced_layer.magnitude = parent.magnitude + 1
+	
+	parent.add_child(instanced_layer)
+	instanced_layer.add_child(instanced_UI)
+	redo_layer_order()
+	
+	instanced_layer.ui.up_button.pressed.connect(_on_layer_up_pressed.bind(instanced_layer))
+	instanced_layer.ui.down_button.pressed.connect(_on_layer_down_pressed.bind(instanced_layer))
+	instanced_layer.ui.trash_button.pressed.connect(_on_layer_trash_pressed.bind(instanced_layer))
+	instanced_layer.ui.base_button.pressed.connect(_on_layer_base_pressed.bind(instanced_layer))
+	
+	layer_added.emit()
+
+func move_layer(layer, amt:int):
+	var layer_parent = layer.get_parent()
+	var layer_index = layer_parent.get_children().find(layer)
+	
+	var sprite_parent
+	var sprite_index
+	if layer.reference != null:
+		sprite_parent = layer.reference.get_parent()
+		sprite_index = sprite_parent.get_children().find(layer.reference)
+	
+	if !Input.is_key_pressed(KEY_CTRL):
+		if amt < 0:
+			#Going Up
+			if layer_index <= 0:
+				return
+		elif amt > 0:
+			#Going Down
+			if layer_index >= layer_parent.get_child_layers().size() - 1:
+				return
+		
+	if Input.is_key_pressed(KEY_SHIFT):
+		var destination = layer_parent.get_child_layers()[layer_index + amt]
+		if amt > 0:
+			#Down
+			layer.reparent_self(destination, 0)
+		else:
+			#Up
+			layer.reparent_self(destination, destination.get_child_layers().size())
+		set_specific_layer_magnitude(self, 0)
+		
+		layer_parent.redo_layer_order()
+		destination.redo_layer_order()
+	elif Input.is_key_pressed(KEY_CTRL):
+		if layer.magnitude > 0:
+			var destination = layer_parent.get_parent()
+			if amt > 0:
+				#Down
+				layer.reparent_self(destination, destination.get_children().find(layer_parent) + 1)
+			else:
+				#Up
+				layer.reparent_self(destination, destination.get_children().find(layer_parent))
+			set_specific_layer_magnitude(self, 0)
+			
+			layer_parent.redo_layer_order()
+			destination.redo_layer_order()
+	else:
+		layer_parent.move_child(layer, layer_index + amt)
+		if sprite_parent != null:
+			sprite_parent.move_child(layer.reference, sprite_index + amt)
+		layer_parent.redo_layer_order()
 
 func _on_layer_up_pressed(layer):
-	if Input.is_action_pressed("shift"):
-		print('trying to reparent self')
-		var layer_index = get_children().find(layer)
-		if layer_index > 0:
-			var layer_above = get_children()[layer_index - 1]
-			layer.sprite2d.reparent(layer_above.sprite2d)
-			layer.reparent_self(layer_above)
-			
-			_redo_layer_order()
-	else:
-		var layer_index = layer.sprite2d.get_parent().get_children().find(self)
-		var real_index = layer_index + 1
-		layer.sprite2d.get_parent().move_child(layer.sprite2d, real_index)
-		_redo_layer_order()
+	move_layer(layer, -1)
 func _on_layer_down_pressed(layer):
-	if Input.is_action_pressed("shift"):
-		var layer_index = get_children().find(layer)
-		if layer_index < get_children().size() - 1:
-			var layer_below = get_children()[layer_index + 1]
-			layer.sprite2d.reparent(layer_below.sprite2d)
-			layer.reparent_self(layer_below)
-			
-			_redo_layer_order()
-	else:
-		var layer_index = layer.sprite2d.get_parent().get_children().find(self)
-		if layer_index > 0:
-			var real_index = layer_index - 1
-			layer.sprite2d.get_parent().move_child(layer.sprite2d, real_index)
-			_redo_layer_order()
-func _redo_layer_order():
-	for layer in get_children():
-		move_child(layer, get_children().size() - 1 - sprite.get_node("Limbs").get_children().find(layer.sprite2d))
-	for i in get_children().size():
-		if i == 0:
-			get_children()[i].position.y = 0
-		else:
-			get_children()[i].position.y = get_children()[i - 1].position.y + (37 * get_children()[i-1].children.size()) + 37
+	move_layer(layer, 1)
+func _on_layer_trash_pressed(layer):
+	layer.delete_self()
+func _on_layer_base_pressed(layer):
+	layer.reference.get_children()[layer.reference.get_children().size() - 1].grab_focus()
 
+func redo_layer_order():
+	super()
+	custom_minimum_size.y = get_all_layers(self).size() * 37
 
-func _on_child_order_changed() -> void:
-	if get_tree() != null:
-		await get_tree().process_frame
-		var layer_count:int = 0
-		for i in range(get_children().size()):
-			layer_count += 1
-			for j in range(get_children()[i].children.size()):
-				layer_count += 1
-		custom_minimum_size.y = layer_count * 37
-
-func get_child_counts():
-	pass
+func set_specific_layer_magnitude(layer, m):
+	for l in layer.get_children():
+		if l is Layer:
+			l.magnitude = m
+			set_specific_layer_magnitude(l, m + 1)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfvl38our0eio"]
+
+[ext_resource type="Script" uid="uid://bh66cuwwdgo2f" path="res://debug/animation_tester/inspector/variable/types/int/int.gd" id="1_no0jj"]
+
+[node name="int" type="SpinBox"]
+custom_minimum_size = Vector2(87, 34)
+offset_right = 86.5625
+offset_bottom = 31.0
+min_value = -1e+14
+max_value = 1e+14
+step = 0.001
+script = ExtResource("1_no0jj")
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

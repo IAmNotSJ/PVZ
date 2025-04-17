@@ -8,5 +8,3 @@ anchors_preset = 0
 offset_right = 227.0
 offset_bottom = 228.0
 script = ExtResource("1_1k4bt")
-
-[connection signal="child_order_changed" from="." to="." method="_on_child_order_changed"]

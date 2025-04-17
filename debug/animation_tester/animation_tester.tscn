@@ -1,37 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://bv67g3ex867u6"]
+[gd_scene load_steps=9 format=3 uid="uid://bv67g3ex867u6"]
 
 [ext_resource type="Script" uid="uid://bu4o1a7rbcw1o" path="res://debug/animation_tester/animation_tester.gd" id="1_6ufs8"]
 [ext_resource type="Texture2D" uid="uid://cxq1stf75dltm" path="res://debug/animation_tester/sprites/grid.png" id="3_ep1yc"]
 [ext_resource type="PackedScene" uid="uid://cy6wwsx18gx4w" path="res://debug/animation_tester/layer_container/layer_container.tscn" id="4_3r6yi"]
 [ext_resource type="PackedScene" uid="uid://cjhfcpski13ol" path="res://debug/animation_tester/hover_detection/hover_detection.tscn" id="4_4fikq"]
-[ext_resource type="Texture2D" uid="uid://dpk6govcskdf" path="res://debug/animation_tester/sprites/deselect.png" id="5_4fikq"]
 [ext_resource type="FontFile" uid="uid://b0eimy42hqrtx" path="res://assets/fonts/Brianne_s_hand.ttf" id="5_7sq03"]
 [ext_resource type="Script" uid="uid://cc0vovi1bh6pb" path="res://debug/animation_tester/history.gd" id="5_afno0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf01o"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14ts1"]
-bg_color = Color(0.246094, 0.246094, 0.246094, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.152344, 0.152344, 0.152344, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjhqh"]
-bg_color = Color(0.128906, 0.128906, 0.128906, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_color = Color(0.0429688, 0.0429688, 0.0429688, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wv5dx"]
-bg_color = Color(0.144531, 0.144531, 0.144531, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.0546875, 0.0546875, 0.0546875, 1)
+[ext_resource type="PackedScene" uid="uid://dhxw6s3q3iut4" path="res://debug/animation_tester/toolbar/toolbar.tscn" id="6_4fikq"]
+[ext_resource type="PackedScene" uid="uid://coqdor6o4ec8o" path="res://debug/animation_tester/inspector/inspector.tscn" id="6_mf01o"]
 
 [node name="Animation Tester" type="Node2D"]
 script = ExtResource("1_6ufs8")
@@ -99,7 +75,6 @@ offset_left = 834.0
 offset_top = 469.0
 offset_right = 1152.0
 offset_bottom = 648.0
-horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
 [node name="LayerContainer" parent="UI_LAYER/UI/ScrollContainer" instance=ExtResource("4_3r6yi")]
@@ -110,41 +85,6 @@ layout_mode = 2
 visible = false
 custom_minimum_size = Vector2(318, 179)
 layout_mode = 2
-
-[node name="Draggable Top Left" type="Control" parent="UI_LAYER/UI"]
-layout_mode = 1
-anchor_top = 0.066
-anchor_bottom = 0.066
-offset_top = 0.231998
-offset_right = 268.0
-offset_bottom = 100.232
-mouse_filter = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI_LAYER/UI/Draggable Top Left"]
-layout_mode = 2
-offset_right = 268.0
-offset_bottom = 100.0
-theme_override_constants/separation = 0
-
-[node name="Load Sprite" type="Button" parent="UI_LAYER/UI/Draggable Top Left/VBoxContainer"]
-custom_minimum_size = Vector2(0, 46)
-layout_mode = 2
-focus_mode = 0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_mf01o")
-theme_override_styles/hover = SubResource("StyleBoxFlat_14ts1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_kjhqh")
-theme_override_styles/normal = SubResource("StyleBoxFlat_wv5dx")
-text = "Load Sprite"
-
-[node name="Add Image" type="Button" parent="UI_LAYER/UI/Draggable Top Left/VBoxContainer"]
-custom_minimum_size = Vector2(0, 46)
-layout_mode = 2
-focus_mode = 0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_mf01o")
-theme_override_styles/hover = SubResource("StyleBoxFlat_14ts1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_kjhqh")
-theme_override_styles/normal = SubResource("StyleBoxFlat_wv5dx")
-text = "Add Image"
 
 [node name="Overview" type="Control" parent="UI_LAYER/UI"]
 unique_name_in_owner = true
@@ -214,62 +154,18 @@ offset_right = 158.0
 offset_bottom = 8.0
 focus_mode = 0
 
-[node name="Top" type="ColorRect" parent="UI_LAYER/UI"]
-layout_mode = 2
-offset_right = 1152.0
-offset_bottom = 43.0
-color = Color(0.753906, 0.753906, 0.753906, 1)
-
-[node name="Deselect" type="Button" parent="UI_LAYER/UI/Top"]
+[node name="Inspector" parent="UI_LAYER/UI" instance=ExtResource("6_mf01o")]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 5.0
-offset_right = 51.0
-offset_bottom = 40.0
-focus_mode = 0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_mf01o")
-theme_override_styles/hover = SubResource("StyleBoxFlat_14ts1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_kjhqh")
-theme_override_styles/normal = SubResource("StyleBoxFlat_wv5dx")
-icon = ExtResource("5_4fikq")
+offset_left = 863.0
+offset_top = 174.0
+offset_right = 1075.0
+offset_bottom = 461.0
 
-[node name="Move" type="Button" parent="UI_LAYER/UI/Top"]
+[node name="Top" parent="UI_LAYER/UI" instance=ExtResource("6_4fikq")]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 8.0
-offset_right = 121.0
-offset_bottom = 39.0
-focus_mode = 0
-text = "+"
-
-[node name="Rotate" type="Button" parent="UI_LAYER/UI/Top"]
-layout_mode = 0
-offset_left = 130.0
-offset_top = 8.0
-offset_right = 161.0
-offset_bottom = 39.0
-focus_mode = 0
-text = "O"
-
-[node name="Scale" type="Button" parent="UI_LAYER/UI/Top"]
-layout_mode = 0
-offset_left = 170.0
-offset_top = 8.0
-offset_right = 201.0
-offset_bottom = 39.0
-focus_mode = 0
-text = "^"
 
 [node name="History" type="Node" parent="."]
 script = ExtResource("5_afno0")
 
 [connection signal="file_selected" from="Dialogs/LoadSpriteDialog" to="." method="_on_load_sprite_dialog_file_selected"]
 [connection signal="files_selected" from="Dialogs/AddImageDialog" to="." method="_on_add_image_dialog_files_selected"]
-[connection signal="mouse_entered" from="UI_LAYER/UI/Draggable Top Left" to="UI_LAYER/UI/Draggable Top Left" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="UI_LAYER/UI/Draggable Top Left" to="UI_LAYER/UI/Draggable Top Left" method="_on_mouse_exited"]
-[connection signal="pressed" from="UI_LAYER/UI/Draggable Top Left/VBoxContainer/Load Sprite" to="." method="_on_load_sprite_pressed"]
-[connection signal="pressed" from="UI_LAYER/UI/Draggable Top Left/VBoxContainer/Add Image" to="." method="_on_add_image_pressed"]
-[connection signal="pressed" from="UI_LAYER/UI/Top/Deselect" to="." method="_on_deselect_pressed"]
-[connection signal="pressed" from="UI_LAYER/UI/Top/Move" to="." method="_on_move_pressed"]
-[connection signal="pressed" from="UI_LAYER/UI/Top/Rotate" to="." method="_on_rotate_pressed"]
-[connection signal="pressed" from="UI_LAYER/UI/Top/Scale" to="." method="_on_scale_pressed"]

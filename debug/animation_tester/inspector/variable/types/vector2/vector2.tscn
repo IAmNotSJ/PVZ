@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://crvo3b8p21810"]
+
+[ext_resource type="Script" uid="uid://bdf5se7h5adc1" path="res://debug/animation_tester/inspector/variable/types/vector2/vector_2.gd" id="1_6wsk3"]
+
+[node name="vector2" type="Control"]
+custom_minimum_size = Vector2(87, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 87.0
+offset_bottom = 64.0
+script = ExtResource("1_6wsk3")
+
+[node name="x" type="SpinBox" parent="."]
+layout_mode = 0
+offset_right = 87.0
+offset_bottom = 31.0
+min_value = -1e+06
+max_value = 1e+07
+
+[node name="y" type="SpinBox" parent="."]
+layout_mode = 0
+offset_top = 33.0
+offset_right = 86.563
+offset_bottom = 64.0
+min_value = -1e+07
+max_value = 1e+07

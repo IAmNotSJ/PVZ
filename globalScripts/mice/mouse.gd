@@ -18,3 +18,10 @@ func change_state(state:int = 0, rotation_deg = 0):
 	rotation_degrees = rotation_deg
 func change_rotation_degrees(rotation_deg):
 	rotation_degrees = rotation_deg
+
+func use_system_mouse():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	hide()
+func use_custom_mouse():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	show()

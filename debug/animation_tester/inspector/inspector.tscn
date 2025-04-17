@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://coqdor6o4ec8o"]
+
+[ext_resource type="Script" uid="uid://ebr2w607a546" path="res://debug/animation_tester/inspector/inspector.gd" id="1_hcd3l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcd3l"]
+bg_color = Color(0, 0, 0, 0.631373)
+
+[node name="Inspector" type="ScrollContainer"]
+offset_right = 219.0
+offset_bottom = 287.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcd3l")
+script = ExtResource("1_hcd3l")
+
+[node name="container" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(215, 27)
+layout_mode = 2

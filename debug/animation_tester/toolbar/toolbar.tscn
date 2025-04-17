@@ -1,0 +1,127 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhxw6s3q3iut4"]
+
+[ext_resource type="Script" uid="uid://bkcveknk0782x" path="res://debug/animation_tester/toolbar/toolbar.gd" id="1_7ruyp"]
+[ext_resource type="Texture2D" uid="uid://dpk6govcskdf" path="res://debug/animation_tester/sprites/deselect.png" id="1_eildg"]
+[ext_resource type="Script" uid="uid://dmm3as0prrjqs" path="res://debug/animation_tester/toolbar/scripts/file.gd" id="3_i1vo5"]
+[ext_resource type="Script" uid="uid://cpu0kt5ra2m1q" path="res://debug/animation_tester/toolbar/scripts/insert.gd" id="5_uaouk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf01o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14ts1"]
+bg_color = Color(0.246094, 0.246094, 0.246094, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.152344, 0.152344, 0.152344, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjhqh"]
+bg_color = Color(0.128906, 0.128906, 0.128906, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_color = Color(0.0429688, 0.0429688, 0.0429688, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wv5dx"]
+bg_color = Color(0.144531, 0.144531, 0.144531, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0546875, 0.0546875, 0.0546875, 1)
+
+[node name="Toolbar" type="ColorRect"]
+offset_right = 1152.0
+offset_bottom = 43.0
+color = Color(0.753906, 0.753906, 0.753906, 1)
+script = ExtResource("1_7ruyp")
+
+[node name="Deselect" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 15.0
+offset_top = 5.0
+offset_right = 51.0
+offset_bottom = 40.0
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mf01o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_14ts1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kjhqh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wv5dx")
+icon = ExtResource("1_eildg")
+
+[node name="Move" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 90.0
+offset_top = 8.0
+offset_right = 121.0
+offset_bottom = 39.0
+focus_mode = 0
+text = "+"
+
+[node name="Rotate" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 130.0
+offset_top = 8.0
+offset_right = 161.0
+offset_bottom = 39.0
+focus_mode = 0
+text = "O"
+
+[node name="Scale" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 170.0
+offset_top = 8.0
+offset_right = 201.0
+offset_bottom = 39.0
+focus_mode = 0
+text = "^"
+
+[node name="Options" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 3.0
+offset_right = 203.0
+offset_bottom = 37.0
+
+[node name="File" type="MenuButton" parent="Options"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "File"
+flat = false
+script = ExtResource("3_i1vo5")
+
+[node name="LoadSpriteDialog" type="FileDialog" parent="Options/File"]
+auto_translate_mode = 1
+title = "Open a File"
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.tscn")
+use_native_dialog = true
+
+[node name="Insert" type="MenuButton" parent="Options"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Insert"
+flat = false
+script = ExtResource("5_uaouk")
+
+[node name="AddImageDialog" type="FileDialog" parent="Options/Insert"]
+auto_translate_mode = 1
+title = "Open File(s)"
+ok_button_text = "Open"
+file_mode = 1
+filters = PackedStringArray("*.png")
+use_native_dialog = true
+
+[node name="Selection" type="MenuButton" parent="Options"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Selection"
+flat = false
+
+[connection signal="file_selected" from="Options/File/LoadSpriteDialog" to="Options/File" method="_on_load_sprite_dialog_file_selected"]
+[connection signal="files_selected" from="Options/Insert/AddImageDialog" to="Options/Insert" method="_on_add_image_dialog_files_selected"]
