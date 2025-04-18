@@ -10,7 +10,7 @@ const NODE_PROPERTIES = {
 	},
 	"Sprite2D" : {
 		"Offset" : ["offset", "flip_h", "flip_v"],
-		"Animation" : ["h_frames", "v_frames", "frame"]
+		"Animation" : ["hframes", "vframes", "frame"]
 	}
 }
 const CATEGORY_SCENE = preload("res://debug/animation_tester/inspector/categories/category.tscn")
@@ -24,7 +24,6 @@ func _ready():
 		animation_tester.selection_cleared.connect(clear)
 
 func _on_selection_changed(new_selection):
-	print(new_selection)
 	clear()
 	for daClass in NODE_PROPERTIES.keys():
 		for category in NODE_PROPERTIES[daClass].keys():
@@ -38,3 +37,7 @@ func clear():
 	print('clearing inspector')
 	for child in container.get_children():
 		child.queue_free()
+
+func update_values():
+	for category in container.get_children():
+		category.update_variables()

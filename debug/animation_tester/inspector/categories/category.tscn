@@ -27,9 +27,9 @@ theme_override_constants/separation = 15
 
 [node name="button" type="Button" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(215, 27)
+custom_minimum_size = Vector2(210, 27)
 layout_mode = 2
-offset_right = 215.0
+offset_right = 210.0
 offset_bottom = 27.0
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_pkt6r")

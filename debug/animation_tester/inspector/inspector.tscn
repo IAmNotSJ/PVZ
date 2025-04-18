@@ -6,9 +6,10 @@
 bg_color = Color(0, 0, 0, 0.631373)
 
 [node name="Inspector" type="ScrollContainer"]
-offset_right = 219.0
+offset_right = 246.0
 offset_bottom = 287.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_hcd3l")
+horizontal_scroll_mode = 0
 script = ExtResource("1_hcd3l")
 
 [node name="container" type="VBoxContainer" parent="."]

@@ -6,9 +6,8 @@
 custom_minimum_size = Vector2(87, 34)
 offset_right = 86.5625
 offset_bottom = 31.0
-min_value = -1e+14
-max_value = 1e+14
-step = 0.001
+min_value = -10000.0
+max_value = 10000.0
 script = ExtResource("1_no0jj")
 
 [connection signal="value_changed" from="." to="." method="_on_value_changed"]

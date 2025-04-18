@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvrl0d88qbe61"]
+
+[ext_resource type="Script" uid="uid://dnj4xuev32tkd" path="res://debug/animation_tester/inspector/variable/types/float/float.gd" id="1_ufbsl"]
+
+[node name="float" type="SpinBox"]
+custom_minimum_size = Vector2(87, 34)
+offset_right = 86.5625
+offset_bottom = 31.0
+min_value = -10000.0
+max_value = 10000.0
+step = 0.001
+update_on_text_changed = true
+custom_arrow_step = 1.0
+script = ExtResource("1_ufbsl")
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

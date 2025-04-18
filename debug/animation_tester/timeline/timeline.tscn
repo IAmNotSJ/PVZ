@@ -1,0 +1,139 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs8fw55lobn6e"]
+
+[ext_resource type="FontFile" uid="uid://b0eimy42hqrtx" path="res://assets/fonts/Brianne_s_hand.ttf" id="1_e4bvu"]
+[ext_resource type="Script" uid="uid://caj01ershcmfp" path="res://debug/animation_tester/timeline/timeline.gd" id="1_eb3jm"]
+
+[node name="Timeline" type="Panel"]
+anchors_preset = -1
+anchor_top = 0.696
+anchor_bottom = 0.696
+offset_top = -0.00802612
+offset_right = 863.0
+offset_bottom = 196.992
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eb3jm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.018
+anchor_top = 0.152
+anchor_right = 0.982
+anchor_bottom = 0.919
+offset_left = -0.534001
+offset_top = 5.056
+offset_right = 0.533936
+offset_bottom = -0.0429993
+color = Color(0.0820313, 0.0820313, 0.0820313, 1)
+
+[node name="Top Bar" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.018
+anchor_right = 0.982
+anchor_bottom = 0.168
+offset_left = -0.398001
+offset_top = 2.0
+offset_right = 0.397949
+offset_bottom = -0.0960007
+
+[node name="full_back" type="Button" parent="Top Bar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+anchor_right = 0.03
+anchor_bottom = 1.0
+offset_right = 0.018158
+focus_mode = 0
+theme_override_font_sizes/font_size = 12
+text = "≤"
+
+[node name="frame_back" type="Button" parent="Top Bar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+anchor_left = 0.035
+anchor_right = 0.065
+anchor_bottom = 1.0
+offset_left = -0.145481
+offset_right = -0.127327
+focus_mode = 0
+theme_override_font_sizes/font_size = 12
+text = "<"
+
+[node name="play" type="Button" parent="Top Bar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+anchor_left = 0.07
+anchor_right = 0.1
+anchor_bottom = 1.0
+offset_left = -0.290962
+offset_right = -0.272804
+focus_mode = 0
+theme_override_font_sizes/font_size = 12
+text = "P"
+
+[node name="frame_forward" type="Button" parent="Top Bar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+anchor_left = 0.104
+anchor_right = 0.134
+anchor_bottom = 1.0
+offset_left = 0.396286
+offset_right = 0.414444
+focus_mode = 0
+theme_override_font_sizes/font_size = 12
+text = ">"
+
+[node name="full_forward" type="Button" parent="Top Bar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+anchor_left = 0.139
+anchor_right = 0.169
+anchor_bottom = 1.0
+offset_left = 0.250793
+offset_right = 0.268951
+focus_mode = 0
+theme_override_font_sizes/font_size = 12
+text = "≥"
+
+[node name="time" type="SpinBox" parent="Top Bar"]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.174
+anchor_right = 0.278
+anchor_bottom = 1.0
+offset_left = 0.105316
+offset_right = -0.498413
+
+[node name="animation_button" type="MenuButton" parent="Top Bar"]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.282
+anchor_right = 0.373
+anchor_bottom = 1.0
+offset_left = 0.170685
+offset_right = 0.392426
+theme_override_fonts/font = ExtResource("1_e4bvu")
+theme_override_font_sizes/font_size = 16
+text = "Animation:"
+item_count = 1
+popup/item_0/text = "Add Animation"
+popup/item_0/id = 0
+
+[node name="animation_list" type="OptionButton" parent="Top Bar"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+anchor_left = 0.378
+anchor_right = 0.919
+anchor_bottom = 1.0
+offset_left = 0.22879
+offset_right = -0.2771
+focus_mode = 0
+
+[connection signal="toggled" from="Top Bar/animation_button" to="." method="_on_animation_button_toggled"]
+[connection signal="toggled" from="Top Bar/animation_list" to="." method="_on_animation_list_toggled"]

@@ -14,7 +14,10 @@ script = ExtResource("1_tbik0")
 [node name="label" type="Label" parent="."]
 custom_minimum_size = Vector2(84, 23)
 layout_mode = 0
+offset_left = 5.0
 offset_right = 106.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("1_hru2j")
 text = "variable name"
+vertical_alignment = 1
+text_overrun_behavior = 3

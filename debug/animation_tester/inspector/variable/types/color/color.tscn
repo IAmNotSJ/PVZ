@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl0ooafmq6sud"]
+
+[ext_resource type="Script" uid="uid://h21tr0e51pve" path="res://debug/animation_tester/inspector/variable/types/color/color.gd" id="1_m8423"]
+
+[node name="ColorPickerButton" type="ColorPickerButton"]
+custom_minimum_size = Vector2(87, 34)
+offset_right = 8.0
+offset_bottom = 8.0
+focus_mode = 0
+color = Color(1, 1, 1, 1)
+script = ExtResource("1_m8423")
+
+[connection signal="color_changed" from="." to="." method="_on_color_changed"]
+[connection signal="toggled" from="." to="." method="_on_toggled"]

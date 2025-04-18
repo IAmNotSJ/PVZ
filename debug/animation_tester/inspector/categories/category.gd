@@ -15,7 +15,9 @@ const variable_class = preload("res://debug/animation_tester/inspector/variable/
 const variable_types:Dictionary = {
 	"bool" : preload("res://debug/animation_tester/inspector/variable/types/bool/bool.tscn"),
 	"int" : preload("res://debug/animation_tester/inspector/variable/types/int/int.tscn"),
+	"float" : preload("res://debug/animation_tester/inspector/variable/types/float/float.tscn"),
 	"String" : preload("res://debug/animation_tester/inspector/variable/types/string/string.tscn"),
+	"Color" : preload("res://debug/animation_tester/inspector/variable/types/color/color.tscn"),
 	"Vector2" : preload("res://debug/animation_tester/inspector/variable/types/vector2/vector2.tscn")
 }
 
@@ -37,13 +39,16 @@ func load_variables(list:Array):
 				setter = return_instanced_variable_type("int")
 				setter.value = reference.get(variable)
 			elif reference.get(variable) is float:
-				setter = return_instanced_variable_type("int")
+				setter = return_instanced_variable_type("float")
 				setter.value = reference.get(variable)
 			elif reference.get(variable) is String:
 				setter = return_instanced_variable_type("String")
 				setter.text = reference.get(variable)
 			elif reference.get(variable) is Vector2:
 				setter = return_instanced_variable_type("Vector2")
+				setter.value = reference.get(variable)
+			elif reference.get(variable) is Color:
+				setter = return_instanced_variable_type("Color")
 				setter.value = reference.get(variable)
 			
 			if setter != null:
@@ -68,3 +73,7 @@ func _on_children_child_order_changed() -> void:
 	for child in children.get_children():
 		min_size += child.size.y
 	children.custom_minimum_size.y = min_size
+
+func update_variables():
+	for variable in children.get_children():
+		variable.setter.value = variable.reference.get(variable.variable_name)

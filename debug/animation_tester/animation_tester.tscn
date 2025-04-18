@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bv67g3ex867u6"]
+[gd_scene load_steps=11 format=3 uid="uid://bv67g3ex867u6"]
 
 [ext_resource type="Script" uid="uid://bu4o1a7rbcw1o" path="res://debug/animation_tester/animation_tester.gd" id="1_6ufs8"]
 [ext_resource type="Texture2D" uid="uid://cxq1stf75dltm" path="res://debug/animation_tester/sprites/grid.png" id="3_ep1yc"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://cc0vovi1bh6pb" path="res://debug/animation_tester/history.gd" id="5_afno0"]
 [ext_resource type="PackedScene" uid="uid://dhxw6s3q3iut4" path="res://debug/animation_tester/toolbar/toolbar.tscn" id="6_4fikq"]
 [ext_resource type="PackedScene" uid="uid://coqdor6o4ec8o" path="res://debug/animation_tester/inspector/inspector.tscn" id="6_mf01o"]
+[ext_resource type="PackedScene" uid="uid://bs8fw55lobn6e" path="res://debug/animation_tester/timeline/timeline.tscn" id="8_14ts1"]
+[ext_resource type="PackedScene" uid="uid://b7628oeefw60q" path="res://debug/animation_tester/misc/texture_atlas_converter.tscn" id="10_kjhqh"]
 
 [node name="Animation Tester" type="Node2D"]
 script = ExtResource("1_6ufs8")
@@ -71,8 +73,8 @@ mouse_filter = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UI_LAYER/UI"]
 layout_mode = 0
-offset_left = 834.0
-offset_top = 469.0
+offset_left = 851.0
+offset_top = 474.0
 offset_right = 1152.0
 offset_bottom = 648.0
 vertical_scroll_mode = 2
@@ -90,9 +92,9 @@ layout_mode = 2
 unique_name_in_owner = true
 anchors_preset = 0
 offset_left = 566.0
-offset_top = 25.0
+offset_top = 43.0
 offset_right = 1152.0
-offset_bottom = 221.0
+offset_bottom = 239.0
 mouse_filter = 2
 
 [node name="Preview" type="TextureRect" parent="UI_LAYER/UI/Overview"]
@@ -155,17 +157,32 @@ offset_bottom = 8.0
 focus_mode = 0
 
 [node name="Inspector" parent="UI_LAYER/UI" instance=ExtResource("6_mf01o")]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 863.0
-offset_top = 174.0
-offset_right = 1075.0
-offset_bottom = 461.0
+offset_top = 187.0
+offset_right = 1154.0
+offset_bottom = 474.0
 
 [node name="Top" parent="UI_LAYER/UI" instance=ExtResource("6_4fikq")]
 layout_mode = 0
 
+[node name="Control" parent="UI_LAYER/UI" instance=ExtResource("8_14ts1")]
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 451.0
+offset_bottom = 648.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="History" type="Node" parent="."]
 script = ExtResource("5_afno0")
+
+[node name="Misc" type="Node" parent="."]
+
+[node name="TextureAtlasConverter" parent="Misc" instance=ExtResource("10_kjhqh")]
 
 [connection signal="file_selected" from="Dialogs/LoadSpriteDialog" to="." method="_on_load_sprite_dialog_file_selected"]
 [connection signal="files_selected" from="Dialogs/AddImageDialog" to="." method="_on_add_image_dialog_files_selected"]
