@@ -81,7 +81,7 @@ func _load_atlas(anim_json:JSON, spritemap_json:JSON):
 			var layers_array = symbols[symbol]
 			for layer in layers_array:
 				for frame in layer[NAMES["Frames"]]:
-					frames[symbol] 
+					frames[symbol][frames[NAMES["index"]]] = {}
 					for element in frame[NAMES["elements"]]:
 						if !element.has(NAMES["SYMBOL_Instance"]):
 							recursive_symbol = false
