@@ -1,0 +1,2665 @@
+{
+	"ANIMATION": {
+		"name": "Untitled-1",
+		"SYMBOL_name": "dance",
+		"TIMELINE": {
+			"LAYERS": [
+				{
+					"Layer_name": "Layer_3",
+					"Frames": [
+						{
+							"index": 0,
+							"duration": 24,
+							"elements": []
+						}
+					]
+				},
+				{
+					"Layer_name": "Layer_2",
+					"Frames": [
+						{
+							"index": 0,
+							"duration": 3,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "evil",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 0,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 167.75,
+											"y": 130.70000000000003
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -365.7,
+											"m31": 209.25,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -365.7,
+												"y": 209.25,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 3,
+							"duration": 4,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "evil",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 0,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 167.75,
+											"y": 130.70000000000003
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -365.7,
+											"m31": 200.25,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -365.7,
+												"y": 200.25,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 7,
+							"duration": 4,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "evil",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 0,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 167.75,
+											"y": 130.70000000000003
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -365.7,
+											"m31": 188.25,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -365.7,
+												"y": 188.25,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 11,
+							"duration": 4,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "evil",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 0,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 167.75,
+											"y": 130.70000000000003
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -365.7,
+											"m31": 207.25,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -365.7,
+												"y": 207.25,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 15,
+							"duration": 4,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "evil",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 0,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 167.75,
+											"y": 130.70000000000003
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -365.7,
+											"m31": 194.25,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -365.7,
+												"y": 194.25,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 19,
+							"duration": 5,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "evil",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 0,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 167.75,
+											"y": 130.70000000000003
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -365.7,
+											"m31": 179.25,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -365.7,
+												"y": 179.25,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"Layer_name": "Layer_1",
+					"Frames": [
+						{
+							"index": 0,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 0,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.70000000000003,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": 0.0,
+											"m31": 0.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": 0.0,
+												"y": 0.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								},
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 0,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.70000000000003,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": 107.3,
+											"m31": 150.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": 107.3,
+												"y": 150.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 1,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 1,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.70000000000003,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": 17.0,
+											"m31": -3.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": 17.0,
+												"y": -3.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 2,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 2,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": 17.0,
+											"m31": -3.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": 17.0,
+												"y": -3.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 3,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 3,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": 17.0,
+											"m31": -3.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": 17.0,
+												"y": -3.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 4,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 2,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.70000000000003,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": 13.0,
+											"m31": 0.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": 13.0,
+												"y": 0.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 5,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 3,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.70000000000003,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -15.0,
+											"m31": 0.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -15.0,
+												"y": 0.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 6,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 4,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -15.0,
+											"m31": 0.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -15.0,
+												"y": 0.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 7,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 4,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.70000000000003,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 8,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 5,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 9,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 6,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 10,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 7,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 11,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 8,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 12,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 9,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 13,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 10,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 14,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 11,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 15,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 0,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 16,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 1,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 17,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 2,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 18,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 3,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 19,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 4,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 20,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 5,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 21,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 6,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 22,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 7,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						},
+						{
+							"index": 23,
+							"duration": 1,
+							"elements": [
+								{
+									"SYMBOL_Instance": {
+										"SYMBOL_name": "dance small",
+										"Instance_Name": "",
+										"symbolType": "graphic",
+										"firstFrame": 8,
+										"loop": "loop",
+										"transformationPoint": {
+											"x": 190.7,
+											"y": 180.65
+										},
+										"Matrix3D": {
+											"m00": 1.0,
+											"m01": 0.0,
+											"m02": 0.0,
+											"m03": 0.0,
+											"m10": 0.0,
+											"m11": 1.0,
+											"m12": 0.0,
+											"m13": 0.0,
+											"m20": 0.0,
+											"m21": 0.0,
+											"m22": 1.0,
+											"m23": 0.0,
+											"m30": -12.0,
+											"m31": -5.0,
+											"m32": 0.0,
+											"m33": 1.0
+										},
+										"DecomposedMatrix": {
+											"Position": {
+												"x": -12.0,
+												"y": -5.0,
+												"z": 0.0
+											},
+											"Rotation": {
+												"x": 0.0,
+												"y": -0.0,
+												"z": 0.0
+											},
+											"Scaling": {
+												"x": 1.0,
+												"y": 1.0,
+												"z": 1.0
+											}
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	},
+	"SYMBOL_DICTIONARY": {
+		"Symbols": [
+			{
+				"SYMBOL_name": "evil",
+				"TIMELINE": {
+					"LAYERS": [
+						{
+							"Layer_name": "Layer_1",
+							"Frames": [
+								{
+									"index": 0,
+									"duration": 1,
+									"elements": [
+										{
+											"SYMBOL_Instance": {
+												"SYMBOL_name": "evil1",
+												"Instance_Name": "",
+												"symbolType": "graphic",
+												"firstFrame": 0,
+												"loop": "loop",
+												"transformationPoint": {
+													"x": 167.75,
+													"y": 130.70000000000003
+												},
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 0.0,
+													"m31": 0.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 0.0,
+														"y": 0.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										},
+										{
+											"SYMBOL_Instance": {
+												"SYMBOL_name": "evil2",
+												"Instance_Name": "",
+												"symbolType": "graphic",
+												"firstFrame": 0,
+												"loop": "loop",
+												"transformationPoint": {
+													"x": 152.15,
+													"y": 52.7
+												},
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 297.4,
+													"m31": -200.3,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 297.4,
+														"y": -200.3,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"SYMBOL_name": "evil1",
+				"TIMELINE": {
+					"LAYERS": [
+						{
+							"Layer_name": "Layer_2",
+							"Frames": [
+								{
+									"index": 0,
+									"duration": 1,
+									"elements": [
+										{
+											"ATLAS_SPRITE_instance": {
+												"name": "0000",
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 0.0,
+													"m31": 0.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 0.0,
+														"y": 0.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"SYMBOL_name": "evil2",
+				"TIMELINE": {
+					"LAYERS": [
+						{
+							"Layer_name": "Layer_1",
+							"Frames": [
+								{
+									"index": 0,
+									"duration": 5,
+									"elements": [
+										{
+											"SYMBOL_Instance": {
+												"SYMBOL_name": "evil2base",
+												"Instance_Name": "",
+												"symbolType": "graphic",
+												"firstFrame": 0,
+												"loop": "loop",
+												"transformationPoint": {
+													"x": 152.15,
+													"y": 52.7
+												},
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 0.0,
+													"m31": 0.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 0.0,
+														"y": 0.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								},
+								{
+									"index": 5,
+									"duration": 5,
+									"elements": [
+										{
+											"SYMBOL_Instance": {
+												"SYMBOL_name": "evil2base",
+												"Instance_Name": "",
+												"symbolType": "graphic",
+												"firstFrame": 0,
+												"loop": "loop",
+												"transformationPoint": {
+													"x": 152.15,
+													"y": 52.7
+												},
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": -142.0,
+													"m31": -45.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": -142.0,
+														"y": -45.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								},
+								{
+									"index": 10,
+									"duration": 1,
+									"elements": [
+										{
+											"SYMBOL_Instance": {
+												"SYMBOL_name": "evil2base",
+												"Instance_Name": "",
+												"symbolType": "graphic",
+												"firstFrame": 0,
+												"loop": "loop",
+												"transformationPoint": {
+													"x": 152.15,
+													"y": 52.7
+												},
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 241.0,
+													"m31": -85.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 241.0,
+														"y": -85.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"SYMBOL_name": "evil2base",
+				"TIMELINE": {
+					"LAYERS": [
+						{
+							"Layer_name": "Layer_2",
+							"Frames": [
+								{
+									"index": 0,
+									"duration": 1,
+									"elements": [
+										{
+											"ATLAS_SPRITE_instance": {
+												"name": "0001",
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 0.0,
+													"m31": 0.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 0.0,
+														"y": 0.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"SYMBOL_name": "dance small",
+				"TIMELINE": {
+					"LAYERS": [
+						{
+							"Layer_name": "Layer_1",
+							"Frames": [
+								{
+									"index": 0,
+									"duration": 1,
+									"elements": [
+										{
+											"SYMBOL_Instance": {
+												"SYMBOL_name": "smiley",
+												"Instance_Name": "",
+												"symbolType": "graphic",
+												"firstFrame": 0,
+												"loop": "loop",
+												"transformationPoint": {
+													"x": 190.70000000000003,
+													"y": 180.65
+												},
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 0.0,
+													"m31": 0.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 0.0,
+														"y": 0.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								},
+								{
+									"index": 1,
+									"duration": 1,
+									"elements": [
+										{
+											"SYMBOL_Instance": {
+												"SYMBOL_name": "smiley",
+												"Instance_Name": "",
+												"symbolType": "graphic",
+												"firstFrame": 0,
+												"loop": "loop",
+												"transformationPoint": {
+													"x": 190.70000000000003,
+													"y": 180.65
+												},
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 40.0,
+													"m31": -30.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 40.0,
+														"y": -30.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								},
+								{
+									"index": 2,
+									"duration": 1,
+									"elements": [
+										{
+											"SYMBOL_Instance": {
+												"SYMBOL_name": "smiley",
+												"Instance_Name": "",
+												"symbolType": "graphic",
+												"firstFrame": 0,
+												"loop": "loop",
+												"transformationPoint": {
+													"x": 190.70000000000003,
+													"y": 180.65
+												},
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 41.0,
+													"m31": -47.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 41.0,
+														"y": -47.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								},
+								{
+									"index": 3,
+									"duration": 2,
+									"elements": [
+										{
+											"SYMBOL_Instance": {
+												"SYMBOL_name": "smiley",
+												"Instance_Name": "",
+												"symbolType": "graphic",
+												"firstFrame": 0,
+												"loop": "loop",
+												"transformationPoint": {
+													"x": 190.70000000000003,
+													"y": 180.65
+												},
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 41.0,
+													"m31": -43.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 41.0,
+														"y": -43.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								},
+								{
+									"index": 5,
+									"duration": 1,
+									"elements": [
+										{
+											"SYMBOL_Instance": {
+												"SYMBOL_name": "smiley",
+												"Instance_Name": "",
+												"symbolType": "graphic",
+												"firstFrame": 0,
+												"loop": "loop",
+												"transformationPoint": {
+													"x": 190.70000000000003,
+													"y": 180.65
+												},
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 41.0,
+													"m31": -21.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 41.0,
+														"y": -21.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								},
+								{
+									"index": 6,
+									"duration": 1,
+									"elements": [
+										{
+											"SYMBOL_Instance": {
+												"SYMBOL_name": "smiley",
+												"Instance_Name": "",
+												"symbolType": "graphic",
+												"firstFrame": 0,
+												"loop": "loop",
+												"transformationPoint": {
+													"x": 190.70000000000003,
+													"y": 180.65
+												},
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 41.0,
+													"m31": -33.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 41.0,
+														"y": -33.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								},
+								{
+									"index": 7,
+									"duration": 1,
+									"elements": [
+										{
+											"SYMBOL_Instance": {
+												"SYMBOL_name": "smiley",
+												"Instance_Name": "",
+												"symbolType": "graphic",
+												"firstFrame": 0,
+												"loop": "loop",
+												"transformationPoint": {
+													"x": 190.70000000000003,
+													"y": 180.65
+												},
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 41.0,
+													"m31": -24.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 41.0,
+														"y": -24.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								},
+								{
+									"index": 8,
+									"duration": 1,
+									"elements": [
+										{
+											"SYMBOL_Instance": {
+												"SYMBOL_name": "smiley",
+												"Instance_Name": "",
+												"symbolType": "graphic",
+												"firstFrame": 0,
+												"loop": "loop",
+												"transformationPoint": {
+													"x": 190.70000000000003,
+													"y": 180.65
+												},
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 41.0,
+													"m31": -17.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 41.0,
+														"y": -17.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								},
+								{
+									"index": 9,
+									"duration": 3,
+									"elements": [
+										{
+											"SYMBOL_Instance": {
+												"SYMBOL_name": "smiley",
+												"Instance_Name": "",
+												"symbolType": "graphic",
+												"firstFrame": 0,
+												"loop": "loop",
+												"transformationPoint": {
+													"x": 190.70000000000003,
+													"y": 180.65
+												},
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 40.0,
+													"m31": -34.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 40.0,
+														"y": -34.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"SYMBOL_name": "smiley",
+				"TIMELINE": {
+					"LAYERS": [
+						{
+							"Layer_name": "Layer_2",
+							"Frames": [
+								{
+									"index": 0,
+									"duration": 1,
+									"elements": [
+										{
+											"ATLAS_SPRITE_instance": {
+												"name": "0002",
+												"Matrix3D": {
+													"m00": 1.0,
+													"m01": 0.0,
+													"m02": 0.0,
+													"m03": 0.0,
+													"m10": 0.0,
+													"m11": 1.0,
+													"m12": 0.0,
+													"m13": 0.0,
+													"m20": 0.0,
+													"m21": 0.0,
+													"m22": 1.0,
+													"m23": 0.0,
+													"m30": 0.0,
+													"m31": 0.0,
+													"m32": 0.0,
+													"m33": 1.0
+												},
+												"DecomposedMatrix": {
+													"Position": {
+														"x": 0.0,
+														"y": 0.0,
+														"z": 0.0
+													},
+													"Rotation": {
+														"x": 0.0,
+														"y": -0.0,
+														"z": 0.0
+													},
+													"Scaling": {
+														"x": 1.0,
+														"y": 1.0,
+														"z": 1.0
+													}
+												}
+											}
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			}
+		]
+	},
+	"metadata": {
+		"framerate": 30.0
+	}
+}
